@@ -12,98 +12,36 @@
     <meta name="author" content="Kevin Zanzi" />
     <meta name="creator" content="Kevin Zanzi" />
     <title>Kevin Zanzi</title>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        text-decoration: none;
-        box-sizing: border-box;
-        color: rgba(255, 255, 255, 0.9);
-      }
-      body {
-        display: flex;
-        flex-direction: column;
-        background-color: #0f1013;
-        font-family: Roboto, sans-serif;
-      }
-      header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-top: 20px;
-        margin-bottom: 50px;
-        height: 10vh;
-      }
-      header a {
-        display: flex;
-        align-items: center;
-      }
-      h1 {
-        color: #3282f5;
-      }
-      .text-color-gray {
-        color: #212429;
-      }
-      .links {
-        position: relative;
-        display: flex;
-        width: 400px;
-        justify-content: space-evenly;
-        left: 50%;
-        transform: translateX(-50%) scale(0.75);
-        margin-top: 20px;
-      }
-      .container {
-        position: relative;
-        width: 50%;
-        justify-self: center;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      footer {
-        display: grid;
-        place-items: center;
-        height: 10vh;
-      }
-      span.color-blue {
-        color: #3282f5;
-      }
-      @media only screen and (max-width: 768px) {
-        .container {
-          width: 80%;
-        }
-      }
-    </style>
-
-    <!-- HEADER -->
-    <header>
-      <a href="https://nivekizzan.github.io/">
-        <h2 class="text-color-gray"><&nbsp;</h2>
-        <h1>Kevin Zanzi</h1>
-        <h2 class="text-color-gray">&nbsp;></h2>
-      </a>
-      <h4>MMO, Student</h4>
-    </header>
-    <!-- CONTENT -->
-    <div class="container">
-      <p>
-        Hi, I'm Kevin! Thank you for your time!
-        <br />
-        I look foward to develop applications for different kinds of people,
-        <span class="color-blue">making a positive impact on their lives</span>.
-        <br /><br />
-        For now, I am an
-        <span class="color-blue">Information Systems Engineer Student</span>
-        at the UTN BA (National Technological University, Buenos Aires), and a
-        would be happy person to start working in a very near future.
-        <br /><br />
-        Currently in life, I find enjoyment in learning (in general), coding,
-        good views, those 3 times at archery, and smiling.
-      </p>
+    <main>
+      <article id="hero">
+        <p>Name: Kevin Zanzi</p>
+        <p>Role: student</p>
+        <p>Titles: MMO</p>
+        <p>Status: unemployed</p>
+        <p>Active Quest: find a job</p>
+        <button onclick="info()">[More info]</button>
+      </article>
+      <article id="about" style="display: none">
+        <p>
+          Hi, I'm Kevin! Thank you for your time!
+          <br />
+          I look foward to develop applications for different kinds of people,
+          <span class="color-blue">making a positive impact on their lives</span
+          >. <br /><br />
+          For now, I am an
+          <span class="color-blue">Information Systems Engineer Student</span>
+          at the UTN BA (National Technological University, Buenos Aires), and a
+          would be happy person to start working in a very near future.
+          <br /><br />
+          Currently in life, I find enjoyment in learning (in general), coding,
+          good views, those 3 times at archery, and smiling.
+        </p>
+        <button onclick="info()">[Less info]</button>
+      </article>
       <div class="links">
         <a
           href="https://github.com/Nivekizzan"
@@ -169,12 +107,13 @@
           </svg>
         </a>
       </div>
-      <!-- FOOTER -->
-      <footer>
-        <a href="./alternative/index.html" style="cursor: default;">
-          <small>&copy; Kevin Zanzi. All rights reserved.</small>
-        </a>
-      </footer>
-    </div>
+    </main>
+
+    <footer>
+      <div class="top"></div>
+      <a href="../index.html" style="cursor: default;text-decoration: none;">
+        <div class="bottom">&copy; Kevin Zanzi, all right reserved.</div>
+      </a>
+    </footer>
   </body>
 </html>
