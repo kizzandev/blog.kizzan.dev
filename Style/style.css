@@ -75,7 +75,7 @@ main {
   padding: 100px 0;
   border-bottom: #dadada solid 2px;
   display: grid;
-  grid-template-columns: minmax(25%, 250px) minmax(50%, 65%);
+  grid-template-columns: minmax(15%, 250px) minmax(50%, 65%); /* 25% -> 15% */
   place-items: center;
 }
 
