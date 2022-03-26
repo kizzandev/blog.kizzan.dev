@@ -389,10 +389,14 @@
     </script>
     <script type="text/javascript">
       document.querySelector('#gform').onsubmit = function (e) {
-        document.querySelector('#gform *').fadeOut(2000);
-        document
-          .querySelector('#gform')
-          .prepend('Your submission has been processed...');
+        let formConfirmation = document.createElement('p');
+        formConfirmation.classList.add('text-center');
+        formConfirmation.innerText = 'Your submission has been processed...';
+        let gform = document.querySelector('#gform').children;
+        Array.from(gform).forEach((e) => {
+          e.style.opacity = '0';
+        });
+        document.querySelector('#gform').prepend(formConfirmation);
       };
     </script>
   </body>
