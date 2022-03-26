@@ -4,119 +4,377 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Kevin Zanzi</title>
-    <meta name="description" content="Kevin Zanzi's personal website." />
+    <meta name="description" content="Kevin Zanzi, Software Engineer." />
     <meta
       name="keywords"
-      content="Kevin, Zanzi, Kevin Zanzi, C++, Python, HTML, CSS, JavaScript, JS, Figma, Machine Learning, ML, github, linkedin"
+      content="kevin, zanzi, software, engineer, c++, python, JavaScript, html, css, js, Django, Vue, mySQL, portfolio, projects"
     />
-    <meta name="author" content="Kevin Zanzi" />
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="Style/style.css" />
-    <script src="./Scripts/menu.js"></script>
+
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+    />
   </head>
   <body>
-    <header class="margin-side">
-      <h1 class="sv">Kevin Zanzi</h1>
-      <button class="menu" onclick="placeholder()"><h2>∷</h2></button>
-    </header>
-    <!-- style="opacity: 100" -->
-    <main class="margin-side" id="main">
-      <div class="grid">
-        <!-- Presentation -->
-        <div class="container">
-          <div class="section"><h2>Who am I</h2></div>
-          <div class="section-content flex flex-column gap05">
-            <h3>Kevin Zanzi.</h3>
-            <h3>M.M.O. (think architecture)</h3>
-            <h3>Student.</h3>
-          </div>
-        </div>
-        <!-- What I know -->
-        <div class="container">
-          <div class="section"><h2>Knowledge</h2></div>
-          <div class="section-content flex flex-row flex-wrap gap1">
-            <div class="skills social">
-              <h2>Skills</h2>
-              <br />
-              <img src="./img/cpp.png" alt="C++" />
-              <img src="./img/python.png" alt="Python" />
-              <img src="./img/figma.png" alt="Figma" />
-              <br />
-              <img src="./img/HTML5.png" alt="HTML5" />
-              <img src="./img/CSS3.png" alt="CSS3" />
-              <img src="./img/javascript.png" alt="JavaScript (a little)" />
-            </div>
-            <div class="lang">
-              <h2>Languages</h2>
-              <br />
-              <h3>Spanish</h3>
-              <h3>English</h3>
-            </div>
-          </div>
-        </div>
-        <!-- Awards -->
-        <div class="container">
-          <div class="section"><h2>Recognition</h2></div>
-          <div class="section-content flex flex-row flex-wrap gap1">
-            <div class="events">
-              <h2>Events</h2>
-              <br />
-              <h3>x2 Construction Olympiads</h3>
-            </div>
-            <div class="cert">
-              <h2>Exams</h2>
-              <br />
-              <h3>Foreign Languages Certificate</h3>
-            </div>
-          </div>
-        </div>
-        <!-- What I am doing now -->
-        <div class="container">
-          <div class="section"><h2>Currently</h2></div>
-          <div class="section-content flex flex-column gap05">
-            <h3>Studying Information System Engineering.</h3>
-            <h3>Looking for first job opportunity!</h3>
-            <h3>Interested in networking!</h3>
-          </div>
-        </div>
-        <!-- The future -->
-        <div class="container">
-          <div class="section"><h2>The future</h2></div>
-          <div class="section-content flex flex-column gap05">
-            <h3>Industrial Engineering.</h3>
-            <h3>Machine Learning.</h3>
-            <h3>And more!</h3>
-          </div>
-        </div>
-        <!-- Contact -->
-        <div class="container">
-          <div class="section"><h2>Find me at</h2></div>
-          <div class="section-content flex flex-row flex-wrap gap1">
-            <a
-              class="social"
-              href="https://www.linkedin.com/in/kevinzanzi/"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img src="./img/linkedin.svg" alt="Linked In" />
-            </a>
-            <a
-              class="social"
-              href="https://github.com/kevinzanzi"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img src="./img/github.svg" alt="Github" />
-            </a>
-          </div>
-        </div>
+    <!-- landing | done -->
+    <section id="home" class="height-100vh flex flex-center flex-column">
+      <canvas id="canvas" class="pos-abs height-100vh width-100vw"></canvas>
+      <h1 class="loadAnimName">Kevin Zanzi</h1>
+      <h3 class="loadAnimTitle">Software Engineer</h3>
+      <!-- <h3 class="loadAnimTitle">Full Stack Developer</h3> -->
+      <div
+        class="pos-rltv flex flex-row loadAnimBtns z-i-top m-t-15px gap-2rem"
+      >
+        <button class="hero-btn transition pos-rltv flex">
+          <a
+            id="hireme-btn"
+            href="#contact"
+            class="border-2px-solid height-max flex flex-center gap-1rem p-all-05-1rem"
+          >
+            Hire me
+            <span class="emailAnim mail-outline material-icons-round">
+              mail_outline
+            </span>
+            <span class="emailAnim mail-filled material-icons-round">
+              email
+            </span>
+          </a>
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+          <div class="line4"></div>
+        </button>
+        <button class="hero-btn transition pos-rltv flex">
+          <a
+            id="explore-btn"
+            href="#about"
+            class="border-2px-solid height-max flex flex-center gap-1rem p-all-05-1rem"
+          >
+            Explore
+            <span class="arrowRtoD material-icons-round">chevron_right</span>
+          </a>
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+          <div class="line4"></div>
+        </button>
       </div>
-    </main>
+    </section>
+    <!-- header -->
+    <header class="bg-color-white-003 sticky-top">
+      <div class="flex flex-row flex-center height-60px m-lr-20px">
+        <h1>Kevin Zanzi</h1>
+      </div>
+    </header>
+    <div class="container m-auto">
+      <!-- about | done -->
+      <section id="about" class="href-fix">
+        <div class="m-lr-20px flex flex-row justify-content-sb">
+          <div class="flex flex-column justify-content-sa m-lr-auto">
+            <div>
+              <h3 class="m-b-10px">About me</h3>
+              <p>Located in Buenos Aires, Argentina.</p>
+              <p>Currently studying Information Systems Engineering at UTN.</p>
+              <p>
+                Looking for Software Engineer and/or Full Stack Web Developing
+                jobs;
+                <a href="#contact" style="color: var(--color-text-white-90)">
+                  send me a message!
+                </a>
+              </p>
+              <p class="m-t-10px">
+                A truth seeker who enjoys thinking of ways to innovate the world
+                and improve lifes.
+              </p>
+              <div class="m-t-50px">
+                <h3 class="m-b-10px">Languages</h3>
+                <p>
+                  <img
+                    src="./images/argentina.svg"
+                    alt="Argentina"
+                    width="16"
+                    height="16"
+                  />
+                  Spanish - native
+                </p>
+                <p>
+                  <img
+                    src="./images/uk.svg"
+                    alt="United Kingdom"
+                    width="16"
+                    height="16"
+                  />
+                  English - Advanced (C1)
+                </p>
+              </div>
+            </div>
+            <div id="about-skills" class="m-t-50px max-width-800">
+              <h3>Skills</h3>
+              <div
+                class="m-t-20px flex flex-row flex-wrap gap-2rem skill-icons"
+              >
+                <dfn title="C++">
+                  <img src="./images/cpp.svg" alt="C++" />
+                </dfn>
+                <dfn title="Python">
+                  <img src="./images/python.svg" alt="Python" />
+                </dfn>
+                <dfn title="HTML (Hyper-Text Markup Language)">
+                  <img src="./images/html.svg" alt="HTML" />
+                </dfn>
+                <dfn title="CSS (Cascading Style Sheets)">
+                  <img src="./images/css.svg" alt="CSS" />
+                </dfn>
+                <dfn title="JavaScript">
+                  <img src="./images/js.svg" alt="JavaScript" />
+                </dfn>
+                <dfn title="Figma">
+                  <img src="./images/figma.svg" alt="JavaScript" />
+                </dfn>
+                <!-- <dfn title="Git">
+                  <img src="./images/git.svg" alt="Git" />
+                </dfn> -->
+                <!-- <dfn title="Vue">
+                  <img src="./images/vue.svg" alt="Vue" />
+                </dfn> -->
+                <!-- <dfn title="MySQL">
+                  <img src="./images/mysql.svg" alt="MySQL" />
+                </dfn> -->
+                <!-- <dfn title="Flask">
+                  <img src="./images/flask.svg" alt="Flask" />
+                </dfn> -->
+                <!-- <dfn title="Django">
+                  <img src="./images/django.svg" alt="Django" />
+                </dfn> -->
+              </div>
+            </div>
+          </div>
+          <div
+            id="about-img"
+            class="flex flex-end flex-grow m-lr-50px m-tb-50px"
+          >
+            <img
+              src="./images/favicon.png"
+              alt="Photo of myself"
+              width="300px"
+              height="600px"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- services -->
+      <!-- <section id="services" class="href-fix">
+        <h2 class="text-center">Services</h2>
+        <div class="flex flex-row flex-center gap-2rem m-t-2rem">
+          <button class="pos-rltv hero-btn transition stretch">
+            <div class="p-all-05-1rem block border-2px-solid">
+              <h4>Service 1</h4>
+              <p>This service is very servicial...</p>
+            </div>
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="line4"></div>
+          </button>
+        </div>
+      </section> -->
+      <!-- portfolio | done -->
+      <section id="portfolio" class="href-fix m-lr-20px">
+        <h2 class="text-center">Portfolio</h2>
+        <div class="grid grid-auto grid-center gap-2rem m-t-2rem">
+          <button class="pos-rltv hero-btn transition stretch">
+            <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory"
+              class="p-all-05-1rem block border-2px-solid"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h4>Folder Organizer</h4>
+            </a>
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="line4"></div>
+          </button>
+          <button class="pos-rltv hero-btn transition stretch">
+            <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame"
+              class="p-all-05-1rem block border-2px-solid"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h4>Quiz Game</h4>
+            </a>
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="line4"></div>
+          </button>
+          <button class="pos-rltv hero-btn transition stretch">
+            <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD"
+              class="p-all-05-1rem block border-2px-solid"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h4>Huffman De/Compressor</h4>
+            </a>
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <div class="line4"></div>
+          </button>
+        </div>
+      </section>
+      <!-- clients -->
+      <!-- <section id="clients" class="href-fix">
+        <h2 class="text-center">Clients</h2>
+        <div class='flex flex-row flex-center gap-2rem m-t-2rem'>
+          <img src="./images/company.svg" alt="Company Name" />
+          <img src="./images/company.svg" alt="Company Name" />
+          <img src="./images/company.svg" alt="Company Name" />
+          <img src="./images/company.svg" alt="Company Name" />
+          <img src="./images/company.svg" alt="Company Name" />
+        </div>
+      </section> -->
+      <!-- contact | done -->
+      <section id="contact" class="href-fix m-t-50px">
+        <div class="flex flex-column flex-center m-lr-20px">
+          <h2>Contact</h2>
+          <p>*Currently not working</p>
 
-    <footer class="margin-side">
-      <small>© Kevin Zanzi, all right reserved.</small>
+          <form
+            class="m-t-2rem round-20px p-tb-1-05-rem p-lr-2rem"
+            action=""
+            target="_blank"
+          >
+            <label for="fname">
+              Full Name <span style="color: orangered">*</span>
+            </label>
+            <input
+              type="text"
+              id="fname"
+              name="fullname"
+              placeholder="The Rock"
+              required
+            />
+
+            <label for="email">
+              Email <span style="color: orangered">*</span>
+            </label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="example@domain.sth"
+              required
+            />
+
+            <label for="phone"> Phone </label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="(111) 123-4567"
+              required
+            />
+
+            <label for="company">
+              Company <span style="color: orangered">*</span>
+            </label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              placeholder="The Company Inc."
+              required
+            />
+
+            <label for="subject">
+              Subject <span style="color: orangered">*</span>
+            </label>
+            <select id="subject" name="subject">
+              <option value="work" class="bg-hover">Work Offer</option>
+              <!-- <option value="services">About my services</option> -->
+              <option value="connect" class="bg-hover">Connect</option>
+              <option value="other" class="bg-hover">Other</option>
+            </select>
+
+            <label for="message">
+              Message <span style="color: orangered">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your message goes here..."
+              style="height: 100px"
+              minlength="20"
+              maxlength="3000"
+              required
+            ></textarea>
+
+            <input type="submit" class="material-icons-round" value="send" />
+          </form>
+        </div>
+      </section>
+    </div>
+    <!-- footer -->
+    <footer class="m-t-50px m-b-20px">
+      <div class="flex flex-center gap-1rem">
+        <a
+          href="https://www.linkedin.com/in/kevinzanzi/"
+          class="p-lr-1rem p-tb-05rem round-20px flex flex-center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="./images/linkedin.svg"
+            alt="Linked in"
+            width="40"
+            height="40"
+            id="linked-1"
+          />
+          <img
+            src="./images/linkedin2.svg"
+            alt="Linked in"
+            width="40"
+            height="40"
+            id="linked-2"
+          />
+        </a>
+        <a
+          href="https://github.com/kevinzanzi/"
+          class="p-lr-1rem p-tb-05rem round-20px flex flex-center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="./images/github.svg"
+            alt="Github"
+            width="40"
+            height="40"
+            id="github-1"
+          />
+          <img
+            src="./images/github2.svg"
+            alt="Github"
+            width="40"
+            height="40"
+            id="github-2"
+          />
+        </a>
+      </div>
+      <p class="text-center m-t-10px">© Kevin Zanzi.</p>
     </footer>
   </body>
 </html>
