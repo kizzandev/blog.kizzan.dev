@@ -251,79 +251,87 @@
       <section id="contact" class="href-fix m-t-50px">
         <div class="flex flex-column flex-center m-lr-20px">
           <h2>Contact</h2>
-          <p>*Currently not working</p>
+          <!-- <p>*Currently not working</p> Now works! -->
 
           <form
+            name="gform"
+            id="gform"
             class="m-t-2rem round-20px p-tb-1-05-rem p-lr-2rem"
-            action=""
-            target="_blank"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSdvlFJoEvUHiYPtHD5zYbZ746bdRSGDcZDmxWSgMq7x2a_Oqw/formResponse?"
+            enctype="text/plain"
+            target="hidden_iframe"
+            onsubmit="submitted=true;"
           >
-            <label for="fname">
+            <label for="entry.2005620554">
               Full Name <span style="color: orangered">*</span>
             </label>
             <input
               type="text"
-              id="fname"
-              name="fullname"
+              id="entry.2005620554"
+              name="entry.2005620554"
               placeholder="The Rock"
               required
             />
 
-            <label for="email">
+            <label for="entry.1045781291">
               Email <span style="color: orangered">*</span>
             </label>
             <input
               type="email"
-              id="email"
-              name="email"
+              id="entry.1045781291"
+              name="entry.1045781291"
               placeholder="example@domain.sth"
               required
             />
 
-            <label for="phone"> Phone </label>
+            <label for="entry.1166974658"> Phone </label>
             <input
               type="text"
-              id="phone"
-              name="phone"
+              id="entry.1166974658"
+              name="entry.1166974658"
               placeholder="(111) 123-4567"
             />
 
-            <label for="company">
+            <label for="entry.1065046570">
               Company <span style="color: orangered">*</span>
             </label>
             <input
               type="text"
-              id="company"
-              name="company"
+              id="entry.1065046570"
+              name="entry.1065046570"
               placeholder="The Company Inc."
               required
             />
 
-            <label for="subject">
-              Subject <span style="color: orangered">*</span>
-            </label>
-            <select id="subject" name="subject">
-              <option value="work" class="bg-hover">Work Offer</option>
+            <label for="entry.645880663"> Subject </label>
+            <select id="entry.645880663" name="entry.645880663">
+              <option value="Work Offer" class="bg-hover">Work Offer</option>
               <!-- <option value="services">About my services</option> -->
-              <option value="connect" class="bg-hover">Connect</option>
-              <option value="other" class="bg-hover">Other</option>
+              <option value="Connect" class="bg-hover">Connect</option>
+              <option value="Other" class="bg-hover">Other</option>
             </select>
 
-            <label for="message">
+            <label for="entry.839337160">
               Message <span style="color: orangered">*</span>
             </label>
             <textarea
-              id="message"
-              name="message"
+              id="entry.839337160"
+              name="entry.839337160"
               placeholder="Your message goes here..."
               style="height: 100px"
-              minlength="20"
+              minlength="3"
               maxlength="3000"
               required
             ></textarea>
 
             <input type="submit" class="material-icons-round" value="send" />
           </form>
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+            onload="if(submitted) {}"
+          ></iframe>
         </div>
       </section>
     </div>
@@ -375,5 +383,16 @@
       </div>
       <p class="text-center m-t-10px">© Kevin Zanzi.</p>
     </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript">
+      var submitted = false;
+    </script>
+    <script type="text/javascript">
+      $('#gform').on('submit', function (e) {
+        $('#gform *').fadeOut(2000);
+        $('#gform').prepend('Your submission has been processed...');
+      });
+    </script>
   </body>
 </html>
