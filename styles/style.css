@@ -82,7 +82,8 @@ p {
   font-size: 1rem;
 }
 input,
-select {
+select,
+textarea {
   font-size: 1rem;
 }
 .text-center {
