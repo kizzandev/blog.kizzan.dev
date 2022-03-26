@@ -384,15 +384,16 @@
       <p class="text-center m-t-10px">© Kevin Zanzi.</p>
     </footer>
 
-    <script src="assets/js/jquery.min.js"></script>
     <script type="text/javascript">
       var submitted = false;
     </script>
     <script type="text/javascript">
-      $('#gform').on('submit', function (e) {
-        $('#gform *').fadeOut(2000);
-        $('#gform').prepend('Your submission has been processed...');
-      });
+      document.querySelector('#gform').onsubmit = function (e) {
+        document.querySelector('#gform *').fadeOut(2000);
+        document
+          .querySelector('#gform')
+          .prepend('Your submission has been processed...');
+      };
     </script>
   </body>
 </html>
