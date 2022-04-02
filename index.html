@@ -26,102 +26,103 @@
     />
   </head>
   <body>
-    <!-- landing | done -->
-    <section id="home" class="height-100vh flex flex-center flex-column">
-      <canvas id="canvas" class="pos-abs height-100vh width-100vw"></canvas>
-      <h1 class="loadAnimName">Kevin Zanzi</h1>
-      <h3 class="loadAnimTitle">Software Engineer</h3>
-      <!-- <h3 class="loadAnimTitle">Full Stack Developer</h3> -->
-      <div
-        class="pos-rltv flex flex-row loadAnimBtns z-i-top m-t-15px gap-2rem"
+    <div class="bg-web">
+      <!-- landing | done -->
+      <section
+        id="home"
+        class="pos-rltv height-100vh flex flex-center bg-web-hero"
       >
-        <button class="hero-btn transition pos-rltv flex">
-          <a
-            id="hireme-btn"
-            href="#contact"
-            class="border-2px-solid height-max flex flex-center gap-1rem p-all-05-1rem"
-          >
-            Hire me
-            <span class="emailAnim mail-outline material-icons-round">
-              mail_outline
-            </span>
-            <span class="emailAnim mail-filled material-icons-round">
-              email
-            </span>
-          </a>
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-          <div class="line4"></div>
-        </button>
-        <button class="hero-btn transition pos-rltv flex">
-          <a
-            id="explore-btn"
-            href="#about"
-            class="border-2px-solid height-max flex flex-center gap-1rem p-all-05-1rem"
-          >
-            Explore
-            <span class="arrowRtoD material-icons-round">chevron_right</span>
-          </a>
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-          <div class="line4"></div>
-        </button>
-      </div>
-    </section>
-    <!-- header -->
-    <header class="bg-color-white-003 sticky-top">
-      <div class="flex flex-row flex-center height-60px m-lr-20px">
-        <h1>Kevin Zanzi</h1>
-      </div>
-    </header>
-    <div class="container m-auto">
-      <!-- about | done -->
-      <section id="about" class="href-fix">
-        <div class="m-lr-20px flex flex-row justify-content-sb">
-          <div class="flex flex-column justify-content-sa m-lr-auto">
-            <div>
-              <h3 class="m-b-10px">About me</h3>
-              <p>Located in Buenos Aires, Argentina.</p>
-              <p>Currently studying Information Systems Engineering at UTN.</p>
-              <p>
-                Looking for Software Engineer and/or Full Stack Web Developing
-                jobs;
-                <a href="#contact" style="color: var(--color-text-white-90)">
-                  send me a message!
-                </a>
-              </p>
-              <p class="m-t-10px">
-                A truth seeker who enjoys thinking of ways to innovate the world
-                and improve lifes.
-              </p>
-              <div class="m-t-50px">
-                <h3 class="m-b-10px">Languages</h3>
+        <div class="flex flex-center flex-column">
+          <h1 class="animLoadName fs-3-05rem">Kevin Zanzi</h1>
+          <h3 class="animLoadTitle">Software Engineer</h3>
+          <!-- <h3 class='animLoadTitle'>Full Stack Developer</h3> -->
+          <button class="animLoadContactMe m-t-20px">
+            <a
+              id="hireme-btn"
+              href="#contact"
+              class="border-2px-solid flex flex-center p-all-05-1rem round-20px"
+            >
+              <span class="animEmail mail-filled material-icons-round m-r-10px">
+                email
+              </span>
+              Contact me
+            </a>
+          </button>
+        </div>
+        <div class="pos-abs tf-bottom flex flex-center flex-column">
+          <h5 class="animLoadExplore m-b-10px">Explore</h5>
+          <button class="animLoadExplore">
+            <a
+              id="explore-btn"
+              href="#about"
+              class="explore-more-border flex flex-center"
+            >
+              <span class="material-icons-round p-6px">expand_more</span>
+            </a>
+          </button>
+        </div>
+      </section>
+
+      <!-- header | done -->
+      <header class="sticky-top z-i-top">
+        <div class="flex flex-row flex-center height-60px m-lr-20px">
+          <h1>Kevin Zanzi</h1>
+        </div>
+      </header>
+
+      <div class="container m-auto">
+        <!-- about | done -->
+        <section id="about" class="p-t-100px">
+          <div class="m-lr-20px flex flex-row justify-content-sb">
+            <div class="flex flex-column justify-content-sa m-lr-auto">
+              <div>
+                <h3 class="m-b-10px">About me</h3>
+                <p>Located in Buenos Aires, Argentina.</p>
                 <p>
-                  <img
-                    src="./images/argentina.svg"
-                    alt="Argentina"
-                    width="16"
-                    height="16"
-                  />
-                  Spanish - native
+                  Currently studying Information Systems Engineering at UTN.
                 </p>
                 <p>
-                  <img
-                    src="./images/uk.svg"
-                    alt="United Kingdom"
-                    width="16"
-                    height="16"
-                  />
-                  English - Advanced (C1)
+                  Looking for Software Engineer and/or Full Stack Web Developing
+                  jobs;
+                  <a href="#contact" style="color: var(--color-text-white-90)">
+                    send me a message!
+                  </a>
                 </p>
+                <p class="m-t-10px">
+                  A truth seeker who enjoys thinking of ways to innovate the
+                  world and improve lifes.
+                </p>
+                <div class="m-t-50px">
+                  <h3 class="m-b-10px">Languages</h3>
+                  <p>
+                    <img
+                      src="./images/argentina.svg"
+                      alt="Argentina"
+                      width="16"
+                      height="16"
+                    />
+                    Spanish - native
+                  </p>
+                  <p>
+                    <img
+                      src="./images/uk.svg"
+                      alt="United Kingdom"
+                      width="16"
+                      height="16"
+                    />
+                    English - Advanced (C1)
+                  </p>
+                </div>
               </div>
             </div>
-            <div id="about-skills" class="m-t-50px max-width-800">
+
+            <div
+              id="about-skills"
+              class="flex flex-column align-center max-width-50pc m-l-10px"
+            >
               <h3>Skills</h3>
               <div
-                class="m-t-20px flex flex-row flex-wrap gap-2rem skill-icons"
+                class="m-t-20px flex flex-row align-center flex-wrap gap-2rem skill-icons"
               >
                 <dfn title="C++">
                   <img src="./images/cpp.svg" alt="C++" />
@@ -142,247 +143,177 @@
                   <img src="./images/figma.svg" alt="JavaScript" />
                 </dfn>
                 <!-- <dfn title="Git">
-                  <img src="./images/git.svg" alt="Git" />
-                </dfn> -->
+                <img src="./images/git.svg" alt="Git" />
+              </dfn> -->
                 <!-- <dfn title="Vue">
-                  <img src="./images/vue.svg" alt="Vue" />
-                </dfn> -->
+                <img src="./images/vue.svg" alt="Vue" />
+              </dfn> -->
                 <!-- <dfn title="MySQL">
-                  <img src="./images/mysql.svg" alt="MySQL" />
-                </dfn> -->
+                <img src="./images/mysql.svg" alt="MySQL" />
+              </dfn> -->
                 <!-- <dfn title="Flask">
-                  <img src="./images/flask.svg" alt="Flask" />
-                </dfn> -->
+                <img src="./images/flask.svg" alt="Flask" />
+              </dfn> -->
                 <!-- <dfn title="Django">
-                  <img src="./images/django.svg" alt="Django" />
-                </dfn> -->
+                <img src="./images/django.svg" alt="Django" />
+              </dfn> -->
               </div>
             </div>
           </div>
-          <div
-            id="about-img"
-            class="flex flex-end flex-grow m-lr-50px m-tb-50px"
+        </section>
+        <!-- services -->
+        <!-- portfolio | done -->
+        <section id="portfolio" class="p-t-100px m-lr-20px">
+          <h2 class="text-center">Portfolio</h2>
+          <div class="grid grid-auto grid-center gap-2rem m-t-2rem">
+            <button class="pos-rltv hero-btn transition stretch">
+              <a
+                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory"
+                class="p-all-05-1rem block border-2px-solid"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h4>Folder Organizer</h4>
+              </a>
+            </button>
+            <button class="pos-rltv hero-btn transition stretch">
+              <a
+                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame"
+                class="p-all-05-1rem block border-2px-solid"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h4>Quiz Game</h4>
+              </a>
+            </button>
+            <button class="pos-rltv hero-btn transition stretch">
+              <a
+                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD"
+                class="p-all-05-1rem block border-2px-solid"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h4>Huffman De/Compressor</h4>
+              </a>
+            </button>
+          </div>
+        </section>
+        <!-- clients -->
+        <!-- contact | done -->
+        <section id="contact" class="p-t-100px m-t-50px">
+          <div class="flex flex-column flex-center m-lr-20px">
+            <h2>Contact</h2>
+
+            <form
+              name="gform"
+              id="gform"
+              class="m-t-2rem round-20px p-tb-1-05-rem p-lr-2rem"
+              action="https://docs.google.com/forms/d/e/1FAIpQLSdvlFJoEvUHiYPtHD5zYbZ746bdRSGDcZDmxWSgMq7x2a_Oqw/formResponse?"
+              enctype="text/plain"
+              target="hidden_iframe"
+              onsubmit="submitted=true;"
+            >
+              <label for="entry.2005620554"> Full Name * </label>
+              <input
+                type="text"
+                id="entry.2005620554"
+                name="entry.2005620554"
+                placeholder="The Rock"
+                required
+              />
+
+              <label for="entry.1045781291"> Email * </label>
+              <input
+                type="email"
+                id="entry.1045781291"
+                name="entry.1045781291"
+                placeholder="example@domain.sth"
+                required
+              />
+
+              <label for="entry.1166974658"> Phone </label>
+              <input
+                type="text"
+                id="entry.1166974658"
+                name="entry.1166974658"
+                placeholder="(111) 123-4567"
+              />
+
+              <label for="entry.1065046570"> Company * </label>
+              <input
+                type="text"
+                id="entry.1065046570"
+                name="entry.1065046570"
+                placeholder="The Company Inc."
+                required
+              />
+
+              <label for="entry.645880663"> Subject * </label>
+              <select id="entry.645880663" name="entry.645880663">
+                <option value="Work Offer" class="bg-hover">Work Offer</option>
+                <!-- <option value="services">About my services</option> -->
+                <option value="Connect" class="bg-hover">Connect</option>
+                <option value="Other" class="bg-hover">Other</option>
+              </select>
+
+              <label for="entry.839337160"> Message * </label>
+              <textarea
+                id="entry.839337160"
+                name="entry.839337160"
+                placeholder="Your message goes here..."
+                style="height: 100px"
+                minlength="3"
+                maxlength="3000"
+                required
+              ></textarea>
+
+              <input type="submit" class="material-icons-round" value="send" />
+            </form>
+            <iframe
+              name="hidden_iframe"
+              id="hidden_iframe"
+              style="display: none"
+              onload="if(submitted) {}"
+            ></iframe>
+          </div>
+        </section>
+      </div>
+      <!-- footer -->
+      <footer class="m-t-50px p-b-20px">
+        <div class="flex flex-center gap-1rem">
+          <a
+            href="https://www.linkedin.com/in/kevinzanzi/"
+            class="flex flex-center"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <img
-              src="./images/favicon.png"
-              alt="Photo of myself"
-              width="300px"
-              height="600px"
+              src="./images/linkedin.svg"
+              alt="Linked in"
+              width="40"
+              height="40"
+              id="linked"
             />
-          </div>
-        </div>
-      </section>
-      <!-- services -->
-      <!-- <section id="services" class="href-fix">
-        <h2 class="text-center">Services</h2>
-        <div class="flex flex-row flex-center gap-2rem m-t-2rem">
-          <button class="pos-rltv hero-btn transition stretch">
-            <div class="p-all-05-1rem block border-2px-solid">
-              <h4>Service 1</h4>
-              <p>This service is very servicial...</p>
-            </div>
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-            <div class="line4"></div>
-          </button>
-        </div>
-      </section> -->
-      <!-- portfolio | done -->
-      <section id="portfolio" class="href-fix m-lr-20px">
-        <h2 class="text-center">Portfolio</h2>
-        <div class="grid grid-auto grid-center gap-2rem m-t-2rem">
-          <button class="pos-rltv hero-btn transition stretch">
-            <a
-              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory"
-              class="p-all-05-1rem block border-2px-solid"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h4>Folder Organizer</h4>
-            </a>
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-            <div class="line4"></div>
-          </button>
-          <button class="pos-rltv hero-btn transition stretch">
-            <a
-              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame"
-              class="p-all-05-1rem block border-2px-solid"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h4>Quiz Game</h4>
-            </a>
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-            <div class="line4"></div>
-          </button>
-          <button class="pos-rltv hero-btn transition stretch">
-            <a
-              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD"
-              class="p-all-05-1rem block border-2px-solid"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h4>Huffman De/Compressor</h4>
-            </a>
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-            <div class="line4"></div>
-          </button>
-        </div>
-      </section>
-      <!-- clients -->
-      <!-- <section id="clients" class="href-fix">
-        <h2 class="text-center">Clients</h2>
-        <div class='flex flex-row flex-center gap-2rem m-t-2rem'>
-          <img src="./images/company.svg" alt="Company Name" />
-          <img src="./images/company.svg" alt="Company Name" />
-          <img src="./images/company.svg" alt="Company Name" />
-          <img src="./images/company.svg" alt="Company Name" />
-          <img src="./images/company.svg" alt="Company Name" />
-        </div>
-      </section> -->
-      <!-- contact | done -->
-      <section id="contact" class="href-fix m-t-50px">
-        <div class="flex flex-column flex-center m-lr-20px">
-          <h2>Contact</h2>
-          <!-- <p>*Currently not working</p> Now works! -->
-
-          <form
-            name="gform"
-            id="gform"
-            class="m-t-2rem round-20px p-tb-1-05-rem p-lr-2rem"
-            action="https://docs.google.com/forms/d/e/1FAIpQLSdvlFJoEvUHiYPtHD5zYbZ746bdRSGDcZDmxWSgMq7x2a_Oqw/formResponse?"
-            enctype="text/plain"
-            target="hidden_iframe"
-            onsubmit="submitted=true;"
+          </a>
+          <a
+            href="https://github.com/kevinzanzi/"
+            class="flex flex-center round-20px"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <label for="entry.2005620554">
-              Full Name <span style="color: orangered">*</span>
-            </label>
-            <input
-              type="text"
-              id="entry.2005620554"
-              name="entry.2005620554"
-              placeholder="The Rock"
-              required
+            <img
+              src="./images/github.svg"
+              alt="Github"
+              width="40"
+              height="40"
+              id="github"
+              class="round-20px"
             />
-
-            <label for="entry.1045781291">
-              Email <span style="color: orangered">*</span>
-            </label>
-            <input
-              type="email"
-              id="entry.1045781291"
-              name="entry.1045781291"
-              placeholder="example@domain.sth"
-              required
-            />
-
-            <label for="entry.1166974658"> Phone </label>
-            <input
-              type="text"
-              id="entry.1166974658"
-              name="entry.1166974658"
-              placeholder="(111) 123-4567"
-            />
-
-            <label for="entry.1065046570">
-              Company <span style="color: orangered">*</span>
-            </label>
-            <input
-              type="text"
-              id="entry.1065046570"
-              name="entry.1065046570"
-              placeholder="The Company Inc."
-              required
-            />
-
-            <label for="entry.645880663"> Subject </label>
-            <select id="entry.645880663" name="entry.645880663">
-              <option value="Work Offer" class="bg-hover">Work Offer</option>
-              <!-- <option value="services">About my services</option> -->
-              <option value="Connect" class="bg-hover">Connect</option>
-              <option value="Other" class="bg-hover">Other</option>
-            </select>
-
-            <label for="entry.839337160">
-              Message <span style="color: orangered">*</span>
-            </label>
-            <textarea
-              id="entry.839337160"
-              name="entry.839337160"
-              placeholder="Your message goes here..."
-              style="height: 100px"
-              minlength="3"
-              maxlength="3000"
-              required
-            ></textarea>
-
-            <input type="submit" class="material-icons-round" value="send" />
-          </form>
-          <iframe
-            name="hidden_iframe"
-            id="hidden_iframe"
-            style="display: none"
-            onload="if(submitted) {}"
-          ></iframe>
+          </a>
         </div>
-      </section>
+        <p class="text-center m-t-10px">© Kevin Zanzi.</p>
+      </footer>
     </div>
-    <!-- footer -->
-    <footer class="m-t-50px m-b-20px">
-      <div class="flex flex-center gap-1rem">
-        <a
-          href="https://www.linkedin.com/in/kevinzanzi/"
-          class="p-lr-1rem p-tb-05rem round-20px flex flex-center"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="./images/linkedin.svg"
-            alt="Linked in"
-            width="40"
-            height="40"
-            id="linked-1"
-          />
-          <img
-            src="./images/linkedin2.svg"
-            alt="Linked in"
-            width="40"
-            height="40"
-            id="linked-2"
-          />
-        </a>
-        <a
-          href="https://github.com/kevinzanzi/"
-          class="p-lr-1rem p-tb-05rem round-20px flex flex-center"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="./images/github.svg"
-            alt="Github"
-            width="40"
-            height="40"
-            id="github-1"
-          />
-          <img
-            src="./images/github2.svg"
-            alt="Github"
-            width="40"
-            height="40"
-            id="github-2"
-          />
-        </a>
-      </div>
-      <p class="text-center m-t-10px">© Kevin Zanzi.</p>
-    </footer>
 
     <script type="text/javascript">
       var submitted = false;
