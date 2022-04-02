@@ -103,6 +103,9 @@ select {
 .fs-3-05rem {
   font-size: 3.25rem;
 }
+.fw-400 {
+  font-weight: 400;
+}
 
 .block {
   display: block;
