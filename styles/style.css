@@ -10,11 +10,15 @@
 }
 
 :root {
-  --color-t1-a: #234566;
-  --color-t1-b: #0760b3;
-  --color-t1-c: #097be6;
-  --color-t1-c: #0a83f5;
-  --color-t1-d: #4f9fea;
+  --color-t1-a: #221275;
+  --color-t1-a-bis: #3c3172;
+  --color-t1-a-third: #2312754b;
+  --color-t1-b: #4456E3;
+  --color-t1-c: #487ACC;
+  --color-t1-c: #4490B8;
+  --color-t1-d: #58D2DB;
+
+  --color-black-ish: #0e0e0e;
 
   --color-text-white-90: rgb(255, 255, 255, 0.9);
   --color-text-white-83: rgb(255, 255, 255, 0.83);
@@ -35,8 +39,10 @@ html {
   max-width: 1350px;
 }
 body {
-  background: var(--color-t1-a);
-  position: relative;
+  background: var(--color-black-ish);
+}
+header {
+  background-color: var(--color-t1-a);
 }
 button {
   background-color: transparent;
@@ -45,6 +51,12 @@ button {
 .sticky-top {
   position: sticky;
   inset: 0 0 auto 0; /* top right bottom left */
+}
+.bg-web {
+  background: linear-gradient(var(--color-t1-a) 50%, var(--color-t1-b));
+}
+.bg-web-hero {
+  background: linear-gradient(var(--color-t1-a-bis) 40%, var(--color-t1-a));
 }
 
 /*
@@ -82,14 +94,19 @@ p {
   font-size: 1rem;
 }
 input,
-select,
-textarea {
+select {
   font-size: 1rem;
 }
 .text-center {
   text-align: center;
 }
+.fs-3-05rem {
+  font-size: 3.25rem;
+}
 
+.block {
+  display: block;
+}
 /*
 FLEX AND GRID
 */
@@ -141,6 +158,11 @@ FLEX AND GRID
   align-self: stretch;
 }
 
+.align-center {
+  align-items: center;
+}
+
+
 .gap-2rem {
   gap: 2rem;
 }
@@ -155,31 +177,19 @@ MARGIN
   margin: auto;
 }
 /*topbottom*/
-.m-tb-50px {
-  margin-block: 50px;
-}
 /*leftright*/
 .m-lr-auto {
   margin-inline: auto;
-}
-.m-lr-50px {
-  margin-inline: 50px;
 }
 .m-lr-20px {
   margin-inline: 20px;
 }
 /*top*/
-.m-t-100px {
-  margin-top: 100px;
-}
 .m-t-50px {
   margin-top: 50px;
 }
 .m-t-20px {
   margin-top: 20px;
-}
-.m-t-15px {
-  margin-top: 15px;
 }
 .m-t-10px {
   margin-top: 10px;
@@ -188,23 +198,26 @@ MARGIN
   margin-top: 2rem;
 }
 /*bottom*/
-.m-b-20px {
-  margin-bottom: 20px;
-}
 .m-b-10px {
   margin-bottom: 10px;
 }
 /*right*/
+.m-r-10px {
+  margin-right: 10px;
+}
 /*left*/
+.m-l-10px {
+  margin-left: 50px;
+}
 
 /*
 PADDING
 */
+.p-6px {
+  padding: 6px;
+}
 .p-all-05-1rem {
   padding: 0.5rem 1rem;
-}
-.p-tb-05rem {
-  padding-block: 0.5rem;
 }
 .p-tb-1-05-rem {
   padding-block: 1.5rem;
@@ -212,37 +225,27 @@ PADDING
 .p-lr-2rem {
   padding-inline: 2rem;
 }
-.p-lr-1rem {
-  padding-inline: 1rem;
+.p-t-100px {
+  padding-top: 100px;
+}
+.p-b-20px {
+  padding-bottom: 20px;
 }
 
 /*
 DIMENSIONS
 */
-.width-100vw {
-  width: 100vw;
-}
-.height-max {
-  height: 100%;
-}
 .height-60px {
   height: 60px;
 }
 .height-100vh {
   min-height: 100vh;
 }
-.max-width-800 {
-  max-width: 800px;
+.max-width-50pc {
+  max-width: 40%;
 }
 .round-20px {
   border-radius: 20px;
-}
-
-/*
-BACKGROUNDS
-*/
-.bg-color-white-003 {
-  background-color: var(--color-text-white-003);
 }
 
 /*
@@ -254,11 +257,13 @@ POSITION
 .pos-abs {
   position: absolute;
 }
+.tf-bottom {
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .z-i-top {
   z-index: 9000;
-}
-.href-fix {
-  padding-top: 50px;
 }
 
 /*
@@ -269,107 +274,32 @@ BORDERS
   border-style: solid;
   border-color: var(--color-t1-b);
 }
-
-/*
-START HERO BTN ANIMATION
-*/
-.transition {
-  transition: all 0.4s;
+.explore-more-border {
+  border: 1px solid var(--color-t1-b);
+  border-radius: 50%;
 }
-/* hire me btn, change icon on hover */
-a:hover .mail-outline,
-a .mail-filled,
-a:hover #linked-1,
-a #linked-2,
-a:hover #github-1,
-a #github-2 {
-  display: none;
-}
-a .mail-outline,
-a:hover .mail-filled,
-a #linked-1,
-a:hover #linked-2,
-a #github-1,
-a:hover #github-2 {
-  display: block;
-}
-/* explore btn, rotate downwards on hover */
-a .arrowRtoD {
-  transition: all 0.8s;
-  transform: rotateZ(0deg);
-}
-a:hover .arrowRtoD {
-  transition: all 0.7s ease-in;
-  transform: rotateZ(90deg);
-}
-/* border animation */
-.line1,
-.line2,
-.line3,
-.line4 {
-  position: absolute;
-  background-color: var(--color-t1-d);
-  transition: all 0.4s;
-}
-.line1,
-.line2 {
-  width: 100%;
-  height: 2px;
-  transform: scaleX(0);
-}
-.line1 {
-  top: 0;
-  transform-origin: left;
-}
-.line2 {
-  bottom: 0;
-  transform-origin: right;
-}
-.hero-btn:hover .line1,
-.hero-btn:hover .line2 {
-  transform: scale(1);
-  transition-delay: 0s;
-}
-.line3,
-.line4 {
-  width: 2px;
-  height: 100%;
-  transform: scaleY(0);
-}
-.line3 {
-  left: 0;
-  bottom: 0;
-  transform-origin: bottom;
-}
-.line4 {
-  right: 0;
-  top: 0;
-  transform-origin: top;
-}
-.hero-btn:hover .line3,
-.hero-btn:hover .line4 {
-  transform: scale(1);
-  transition-delay: 0.4s;
-}
-/*
-END HERO BTN ANIMATION
-*/
 
 /* hero intro animation */
-.loadAnimName {
+.animLoadName {
   animation: opacityToOne 3s;
   animation-fill-mode: forwards;
 }
-.loadAnimTitle {
+.animLoadTitle {
   opacity: 0;
   animation: opacityToOne 3s;
   animation-delay: 0.8s;
   animation-fill-mode: forwards;
 }
-.loadAnimBtns {
+.animLoadContactMe {
   opacity: 0;
   animation: opacityToOne 3s;
   animation-delay: 1.6s;
+  animation-fill-mode: forwards;
+}
+.animLoadExplore {
+  opacity: 0;
+  animation: opacityToOne 3s;
+  animation-delay: 2.4s;
   animation-fill-mode: forwards;
 }
 @keyframes opacityToOne {
@@ -380,46 +310,64 @@ END HERO BTN ANIMATION
     opacity: 1;
   }
 }
-/* hero-btn animations */
-.emailAnim {
-  animation: emailAnim 1s;
+/* animations */
+button:hover a .animEmail {
+  animation: animEmail 3s infinite;
 }
-@keyframes emailAnim {
+@keyframes animEmail {
   0% {
-    opacity: 0.6;
+    transform: translateX(10%) translateY(-2%) rotate(-15deg);
+  }
+  50% {
+    transform: translateX(-10%) translateY(-2%) rotate(15deg);
   }
   100% {
-    opacity: 1;
+    transform: translateX(10%) translateY(-2%) rotate(-15deg);
   }
 }
-/* end */
+button:hover a#explore-btn {
+  animation: animExplore 2s forwards;
+}
+@keyframes animExplore {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+    border-color: var(--color-t1-d);
+  }
+}
+footer > div > a:hover {
+  transition: all .2s;
+  transform: scale(1.2);
+  color: black;
+}
+/* animations end */
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   #about > div {
-    flex-direction: column-reverse;
+    flex-wrap: wrap;
   }
-  #about-img {
+   #about-skills {
+    margin-top: 50px;
     justify-content: center;
-  }
-  #about-skills {
-    display: flex;
-    flex-direction: column;
+    margin-inline: auto;
+    max-width: 100%;
+  } 
+  #about-skills > div {
     justify-content: center;
-    align-items: center;
   }
   .grid-auto {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
-.block {
-  display: block;
-}
 
 /* form */
 form {
   max-width: 800px;
-  background-color: var(--color-text-white-003);
+  transition: opacity 2s;
+  background-color: var(--color-t1-a-third);
 }
 
 input[type='text'],
@@ -464,4 +412,7 @@ input[type='submit']:hover {
   -webkit-box-shadow: 0 0 5px var(--color-t1-d);
 }
 /* end form */
- 
+
+
+
+
