@@ -3,6 +3,7 @@ const header = document.querySelector('#header');
 window.addEventListener('scroll', () => {
   let scroll = document.documentElement.scrollTop;
   let wh = window.innerHeight;
+  // Math did not work out perfectly, so i overengineered itgi
   if (scroll < wh / 2) {
     header.style.opacity = 0;
   } else if (scroll < wh * (21 / 40)) {
