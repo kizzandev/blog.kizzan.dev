@@ -103,8 +103,8 @@ form.addEventListener('submit', (e) => {
     company.value = '';
     subject.value = 'Job Offer';
     message.value = '';
-    arrayValidation = [];
-    BD = [];
+    arrayValidation.splice(0, arrayValidation.length);
+    BD.splice(0, BD.length);
     onlyOnes = [0, 0, 0, 0, 0];
   }
 });
