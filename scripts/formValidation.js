@@ -9,7 +9,7 @@ const form = document.querySelector('#gform');
 const nameRegex =
   /^[a-zA-Z äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ\u00f1\u00d1]{2,28}$/;
 const emailRegex =
-  /^[a-zA-Z0-9._-]{1,28}[@]{1}[a-zA-Z0-9-]{2,28}[.]{1}[a-zA-Z]{2,4}$/;
+  /^[a-zA-Z0-9._-]{1,28}[@]{1}([a-zA-Z0-9-]{2,28}[.]{1}){1,6}[a-zA-Z]{2,4}$/;
 const phoneRegex = /^[0-9+() -]{0,28}$/;
 const companyRegex =
   /^[a-zA-Z0-9()\- !äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ\u00f1\u00d1]{2,28}$/;
