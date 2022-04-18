@@ -7,12 +7,14 @@ const message = document.querySelector('textarea[name="entry.839337160"]');
 const form = document.querySelector('#gform');
 
 const nameRegex =
-  /^[a-zA-Z äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ\u00f1\u00d1]{2,16}$/;
+  /^[a-zA-Z äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ\u00f1\u00d1]{2,28}$/;
 const emailRegex =
   /^[a-zA-Z0-9._-]{1,28}[@]{1}[a-zA-Z0-9-]{2,28}[.]{1}[a-zA-Z]{2,4}$/;
 const phoneRegex = /^[0-9+() -]{0,28}$/;
 const companyRegex =
   /^[a-zA-Z0-9()\- !äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ\u00f1\u00d1]{2,28}$/;
+const msgRegex =
+  /^[a-zA-Z0-9()\- !äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ\u00f1\u00d1]{3,2000}$/;
 
 const arrayValidation = [];
 const BD = [];
@@ -75,7 +77,7 @@ const valueSubject = (subjectValue) => {
 
 const valueMsg = (msgValue) => {
   if (msgValue.trim()) {
-    if (companyRegex.test(msgValue)) {
+    if (msgRegex.test(msgValue)) {
       if (onlyOnes[4] === 0) {
         arrayValidation.push('message');
         onlyOnes[4] = 1;
@@ -101,6 +103,9 @@ form.addEventListener('submit', (e) => {
     company.value = '';
     subject.value = 'Job Offer';
     message.value = '';
+    arrayValidation = [];
+    BD = [];
+    onlyOnes = [0, 0, 0, 0, 0];
   }
 });
 
