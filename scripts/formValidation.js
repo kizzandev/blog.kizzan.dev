@@ -23,12 +23,15 @@ let onlyOnes = [0, 0, 0, 0, 0];
 
 const valueName = (nameValue) => {
   if (nameValue.trim()) {
+    // clean start and end spaces
     if (nameRegex.test(nameValue)) {
+      // verifies regex
       if (onlyOnes[0] === 0) {
+        // add to validation array just once
         arrayValidation.push('name');
         onlyOnes[0] = 1;
       }
-      BD.push(nameValue);
+      BD.push(nameValue); // add info
     }
   }
 };
@@ -48,6 +51,7 @@ const valueEmail = (emailValue) => {
 const valuePhone = (phoneValue) => {
   if (phoneValue.trim()) {
     if (phoneRegex.test(phoneValue)) {
+      // ignored validation array because it is optional
       BD.push(phoneValue);
     }
   }
@@ -60,7 +64,7 @@ const valueCompany = (companyValue) => {
         arrayValidation.push('company');
         onlyOnes[2] = 1;
       }
-      BD.unshift(companyValue);
+      BD.unshift(companyValue); // company at the start of the info array
     }
   }
 };
@@ -90,13 +94,17 @@ const valueMsg = (msgValue) => {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (arrayValidation.length == 5) {
+    // checks all required fields
     document
       .querySelector('#hidden_iframe')
       .setAttribute(
         'src',
         `https://docs.google.com/forms/d/e/1FAIpQLSdvlFJoEvUHiYPtHD5zYbZ746bdRSGDcZDmxWSgMq7x2a_Oqw/formResponse?entry.2005620554=${fullName.value}&entry.1045781291=${email.value}&entry.1166974658=${phone.value}&entry.1065046570=${company.value}&entry.645880663=${subject.value}&entry.839337160=${message.value}`
-      );
-    alert('Your submission has been processed...');
+      ); // submits the form through google forms
+    alert('Your submission has been processed...'); // confirmation for client
+    /*
+     * resetting the form
+     */
     fullName.value = '';
     email.value = '';
     phone.value = '';
@@ -113,7 +121,7 @@ form.addEventListener('change', (e) => {
   // e.preventDefault();
   e.target.matches('input[name="entry.2005620554"]')
     ? valueName(e.target.value)
-    : null;
+    : null; // if the input changes, verify content
   e.target.matches('input[name="entry.1045781291"]')
     ? valueEmail(e.target.value)
     : null;
@@ -131,6 +139,9 @@ form.addEventListener('change', (e) => {
     : null;
 });
 
+/*
+ * initial info
+ */
 valueName(fullName.value);
 valueEmail(email.value);
 valuePhone(phone.value);
