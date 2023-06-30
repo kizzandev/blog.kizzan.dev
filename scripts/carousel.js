@@ -9,6 +9,8 @@ const urls = [
   'https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory',
   'https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame',
   'https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD',
+  'https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/PasswordGen',
+  'https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/PasswordCrackerSha1',
 ]; // links for the portfolio
 const portfolioLink = document.querySelectorAll('.portolio-link');
 const linkToProject = document.createElement('div');
