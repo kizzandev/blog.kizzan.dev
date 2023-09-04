@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html class="dark selection:bg-orange-300 selection:text-neutral-800" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kevin Zanzi | CV</title>
+    <meta name="description" content="Kevin Zanzi's personal website" />
+    <meta
+      name="keywords"
+      content="Kevin Zanzi, Zanzi, Kevin, kevin, zanzi, zanzi kevin, kevinzanzi"
+    />
+    <meta name="author" content="Kevin Zanzi" />
+    <link rel="shortcut icon" href="./assets/k.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="./build.css" type="text/css" />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body
+    class="flex flex-col max-w-screen-lg m-auto px-4 lg:px-0 dark:bg-slate-800 relative"
+  >
+    <header class="flex flex-col sm:flex-row items-center mt-4 justify-start">
+      <div
+        class="w-32 h-32 overflow-hidden rounded-full border-4 border-gray-500"
+      >
+        <img
+          src="https://avatars.githubusercontent.com/u/69643444?v=4"
+          alt="Kevin Zanzi"
+          class="w-full h-full rounded-full object-cover scale-150"
+        />
+      </div>
+      <div
+        class="flex flex-col gap-2 sm:gap-0 ml-4 mt-4 sm:mt-0 dark:text-gray-100"
+      >
+        <h1 class="text-4xl">
+          <a
+            href="/"
+            class="hover:underline hover:text-blue-800 dark:hover:text-orange-200"
+          >
+            Kevin Zanzi
+          </a>
+        </h1>
+        <h2 class="text-xl italic text-gray-600 dark:text-gray-400">
+          Software Engineer
+        </h2>
+        <div class="flex flex-row gap-4 mt-2">
+          <a
+            href="https://github.com/kevinzanzi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dark:bg-slate-200 rounded-full"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+              alt="GitHub"
+              class="w-8 h-8 scale-110"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kevinzanzi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+              alt="LinkedIn"
+              class="w-8 h-8"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <button id="darkModeToggle" class="absolute top-4 right-4">
+      <span id="darkMode" class="absolute">🌙</span>
+      <span id="lightMode" class="absolute">🌞</span>
+    </button>
+
+    <main class="flex flex-col mt-8 gap-4">
+      <nav
+        class="flex flex-row gap-4 sticky border-b border-t border-gray-500 pt-1 pb-1 dark:text-gray-100"
+      >
+        <a
+          href="/"
+          class="sm:text-xl hover:underline hover:text-blue-800 dark:hover:text-orange-200"
+        >
+          Home
+        </a>
+        <a
+          href="#"
+          class="sm:text-xl underline text-blue-800 ml-auto dark:text-orange-200"
+        >
+          CV
+        </a>
+      </nav>
+
+      <div
+        class="flex flex-col md:flex-row gap-6 md:gap-0 max-w-screen-lg px-4 lg:px-0"
+      >
+        <!-- Left Column -->
+        <section class="flex flex-col gap-8 w-full md:w-2/3 dark:text-gray-100">
+          <article class="mr-4">
+            <h2 class="text-2xl font-bold">Work Experience</h2>
+
+            <ul class="mt-4 flex flex-col gap-4">
+              <li>
+                <h3 class="text-xl font-bold">Software Engineer</h3>
+                <h4 class="text-md italic text-gray-600 dark:text-stone-400">
+                  Autonomous - UTN • 2022
+                </h4>
+                <p class="text-gray-600 dark:text-stone-300">
+                  Built a Huffman Compressor and Decompressor using C++. This
+                  was done as a project for my Data Structures and Algorithms
+                  class.
+                </p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="mr-4">
+            <h2 class="text-2xl font-bold">Projects</h2>
+
+            <ul class="mt-4 flex flex-col gap-4">
+              <li>
+                <h3 class="text-xl font-bold">Quiz Game</h3>
+                <p class="text-gray-600 dark:text-stone-300">
+                  Python CLI quiz game. Make custom quizzes, play with shuffled
+                  Q&A, and share with friends.
+                </p>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">Folder Organizer</h3>
+                <p class="text-gray-600 dark:text-stone-300">
+                  Analyze and organize files in the current folder into their
+                  respective directories depending on their extension.
+                </p>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">Password Generator</h3>
+                <p class="text-gray-600 dark:text-stone-300">
+                  Generate a random password with a length of your choice as
+                  well as a random set of words.
+                </p>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">
+                  Huffman Compression & Decompression
+                </h3>
+                <p class="text-gray-600 dark:text-stone-300">
+                  A program that compresses and decompresses text files using
+                  the Huffman algorithm.
+                </p>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">
+                  Report of All Files in Directory
+                </h3>
+                <p class="text-gray-600 dark:text-stone-300">
+                  A program that generates a report of all files in a directory
+                  and its subdirectories in a CSV or PDF file.
+                </p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="mr-4">
+            <h2 class="text-2xl font-bold">Skills</h2>
+
+            <ul class="mt-4 flex flex-col gap-4">
+              <li>
+                <h3 class="text-xl font-bold">Languages</h3>
+                <ul
+                  class="mt-1 grid gap-4"
+                  style="
+                    grid-template-columns: repeat(
+                      auto-fill,
+                      minmax(100px, 1fr)
+                    );
+                  "
+                >
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Python
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    C++
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    JavaScript
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    TypeScript
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    HTML
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    CSS
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    SQL
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Markdown
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">Frameworks</h3>
+                <ul
+                  class="mt-1 grid gap-4"
+                  style="
+                    grid-template-columns: repeat(
+                      auto-fill,
+                      minmax(100px, 1fr)
+                    );
+                  "
+                >
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Tailwind
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Prisma
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    PostgreSQL
+                  </li>
+                  <!-- <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    tRPC
+                  </li> -->
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    MongoDB
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Vercel
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Node.JS
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Svelte
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    SvelteKit
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">Tools</h3>
+                <ul
+                  class="mt-1 grid gap-4"
+                  style="
+                    grid-template-columns: repeat(
+                      auto-fill,
+                      minmax(100px, 1fr)
+                    );
+                  "
+                >
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Git
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    GitHub
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    VS Code
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Figma
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">Operating Systems</h3>
+                <ul
+                  class="mt-1 grid gap-4"
+                  style="
+                    grid-template-columns: repeat(
+                      auto-fill,
+                      minmax(100px, 1fr)
+                    );
+                  "
+                >
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Windows
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- Right Column -->
+        <section class="flex flex-col gap-8 w-full md:w-1/3 dark:text-gray-100">
+          <article>
+            <h2 class="text-2xl font-bold">Education</h2>
+
+            <ul class="mt-2 flex flex-col gap-2">
+              <li>
+                <h3 class="text-lg font-bold">Information System Engineer</h3>
+                <h4 class="text-md italic text-gray-600 dark:text-stone-400">
+                  Universidad Tecnológica Nacional, Buenos Aires • present
+                </h4>
+              </li>
+              <li>
+                <h3 class="text-lg font-bold">Python Full Stack</h3>
+                <h4 class="text-md italic text-gray-600 dark:text-stone-400">
+                  Codo a Codo, GCBA • 2022
+                </h4>
+              </li>
+            </ul>
+          </article>
+
+          <article>
+            <h2 class="text-2xl font-bold">Languages</h2>
+
+            <ul class="mt-2 flex flex-col gap-2">
+              <li>
+                <h3 class="text-lg font-bold">Spanish</h3>
+                <h4 class="text-md italic text-gray-600 dark:text-stone-400">
+                  Native
+                </h4>
+              </li>
+              <li>
+                <h3 class="text-lg font-bold">English</h3>
+                <h4 class="text-md italic text-gray-600 dark:text-stone-400">
+                  Advanced
+                </h4>
+              </li>
+            </ul>
+          </article>
+
+          <article>
+            <h2 class="text-2xl font-bold">Recognitions</h2>
+
+            <ul class="mt-2 flex flex-col gap-2">
+              <li>
+                <h3 class="text-lg font-bold">
+                  National Constructions Olympiads
+                </h3>
+                <p class="text-md italic text-gray-600 dark:text-stone-400">
+                  Architectural Design, Construction, and Structural
+                  Calculations.
+                </p>
+              </li>
+            </ul>
+          </article>
+
+          <!-- download CV | Drive link -->
+          <!-- <article>
+            <a
+              href="#"
+              target="_blank"
+              class="flex items-center justify-center gap-2 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-100 font-bold py-2 px-4 rounded-md hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-200 ease-in-out"
+            >
+              Download
+            </a>
+          </article> -->
+        </section>
+      </div>
+    </main>
+
+    <footer class="flex flex-col mt-8 gap-4 mb-4">
+      <p class="text-gray-600 text-center">
+        © <span id="year">2023</span> • Kevin Zanzi
+      </p>
+    </footer>
+
+    <script>
+      const year = (document.querySelector('#year').innerHTML =
+        new Date().getFullYear());
+
+      const darkModeToggle = document.querySelector('#darkModeToggle');
+      const darkMode = document.querySelector('#darkMode');
+      const lightMode = document.querySelector('#lightMode');
+
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+        lightMode.classList.add('opacity-0');
+      } else {
+        document.documentElement.classList.remove('dark');
+        darkMode.classList.add('opacity-0');
+      }
+
+      darkModeToggle.addEventListener('click', function () {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.theme = 'light';
+          lightMode.classList.remove('opacity-0');
+          darkMode.classList.add('opacity-0');
+        } else {
+          document.documentElement.classList.add('dark');
+          darkMode.classList.remove('opacity-0');
+          lightMode.classList.add('opacity-0');
+          localStorage.theme = 'dark';
+        }
+      });
+    </script>
+  </body>
+</html>

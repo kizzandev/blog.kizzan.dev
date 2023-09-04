@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html class="dark selection:bg-orange-300 selection:text-neutral-800" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kevin Zanzi</title>
+    <meta name="description" content="Kevin Zanzi's personal website" />
+    <meta
+      name="keywords"
+      content="Kevin Zanzi, Zanzi, Kevin, kevin, zanzi, zanzi kevin, kevinzanzi"
+    />
+    <meta name="author" content="Kevin Zanzi" />
+    <link rel="shortcut icon" href="./assets/k.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="./build.css" type="text/css" />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body
+    class="flex flex-col max-w-screen-lg m-auto px-4 lg:px-0 dark:bg-slate-800 relative"
+  >
+    <header class="flex flex-col sm:flex-row items-center mt-4 justify-start">
+      <div
+        class="w-32 h-32 overflow-hidden rounded-full border-4 border-gray-500"
+      >
+        <img
+          src="https://avatars.githubusercontent.com/u/69643444?v=4"
+          alt="Kevin Zanzi"
+          class="w-full h-full rounded-full object-cover scale-150"
+        />
+      </div>
+      <div
+        class="flex flex-col gap-2 sm:gap-0 ml-4 mt-4 sm:mt-0 dark:text-gray-100"
+      >
+        <h1 class="text-4xl">
+          <a
+            href="/"
+            class="hover:underline hover:text-blue-800 dark:hover:text-orange-200"
+          >
+            Kevin Zanzi
+          </a>
+        </h1>
+        <h2 class="text-xl italic text-gray-600 dark:text-gray-400">
+          Software Engineer
+        </h2>
+        <div class="flex flex-row gap-4 mt-2">
+          <a
+            href="https://github.com/kevinzanzi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="dark:bg-slate-200 rounded-full"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+              alt="GitHub"
+              class="w-8 h-8 scale-110"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kevinzanzi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+              alt="LinkedIn"
+              class="w-8 h-8"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <button id="darkModeToggle" class="absolute top-4 right-4">
+      <span id="darkMode" class="absolute transition-opacity">🌙</span>
+      <span id="lightMode" class="absolute transition-opacity">🌞</span>
+    </button>
+
+    <main class="flex flex-col mt-8 gap-4">
+      <nav
+        class="flex flex-row gap-4 sticky border-b border-t border-gray-500 pt-1 pb-1 dark:text-gray-100"
+      >
+        <a
+          href="/"
+          class="sm:text-xl underline text-blue-800 dark:text-orange-200"
+        >
+          Home
+        </a>
+        <a
+          href="/cv"
+          class="sm:text-xl hover:underline hover:text-blue-800 ml-auto dark:hover:text-orange-200"
+        >
+          CV
+        </a>
+      </nav>
+
+      <section id="about-me" class="flex flex-col gap-4 dark:text-gray-100">
+        <h2 class="text-2xl font-semibold">About me</h2>
+        <p class="dark:text-gray-200">
+          Software engineer with a passion for learning and building things.
+        </p>
+        <p class="dark:text-gray-200">
+          Currently studying Information Systems Engineering at
+          <a
+            href="https://www.epitech.eu"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:underline text-blue-600 dark:text-blue-300 hover:text-blue-800 dark:hover:text-orange-200"
+          >
+            Universidad Tecnológica Nacional
+          </a>
+          in <span class="whitespace-nowrap">Buenos Aires, Argentina.</span>
+        </p>
+      </section>
+
+      <section id="projects" class="flex flex-col gap-4 dark:text-gray-100">
+        <h2 class="text-2xl font-semibold">Projects</h2>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto"
+        >
+          <!-- item 1 -->
+          <div
+            class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <!-- <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame"
+            > -->
+            <img
+              class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
+              src="./assets/projects/quizgame.png"
+              alt="Quiz Game"
+              height="150"
+            />
+            <!-- </a> -->
+            <div class="p-5 flex flex-col">
+              <!-- <a
+                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame"
+                target="_blank"
+                rel="noopener noreferrer"
+              > -->
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Quiz Game
+              </h5>
+              <!-- </a> -->
+              <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
+                Python CLI quiz game. Make custom quizzes, play with shuffled
+                Q&A, and share with friends.
+              </p>
+              <span class="flex flex-row gap-2 mb-3 flex-wrap">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Python"
+                  title="Python"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                  title="Git"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="GitHub"
+                  title="GitHub"
+                  class="w-6 h-6"
+                />
+              </span>
+            </div>
+            <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame"
+              class="inline-flex items-center self-end px-3 py-2 mt-auto mb-3 mr-5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+          <!-- item 2 -->
+          <div
+            class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <!-- <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory"
+            > -->
+            <img
+              class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
+              src="./assets/projects/folder-organizer.png"
+              alt="Folder Organizer"
+              height="150"
+            />
+            <!-- </a> -->
+            <div class="p-5">
+              <!-- <a
+                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory"
+                target="_blank"
+                rel="noopener noreferrer"
+              > -->
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Folder Organizer
+              </h5>
+              <!-- </a> -->
+              <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
+                Analyze and organize files in the current folder into their
+                respective directories depending on their extension.
+              </p>
+              <span class="flex flex-row gap-2 mb-3 flex-wrap">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Python"
+                  title="Python"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                  title="Git"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="GitHub"
+                  title="GitHub"
+                  class="w-6 h-6"
+                />
+              </span>
+            </div>
+            <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory"
+              class="inline-flex items-center self-end px-3 py-2 mt-auto mb-3 mr-5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+          <!-- item 3 -->
+          <div
+            class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <!-- <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/PasswordGen"
+            > -->
+            <img
+              class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
+              src="./assets/projects/passwordGen.png"
+              alt="Password Generator"
+              height="150"
+            />
+            <!-- </a> -->
+            <div class="p-5">
+              <!-- <a
+                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/PasswordGen"
+                target="_blank"
+                rel="noopener noreferrer"
+              > -->
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Password Generator
+              </h5>
+              <!-- </a> -->
+              <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
+                Generate a random password with a length of your choice as well
+                as a random set of words.
+              </p>
+              <span class="flex flex-row gap-2 mb-3 flex-wrap">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Python"
+                  title="Python"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                  title="Git"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="GitHub"
+                  title="GitHub"
+                  class="w-6 h-6"
+                />
+              </span>
+            </div>
+            <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/PasswordGen"
+              class="inline-flex items-center self-end px-3 py-2 mt-auto mb-3 mr-5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+          <!-- item 4 -->
+          <div
+            class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <!-- <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD"
+            > -->
+            <img
+              class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
+              src="./assets/projects/huffman.png"
+              alt="Huffman Algorithm"
+              height="150"
+            />
+            <!-- </a> -->
+            <div class="p-5">
+              <!-- <a
+                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD"
+                target="_blank"
+                rel="noopener noreferrer"
+              > -->
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Huffman Compression & Decompression
+              </h5>
+              <!-- </a> -->
+              <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
+                A program that compresses and decompresses text files using the
+                Huffman algorithm.
+              </p>
+              <span class="flex flex-row gap-2 mb-3 flex-wrap">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                  alt="C++"
+                  title="C++"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                  title="Git"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="GitHub"
+                  title="GitHub"
+                  class="w-6 h-6"
+                />
+              </span>
+            </div>
+            <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD"
+              class="inline-flex items-center self-end px-3 py-2 mt-auto mb-3 mr-5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+          <!-- item 5 -->
+          <div
+            class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <!-- <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/ReportFilesInDir"
+            > -->
+            <img
+              class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
+              src="./assets/projects/fileReport.png"
+              alt="Report of All Files in Directory"
+              height="150"
+            />
+            <!-- </a> -->
+            <div class="p-5">
+              <!-- <a
+                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/ReportFilesInDir"
+                target="_blank"
+                rel="noopener noreferrer"
+              > -->
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Report of All Files in Directory
+              </h5>
+              <!-- </a> -->
+              <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
+                A program that generates a report of all files in a directory
+                and its subdirectories in a CSV or PDF file.
+              </p>
+              <span class="flex flex-row gap-2 mb-3 flex-wrap">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Python"
+                  title="Python"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                  title="Git"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="GitHub"
+                  title="GitHub"
+                  class="w-6 h-6"
+                />
+              </span>
+            </div>
+            <a
+              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/ReportFilesInDir"
+              class="inline-flex items-center self-end px-3 py-2 mt-auto mb-3 mr-5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Code
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+          <!-- item 6 it's a "my github profile" propaganda -->
+          <div
+            class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <!-- <a href="https://github.com/kevinzanzi"> -->
+            <img
+              class="rounded-lg max-h-40 object-cover mx-auto"
+              src="./assets/projects/github_profile.png"
+              alt="My GitHub Profile"
+              height="150"
+            />
+            <!-- </a> -->
+            <div class="p-5">
+              <!-- <a
+                href="https://github.com/kevinzanzi"
+                target="_blank"
+                rel="noopener noreferrer"
+              > -->
+              <h5
+                class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                My GitHub Profile
+              </h5>
+              <!-- </a> -->
+              <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
+                My GitHub profile, where you can find all my projects.
+              </p>
+              <span class="flex flex-row gap-2 mb-3 flex-wrap">
+                <!-- Programming languages -->
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Python"
+                  title="Python"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JavaScript"
+                  title="JavaScript"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                  alt="TypeScript"
+                  title="TypeScript"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                  alt="C++"
+                  title="C++"
+                  class="w-6 h-6"
+                />
+                <!-- Web Dev -->
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                  alt="HTML5"
+                  title="HTML5"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                  alt="CSS3"
+                  title="CSS3"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                  alt="Node.js"
+                  title="Node.js"
+                  class="w-6 h-6"
+                />
+                <!-- Tools -->
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                  alt="VSCode"
+                  title="VSCode"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                  alt="Figma"
+                  title="Figma"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                  title="Git"
+                  class="w-6 h-6"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="GitHub"
+                  title="GitHub"
+                  class="w-6 h-6"
+                />
+                <!-- Operating Systems -->
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"
+                  alt="Windows"
+                  title="Windows"
+                  class="w-6 h-6"
+                />
+              </span>
+            </div>
+            <a
+              href="https://github.com/kevinzanzi"
+              class="inline-flex items-center self-end px-3 py-2 mt-auto mb-3 mr-5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Check my profile!
+              <svg
+                class="w-3.5 h-3.5 ml-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section
+        id="contact"
+        class="flex flex-col gap-4 dark:text-gray-100 w-[36rem] mx-auto mt-4"
+      >
+        <h2 class="text-2xl font-semibold">Contact</h2>
+
+        <form
+          action="/submit"
+          method="POST"
+          enctype="application/x-www-form-urlencoded"
+          id="contactForm"
+        >
+          <label
+            for="name"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Albert Newton"
+            required
+          />
+          <label
+            for="phone"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Phone number (optional)
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="12 345 1234 5678"
+          />
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Email address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="albert.newton@company.com"
+            required
+          />
+          <label
+            for="subject"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Subject
+          </label>
+          <select
+            id="subject"
+            name="subject"
+            class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          >
+            <option value="" disabled selected hidden>Select an option</option>
+            <option value="job">Job Offer</option>
+            <option value="business">Business</option>
+            <option value="connect">Connect</option>
+            <option value="other">Other</option>
+          </select>
+          <label
+            for="message"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            type="text"
+            rows="4"
+            class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full max-h-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Your message here..."
+            required
+          ></textarea>
+          <input
+            type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mt-2 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 float-right"
+            value="Send"
+          />
+        </form>
+      </section> -->
+    </main>
+
+    <footer class="flex flex-col mt-8 gap-4 mb-4">
+      <p class="text-gray-600 text-center">
+        © <span id="year">2023</span> • Kevin Zanzi
+      </p>
+    </footer>
+
+    <div
+      id="successMessage"
+      class="bg-green-500 p-4 text-white fixed hidden bottom-0 right-0 mb-4 mr-4 rounded-md shadow-md"
+    >
+      <p>Contact form successfully submitted!</p>
+      <!-- <button
+        id="closeNotif1"
+        class="ml-2 text-sm font-semibold focus:outline-none"
+      >
+        Dismiss
+      </button> -->
+    </div>
+
+    <div
+      id="failMessage"
+      class="bg-red-500 p-4 text-white fixed hidden bottom-0 right-0 mb-4 mr-4 rounded-md shadow-md"
+    >
+      <p>Contact form failed!</p>
+      <!-- <button
+        id="closeNotif2"
+        class="ml-2 text-sm font-semibold focus:outline-none"
+      >
+        Dismiss
+      </button> -->
+    </div>
+
+    <script>
+      const year = (document.querySelector('#year').innerHTML =
+        new Date().getFullYear());
+
+      const darkModeToggle = document.querySelector('#darkModeToggle');
+      const darkMode = document.querySelector('#darkMode');
+      const lightMode = document.querySelector('#lightMode');
+
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+        lightMode.classList.add('opacity-0');
+      } else {
+        document.documentElement.classList.remove('dark');
+        darkMode.classList.add('opacity-0');
+      }
+
+      darkModeToggle.addEventListener('click', function () {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.theme = 'light';
+          lightMode.classList.remove('opacity-0');
+          darkMode.classList.add('opacity-0');
+        } else {
+          document.documentElement.classList.add('dark');
+          darkMode.classList.remove('opacity-0');
+          lightMode.classList.add('opacity-0');
+          localStorage.theme = 'dark';
+        }
+      });
+
+      const successMessage = document.querySelector('#successMessage');
+      const failMessage = document.querySelector('#failMessage');
+
+      // const form = document.querySelector('#contactForm');
+      // form.addEventListener('submit', async (event) => {
+      //   event.preventDefault();
+
+      //   // Send the form data to the server
+      //   const formData = new FormData(form);
+      //   const response = await fetch('/submit', {
+      //     method: 'POST',
+      //     body: formData,
+      //   });
+
+      //   if (response.ok) {
+      //     successMessage.classList.remove('hidden');
+      //     await new Promise((resolve) => setTimeout(resolve, 2000));
+      //     successMessage.classList.add('hidden');
+
+      //     form.reset();
+      //   } else {
+      //     failMessage.classList.remove('hidden');
+      //     await new Promise((resolve) => setTimeout(resolve, 2000));
+      //     failMessage.classList.add('hidden');
+      //   }
+      // });
+    </script>
+  </body>
+</html>
