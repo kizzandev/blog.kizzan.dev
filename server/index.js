@@ -94,7 +94,9 @@ app.post('/', async (req, res) => {
 const port = process.env.PORT || 3000;
 // const devsite = `http://127.0.0.1:${port}`;
 
+console.log(path.join(__dirname, '..', 'client', 'index.html'));
+
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is listening on ${port}`);
+  console.log(`Server is listening on port ${port}`);
 });
