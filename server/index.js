@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 3000;
-const devsite = `http://127.0.0.1:${port}`;
 const path = require('path');
 
 const axios = require('axios');
@@ -93,7 +91,10 @@ app.post('/', async (req, res) => {
   }
 });
 
+const port = process.env.PORT || 3000;
+// const devsite = `http://127.0.0.1:${port}`;
+
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is listening on ${devsite}`);
+  console.log(`Server is listening on ${port}`);
 });
