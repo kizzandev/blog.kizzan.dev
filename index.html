@@ -22,7 +22,7 @@
   </head>
 
   <body
-    class="flex flex-col max-w-screen-lg m-auto px-4 lg:px-0 dark:bg-slate-800 relative"
+    class="flex flex-col max-w-screen-lg m-auto px-4 xl:px-0 dark:bg-slate-800 relative transition-colors duration-200"
   >
     <header class="flex flex-col sm:flex-row items-center mt-4 justify-start">
       <div
@@ -46,25 +46,26 @@
           </a>
         </h1>
         <h2 class="text-xl italic text-gray-600 dark:text-gray-400">
-          Software Engineer
+          Software Developer
         </h2>
         <div class="flex flex-row gap-4 mt-2">
           <a
             href="https://github.com/kevinzanzi"
             target="_blank"
             rel="noopener noreferrer"
-            class="dark:bg-slate-200 rounded-full"
+            class="relative after:absolute after:opacity-0 after:inset-0 after:rounded-full after:border-orange-200 after:transition-opacity after:duration-50 after:border-2 hover:after:opacity-100"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
               alt="GitHub"
-              class="w-8 h-8 scale-110"
+              class="w-8 h-8 dark:invert"
             />
           </a>
           <a
             href="https://www.linkedin.com/in/kevinzanzi"
             target="_blank"
             rel="noopener noreferrer"
+            class="relative after:absolute after:opacity-0 after:inset-0 after:border-orange-200 after:transition-opacity after:duration-50 after:border-2 hover:after:opacity-100"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
@@ -76,7 +77,7 @@
       </div>
     </header>
 
-    <button id="darkModeToggle" class="absolute top-4 right-4">
+    <button id="darkModeToggle" class="absolute top-4 right-10 xl:right-5">
       <span id="darkMode" class="absolute transition-opacity">🌙</span>
       <span id="lightMode" class="absolute transition-opacity">🌞</span>
     </button>
@@ -88,6 +89,7 @@
         <a
           href="/"
           class="sm:text-xl underline text-blue-800 dark:text-orange-200"
+          translate="no"
         >
           Home
         </a>
@@ -102,19 +104,32 @@
       <section id="about-me" class="flex flex-col gap-4 dark:text-gray-100">
         <h2 class="text-2xl font-semibold">About me</h2>
         <p class="dark:text-gray-200">
-          Software engineer with a passion for learning and building things.
+          Hello! Kevin here!
+          <span class="text-blue-600 dark:text-orange-200 italic">
+            Software Developer
+          </span>
+          and
+          <span class="text-blue-600 dark:text-orange-200 italic">
+            Information Systems Engineering
+          </span>
+          student at the
+          <span class="text-blue-600 dark:text-orange-200 italic">
+            National Technological University
+          </span>
+          in <span style="white-space: nowrap">Buenos Aires</span>, Argentina.
         </p>
         <p class="dark:text-gray-200">
-          Currently studying Information Systems Engineering at
+          Feel free to connect with me on
           <a
-            href="https://www.epitech.eu"
+            href="https://www.linkedin.com/in/kevinzanzi"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:underline text-blue-600 dark:text-blue-300 hover:text-blue-800 dark:hover:text-orange-200"
+            class="text-blue-600 hover:text-blue-800 dark:text-orange-200 dark:hover:text-orange-300 relative after:absolute after:-right-1 after:-top-3 after:invisible after:hover:visible after:content-['→'] after:-rotate-45 after:scale-50"
           >
-            Universidad Tecnológica Nacional
+            LinkedIn
           </a>
-          in <span class="whitespace-nowrap">Buenos Aires, Argentina.</span>
+          or drop me an email, whether it's for professional opportunities or
+          simply to have a chat over a virtual coffee.
         </p>
       </section>
 
@@ -128,28 +143,18 @@
           <div
             class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <!-- <a
-              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame"
-            > -->
             <img
               class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
               src="./assets/projects/quizgame.png"
               alt="Quiz Game"
               height="150"
             />
-            <!-- </a> -->
             <div class="p-5 flex flex-col">
-              <!-- <a
-                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/QuizGame"
-                target="_blank"
-                rel="noopener noreferrer"
-              > -->
               <h5
                 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
               >
                 Quiz Game
               </h5>
-              <!-- </a> -->
               <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
                 Python CLI quiz game. Make custom quizzes, play with shuffled
                 Q&A, and share with friends.
@@ -171,7 +176,7 @@
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                   alt="GitHub"
                   title="GitHub"
-                  class="w-6 h-6"
+                  class="w-6 h-6 dark:invert"
                 />
               </span>
             </div>
@@ -203,28 +208,18 @@
           <div
             class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <!-- <a
-              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory"
-            > -->
             <img
               class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
               src="./assets/projects/folder-organizer.png"
               alt="Folder Organizer"
               height="150"
             />
-            <!-- </a> -->
             <div class="p-5">
-              <!-- <a
-                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/OrganizeDirectory"
-                target="_blank"
-                rel="noopener noreferrer"
-              > -->
               <h5
                 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
               >
                 Folder Organizer
               </h5>
-              <!-- </a> -->
               <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
                 Analyze and organize files in the current folder into their
                 respective directories depending on their extension.
@@ -246,7 +241,7 @@
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                   alt="GitHub"
                   title="GitHub"
-                  class="w-6 h-6"
+                  class="w-6 h-6 dark:invert"
                 />
               </span>
             </div>
@@ -278,28 +273,18 @@
           <div
             class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <!-- <a
-              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/PasswordGen"
-            > -->
             <img
               class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
               src="./assets/projects/passwordGen.png"
               alt="Password Generator"
               height="150"
             />
-            <!-- </a> -->
             <div class="p-5">
-              <!-- <a
-                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/PasswordGen"
-                target="_blank"
-                rel="noopener noreferrer"
-              > -->
               <h5
                 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
               >
                 Password Generator
               </h5>
-              <!-- </a> -->
               <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
                 Generate a random password with a length of your choice as well
                 as a random set of words.
@@ -321,7 +306,7 @@
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                   alt="GitHub"
                   title="GitHub"
-                  class="w-6 h-6"
+                  class="w-6 h-6 dark:invert"
                 />
               </span>
             </div>
@@ -353,28 +338,18 @@
           <div
             class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <!-- <a
-              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD"
-            > -->
             <img
               class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
               src="./assets/projects/huffman.png"
               alt="Huffman Algorithm"
               height="150"
             />
-            <!-- </a> -->
             <div class="p-5">
-              <!-- <a
-                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/CPP/HuffmanCD"
-                target="_blank"
-                rel="noopener noreferrer"
-              > -->
               <h5
                 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
               >
                 Huffman Compression & Decompression
               </h5>
-              <!-- </a> -->
               <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
                 A program that compresses and decompresses text files using the
                 Huffman algorithm.
@@ -396,7 +371,7 @@
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                   alt="GitHub"
                   title="GitHub"
-                  class="w-6 h-6"
+                  class="w-6 h-6 dark:invert"
                 />
               </span>
             </div>
@@ -428,28 +403,18 @@
           <div
             class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <!-- <a
-              href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/ReportFilesInDir"
-            > -->
             <img
               class="rounded-t-lg p-5 pb-0 max-h-40 object-cover mx-auto"
               src="./assets/projects/fileReport.png"
               alt="Report of All Files in Directory"
               height="150"
             />
-            <!-- </a> -->
             <div class="p-5">
-              <!-- <a
-                href="https://github.com/kevinzanzi/CodingWithKevin/tree/main/Python/ReportFilesInDir"
-                target="_blank"
-                rel="noopener noreferrer"
-              > -->
               <h5
                 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
               >
                 Report of All Files in Directory
               </h5>
-              <!-- </a> -->
               <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
                 A program that generates a report of all files in a directory
                 and its subdirectories in a CSV or PDF file.
@@ -471,7 +436,7 @@
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                   alt="GitHub"
                   title="GitHub"
-                  class="w-6 h-6"
+                  class="w-6 h-6 dark:invert"
                 />
               </span>
             </div>
@@ -503,26 +468,18 @@
           <div
             class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <!-- <a href="https://github.com/kevinzanzi"> -->
             <img
               class="rounded-lg max-h-40 object-cover mx-auto"
               src="./assets/projects/github_profile.png"
               alt="My GitHub Profile"
               height="150"
             />
-            <!-- </a> -->
             <div class="p-5">
-              <!-- <a
-                href="https://github.com/kevinzanzi"
-                target="_blank"
-                rel="noopener noreferrer"
-              > -->
               <h5
                 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
               >
                 My GitHub Profile
               </h5>
-              <!-- </a> -->
               <p class="mb-3 font-normal text-gray-700 dark:text-stone-300">
                 My GitHub profile, where you can find all my projects.
               </p>
@@ -594,7 +551,7 @@
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
                   alt="GitHub"
                   title="GitHub"
-                  class="w-6 h-6"
+                  class="w-6 h-6 dark:invert"
                 />
                 <!-- Operating Systems -->
                 <img
@@ -632,14 +589,14 @@
         </div>
       </section>
 
-      <!-- <section
+      <section
         id="contact"
-        class="flex flex-col gap-4 dark:text-gray-100 w-[36rem] mx-auto mt-4"
+        class="flex flex-col gap-4 dark:text-gray-100 w-full max-w-[36rem] mx-auto mt-4"
       >
         <h2 class="text-2xl font-semibold">Contact</h2>
 
         <form
-          action="/submit"
+          action="/"
           method="POST"
           enctype="application/x-www-form-urlencoded"
           id="contactForm"
@@ -658,7 +615,7 @@
             placeholder="Albert Newton"
             required
           />
-          <label
+          <!-- <label
             for="phone"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
@@ -670,7 +627,7 @@
             name="phone"
             class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="12 345 1234 5678"
-          />
+          /> -->
           <label
             for="email"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -698,7 +655,7 @@
             required
           >
             <option value="" disabled selected hidden>Select an option</option>
-            <option value="job">Job Offer</option>
+            <option value="job offer">Job Offer</option>
             <option value="business">Business</option>
             <option value="connect">Connect</option>
             <option value="other">Other</option>
@@ -717,6 +674,8 @@
             class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full max-h-40 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Your message here..."
             required
+            minlength="0"
+            maxlength="500"
           ></textarea>
           <input
             type="submit"
@@ -724,7 +683,7 @@
             value="Send"
           />
         </form>
-      </section> -->
+      </section>
     </main>
 
     <footer class="flex flex-col mt-8 gap-4 mb-4">
@@ -733,31 +692,21 @@
       </p>
     </footer>
 
-    <div
+    <p
       id="successMessage"
-      class="bg-green-500 p-4 text-white fixed hidden bottom-0 right-0 mb-4 mr-4 rounded-md shadow-md"
+      class="bg-green-500 p-4 text-white fixed bottom-0 right-0 mr-4 rounded-md shadow-md transition-all duration-500 transform translate-y-full opacity-0"
     >
-      <p>Contact form successfully submitted!</p>
-      <!-- <button
-        id="closeNotif1"
-        class="ml-2 text-sm font-semibold focus:outline-none"
-      >
-        Dismiss
-      </button> -->
-    </div>
+      Contact form successfully submitted!
+    </p>
 
-    <div
+    <p
       id="failMessage"
-      class="bg-red-500 p-4 text-white fixed hidden bottom-0 right-0 mb-4 mr-4 rounded-md shadow-md"
+      class="bg-red-500 p-4 text-white fixed bottom-0 right-0 mr-4 rounded-md shadow-md transition-all duration-500 transform translate-y-full opacity-0"
     >
-      <p>Contact form failed!</p>
-      <!-- <button
-        id="closeNotif2"
-        class="ml-2 text-sm font-semibold focus:outline-none"
-      >
-        Dismiss
-      </button> -->
-    </div>
+      Contact form failed!
+    </p>
+
+    <div class="hidden translate-y-0 opacity-100"></div>
 
     <script>
       const year = (document.querySelector('#year').innerHTML =
@@ -796,29 +745,36 @@
       const successMessage = document.querySelector('#successMessage');
       const failMessage = document.querySelector('#failMessage');
 
-      // const form = document.querySelector('#contactForm');
-      // form.addEventListener('submit', async (event) => {
-      //   event.preventDefault();
+      const form = document.querySelector('#contactForm');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-      //   // Send the form data to the server
-      //   const formData = new FormData(form);
-      //   const response = await fetch('/submit', {
-      //     method: 'POST',
-      //     body: formData,
-      //   });
+        // Send the form data to the server
+        const formData = new FormData(form);
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString(),
+        });
 
-      //   if (response.ok) {
-      //     successMessage.classList.remove('hidden');
-      //     await new Promise((resolve) => setTimeout(resolve, 2000));
-      //     successMessage.classList.add('hidden');
+        if (response.ok) {
+          // redirect
+          window.location.href = '/';
+          successMessage.classList.remove('translate-y-full', 'opacity-0');
+          successMessage.classList.add('-translate-y-4', 'opacity-100');
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          successMessage.classList.remove('-translate-y-4', 'opacity-100');
+          successMessage.classList.add('translate-y-full', 'opacity-0');
 
-      //     form.reset();
-      //   } else {
-      //     failMessage.classList.remove('hidden');
-      //     await new Promise((resolve) => setTimeout(resolve, 2000));
-      //     failMessage.classList.add('hidden');
-      //   }
-      // });
+          form.reset();
+        } else {
+          failMessage.classList.remove('translate-y-full', 'opacity-0');
+          failMessage.classList.add('-translate-y-4', 'opacity-100');
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          failMessage.classList.remove('-translate-y-4', 'opacity-100');
+          failMessage.classList.add('translate-y-full', 'opacity-0');
+        }
+      });
     </script>
   </body>
 </html>

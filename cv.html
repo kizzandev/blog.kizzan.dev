@@ -22,7 +22,7 @@
   </head>
 
   <body
-    class="flex flex-col max-w-screen-lg m-auto px-4 lg:px-0 dark:bg-slate-800 relative"
+    class="flex flex-col max-w-screen-lg m-auto px-4 xl:px-0 dark:bg-slate-800 relative transition-colors duration-200"
   >
     <header class="flex flex-col sm:flex-row items-center mt-4 justify-start">
       <div
@@ -46,25 +46,26 @@
           </a>
         </h1>
         <h2 class="text-xl italic text-gray-600 dark:text-gray-400">
-          Software Engineer
+          Software Developer
         </h2>
         <div class="flex flex-row gap-4 mt-2">
           <a
             href="https://github.com/kevinzanzi"
             target="_blank"
             rel="noopener noreferrer"
-            class="dark:bg-slate-200 rounded-full"
+            class="relative after:absolute after:opacity-0 after:inset-0 after:rounded-full after:border-orange-200 after:transition-opacity after:duration-50 after:border-2 hover:after:opacity-100"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
               alt="GitHub"
-              class="w-8 h-8 scale-110"
+              class="w-8 h-8 dark:invert"
             />
           </a>
           <a
             href="https://www.linkedin.com/in/kevinzanzi"
             target="_blank"
             rel="noopener noreferrer"
+            class="relative after:absolute after:opacity-0 after:inset-0 after:border-orange-200 after:transition-opacity after:duration-50 after:border-2 hover:after:opacity-100"
           >
             <img
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
@@ -76,7 +77,7 @@
       </div>
     </header>
 
-    <button id="darkModeToggle" class="absolute top-4 right-4">
+    <button id="darkModeToggle" class="absolute top-4 right-10 xl:right-5">
       <span id="darkMode" class="absolute">🌙</span>
       <span id="lightMode" class="absolute">🌞</span>
     </button>
@@ -100,7 +101,7 @@
       </nav>
 
       <div
-        class="flex flex-col md:flex-row gap-6 md:gap-0 max-w-screen-lg px-4 lg:px-0"
+        class="flex flex-col md:flex-row gap-6 md:gap-0 max-w-screen-lg lg:px-0"
       >
         <!-- Left Column -->
         <section class="flex flex-col gap-8 w-full md:w-2/3 dark:text-gray-100">
@@ -109,7 +110,17 @@
 
             <ul class="mt-4 flex flex-col gap-4">
               <li>
-                <h3 class="text-xl font-bold">Software Engineer</h3>
+                <h3 class="text-xl font-bold">Junior Java Developer</h3>
+                <h4 class="text-md italic text-gray-600 dark:text-stone-400">
+                  UTN • 2023 - present
+                </h4>
+                <p class="text-gray-600 dark:text-stone-300">
+                  Working on a project that is on NTKO (need to know only) basis
+                  for now. I will update this section as soon as I can.
+                </p>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">Software Developer</h3>
                 <h4 class="text-md italic text-gray-600 dark:text-stone-400">
                   Autonomous - UTN • 2022
                 </h4>
@@ -143,8 +154,8 @@
               <li>
                 <h3 class="text-xl font-bold">Password Generator</h3>
                 <p class="text-gray-600 dark:text-stone-300">
-                  Generate a random password with a length of your choice as
-                  well as a random set of words.
+                  Generate a random password with a length of your choice with
+                  random characters as well as with a random set of words.
                 </p>
               </li>
               <li>
@@ -185,6 +196,7 @@
                 >
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     Python
                   </li>
@@ -195,14 +207,39 @@
                   </li>
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     JavaScript
                   </li>
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     TypeScript
                   </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    Java
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    C
+                  </li>
+
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                  >
+                    SQL
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
+                  >
+                    GraphQL
+                  </li>
+
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
                   >
@@ -215,18 +252,14 @@
                   </li>
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
-                  >
-                    SQL
-                  </li>
-                  <li
-                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     Markdown
                   </li>
                 </ul>
               </li>
               <li>
-                <h3 class="text-xl font-bold">Frameworks</h3>
+                <h3 class="text-xl font-bold" translate="no">Frameworks</h3>
                 <ul
                   class="mt-1 grid gap-4"
                   style="
@@ -238,48 +271,51 @@
                 >
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     Tailwind
                   </li>
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
                   >
-                    Prisma
-                  </li>
-                  <li
-                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
-                  >
-                    PostgreSQL
-                  </li>
-                  <!-- <li
-                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
-                  >
                     tRPC
-                  </li> -->
-                  <li
-                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
-                  >
-                    MongoDB
                   </li>
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
-                  >
-                    Vercel
-                  </li>
-                  <li
-                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
-                  >
-                    Node.JS
-                  </li>
-                  <li
-                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     Svelte
                   </li>
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     SvelteKit
+                  </li>
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
+                  >
+                    Spring
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3 class="text-xl font-bold">ORMs</h3>
+                <ul
+                  class="mt-1 grid gap-4"
+                  style="
+                    grid-template-columns: repeat(
+                      auto-fill,
+                      minmax(100px, 1fr)
+                    );
+                  "
+                >
+                  <li
+                    class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md text-sm"
+                    translate="no"
+                  >
+                    Prisma
                   </li>
                 </ul>
               </li>
@@ -296,6 +332,7 @@
                 >
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     Git
                   </li>
@@ -306,11 +343,13 @@
                   </li>
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     VS Code
                   </li>
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     Figma
                   </li>
@@ -329,6 +368,7 @@
                 >
                   <li
                     class="flex justify-center items-center p-2 bg-slate-50 border-2 border-slate-100 dark:bg-slate-900 dark:border-slate-800 rounded-md"
+                    translate="no"
                   >
                     Windows
                   </li>
@@ -345,7 +385,9 @@
 
             <ul class="mt-2 flex flex-col gap-2">
               <li>
-                <h3 class="text-lg font-bold">Information System Engineer</h3>
+                <h3 class="text-lg font-bold">
+                  Information System Engineering (student)
+                </h3>
                 <h4 class="text-md italic text-gray-600 dark:text-stone-400">
                   Universidad Tecnológica Nacional, Buenos Aires • present
                 </h4>
