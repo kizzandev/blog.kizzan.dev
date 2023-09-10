@@ -23,4 +23,5 @@ jobs:
         working-directory: server
 
       - name: Start Express Server
-        run: node server/index.js
+        run: npm start
+        working-directory: server
