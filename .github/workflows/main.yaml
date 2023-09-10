@@ -20,6 +20,7 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        working-directory: server
 
       - name: Start Express Server
-        run: npm start
+        run: node server/index.js
