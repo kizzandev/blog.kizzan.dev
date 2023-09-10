@@ -12,12 +12,12 @@ app.use(express.static('public'));
 
 // Home page
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '../client/index.html');
+  res.sendFile(__dirname + 'client/index.html');
 });
 
 // CV page
 app.get('/cv', (req, res) => {
-  res.sendFile(__dirname + '../client/cv.html');
+  res.sendFile(__dirname + 'client/cv.html');
 });
 
 // Handle form submission
