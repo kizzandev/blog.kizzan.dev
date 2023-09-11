@@ -12,22 +12,12 @@ app.use(express.static(path.join(__dirname, '..', 'client')));
 
 // Home page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client'));
+  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
 });
 
 // CV page
 app.get('/cv', (req, res) => {
-  res.sendFile(
-    path.join(
-      __dirname,
-      'home',
-      'runner',
-      'work',
-      'kevinzanzi.github.io',
-      'kevinzanzi.github.io',
-      'client'
-    )
-  );
+  res.sendFile(path.join(__dirname, '..', 'client', 'cv.html'));
 });
 
 // Handle form submission
@@ -106,6 +96,5 @@ const port = process.env.PORT || 3000;
 
 // Start the server
 app.listen(port, () => {
-  console.log(path.join(__dirname, '..', 'client'));
   console.log(`Server is listening on port ${port}`);
 });
