@@ -126,19 +126,29 @@ app.post('/', async (req, res) => {
 const port = process.env.PORT || 3000;
 // const devsite = `http://127.0.0.1:${port}`;
 
-console.log(
-  path.join(
-    __dirname,
-    'home',
-    'runner',
-    'work',
-    'kevinzanzi.github.io',
-    'kevinzanzi.github.io',
-    'client'
-  )
-);
-
 // Start the server
 app.listen(port, () => {
+  console.log(
+    path.join(
+      __dirname,
+      'home',
+      'runner',
+      'work',
+      'kevinzanzi.github.io',
+      'kevinzanzi.github.io',
+      'client'
+    )
+  );
+  console.log(
+    path.join(
+      __dirname,
+      'runner',
+      'work',
+      'kevinzanzi.github.io',
+      'kevinzanzi.github.io',
+      'client'
+    )
+  );
+  console.log(path.join(__dirname));
   console.log(`Server is listening on port ${port}`);
 });
