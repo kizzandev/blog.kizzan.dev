@@ -8,33 +8,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
-app.use(
-  express.static(
-    path.join(
-      __dirname,
-      'home',
-      'runner',
-      'work',
-      'kevinzanzi.github.io',
-      'kevinzanzi.github.io',
-      'client'
-    )
-  )
-);
+app.use(express.static(path.join(__dirname, '..', 'client')));
 
 // Home page
 app.get('/', (req, res) => {
-  res.sendFile(
-    path.join(
-      __dirname,
-      'home',
-      'runner',
-      'work',
-      'kevinzanzi.github.io',
-      'kevinzanzi.github.io',
-      'client'
-    )
-  );
+  res.sendFile(path.join(__dirname, '..', 'client'));
 });
 
 // CV page
@@ -128,27 +106,6 @@ const port = process.env.PORT || 3000;
 
 // Start the server
 app.listen(port, () => {
-  console.log(
-    path.join(
-      __dirname,
-      'home',
-      'runner',
-      'work',
-      'kevinzanzi.github.io',
-      'kevinzanzi.github.io',
-      'client'
-    )
-  );
-  console.log(
-    path.join(
-      __dirname,
-      'runner',
-      'work',
-      'kevinzanzi.github.io',
-      'kevinzanzi.github.io',
-      'client'
-    )
-  );
-  console.log(path.join(__dirname));
+  console.log(path.join(__dirname, '..', 'client'));
   console.log(`Server is listening on port ${port}`);
 });
