@@ -7,7 +7,6 @@ const axios = require('axios');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, '..', 'client')));
 
 // Home page
@@ -91,10 +90,11 @@ app.post('/', async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 // const devsite = `http://127.0.0.1:${port}`;
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+  // console.log(`Server is listening on port ${port}`);
+  console.log(`Server is running...`);
 });
