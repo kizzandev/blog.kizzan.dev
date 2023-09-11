@@ -8,16 +8,48 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
-app.use(express.static(path.join(__dirname, '..', 'client')));
+app.use(
+  express.static(
+    path.join(
+      __dirname,
+      'home',
+      'runner',
+      'work',
+      'kevinzanzi.github.io',
+      'kevinzanzi.github.io',
+      'client'
+    )
+  )
+);
 
 // Home page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
+  res.sendFile(
+    path.join(
+      __dirname,
+      'home',
+      'runner',
+      'work',
+      'kevinzanzi.github.io',
+      'kevinzanzi.github.io',
+      'client'
+    )
+  );
 });
 
 // CV page
 app.get('/cv', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'client', 'cv.html'));
+  res.sendFile(
+    path.join(
+      __dirname,
+      'home',
+      'runner',
+      'work',
+      'kevinzanzi.github.io',
+      'kevinzanzi.github.io',
+      'client'
+    )
+  );
 });
 
 // Handle form submission
@@ -94,7 +126,17 @@ app.post('/', async (req, res) => {
 const port = process.env.PORT || 3000;
 // const devsite = `http://127.0.0.1:${port}`;
 
-console.log(path.join(__dirname, '..', 'client', 'index.html'));
+console.log(
+  path.join(
+    __dirname,
+    'home',
+    'runner',
+    'work',
+    'kevinzanzi.github.io',
+    'kevinzanzi.github.io',
+    'client'
+  )
+);
 
 // Start the server
 app.listen(port, () => {
