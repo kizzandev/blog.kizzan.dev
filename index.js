@@ -33,7 +33,6 @@ app.post('/', async (req, res) => {
   // const sanitized_phone = phone.replace(/[^+0-9]/g, '');
   const sanitized_email = email.replace(/[^a-zA-Z0-9@.]/g, '');
   const sanitized_subject = subject.replace(/[^a-zA-Z ]/g, '');
-  // const sanitized_message = message.replace(/[^a-zA-Z0-9 .!()]/g, '');
 
   // Validate form data
   let is_valid = true;
@@ -60,7 +59,6 @@ app.post('/', async (req, res) => {
     // console.log('validation: email invalid');
     is_valid = false;
   } else if (!subjectOptions.includes(sanitized_subject.toLowerCase())) {
-    // console.log(sanitized_subject);
     // console.log('validation: subject invalid');
     is_valid = false;
   } else if (message.length < 10 || message.length > 500) {
@@ -75,11 +73,11 @@ app.post('/', async (req, res) => {
   }
 
   try {
-    let gformurl = '';
+    // let gformurl = '';
     // if (sanitized_phone.length > 0) {
     //   gformurl = `https://docs.google.com/forms/d/e/1FAIpQLSfoJJ6j4g1J6e8Rfl4KtBNx7Ry97DxYZuH7OlQ-ajo-ttYT4A/formResponse?entry.535828247=${sanitized_name}&entry.216733776=${sanitized_phone}&entry.820148392=${sanitized_email}&entry.1303174713=${sanitized_subject}&entry.265569860=${sanitized_message}`;
     // } else {
-    gformurl = `https://docs.google.com/forms/d/e/1FAIpQLSfoJJ6j4g1J6e8Rfl4KtBNx7Ry97DxYZuH7OlQ-ajo-ttYT4A/formResponse?entry.535828247=${sanitized_name}&entry.820148392=${sanitized_email}&entry.1303174713=${sanitized_subject}&entry.265569860=${message}`;
+    const gformurl = `https://docs.google.com/forms/d/e/1FAIpQLSfoJJ6j4g1J6e8Rfl4KtBNx7Ry97DxYZuH7OlQ-ajo-ttYT4A/formResponse?entry.535828247=${sanitized_name}&entry.820148392=${sanitized_email}&entry.1303174713=${sanitized_subject}&entry.265569860=${message}`;
     // }
 
     // submit form data to google form
