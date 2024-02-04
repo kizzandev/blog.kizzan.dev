@@ -1,0 +1,171 @@
+---
+/*interface Props {
+  as?: TextAs;
+  id?: string;
+  title?: string;
+  width?: string | number;
+
+  size?: TextSize;
+  weight?: TextWeight;
+  transform?: TextTransform;
+  // align?: TextAlign;
+  wrap?: TextWrap;
+
+  truncate?: boolean | number;
+  monospace?: boolean;
+
+  style?: string;
+  class?: string;
+}*/
+
+const transition = Astro.props.transition ?? null;
+
+// type TextAs = 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4';
+const Tag = Astro.props.as ?? 'span';
+
+const id = Astro.props.id ? ''.concat((Astro.props.id ?? '').toString()) : null;
+
+// const width = Astro.props.width
+//   ? `width: ${Astro.props.width.toString()}ch;`
+//   : 'width: 60ch;';
+const width = `width-${Astro.props.width?.toString()}` ?? 'width-fit';
+// const weight = `weight-${Astro.props.weight?.toString()}` ?? null;
+
+// H1: 40px
+// H2: 32px
+// H3: 24px
+// H4: 20px
+// P: 16px
+// SPAN: 12px
+// type TextSize = 10 | 12 | 14 | 16 | 20 | 24 | 32 | 40 | 48;
+
+const size = '';
+/*  Tag === 'h1'
+    ? 'h1'
+    : Tag === 'h2'
+      ? 'h2'
+      : Tag === 'h3'
+        ? 'h3'
+        : Tag === 'h4'
+          ? 'h4'
+          : Tag === 'p'
+            ? 'p'
+            : 'span';*/
+
+// type TextWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+/*const weight = 'font-weight: '.concat(
+  (Astro.props.weight ?? 400).toString(),
+  ';'
+);*/
+
+const weight = `weight-${Astro.props.weight?.toString()}` ?? null;
+
+// type TextTransform =
+//   | 'uppercase'
+//   | 'lowercase'
+//   | 'capitalize'
+//   | 'none'
+//   | 'initial';
+const transform = 'text-transform: '.concat(
+  (Astro.props.transform ?? 'none').toString(),
+  ';'
+);
+
+/*type TextAlign = 'left' | 'right' | 'center';
+const align = 'text-align: '.concat(
+  (Astro.props.align ?? 'left').toString(),
+  ';'
+);*/
+
+// type TextColor =
+
+// type TextWrap = 'balance' | 'pretty' | 'initial';
+const wrap = 'text-wrap: '.concat(
+  (Astro.props.display ?? 'initial').toString(),
+  ';'
+);
+
+const truncate = Astro.props.truncate
+  ? `overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: ${
+    typeof Astro.props.truncate === 'number' ? Astro.props.truncate : 1
+  };
+  -webkit-box-orient: vertical;`
+  : '';
+
+const monospace = Astro.props.monospace ? 'font-family: monospace;' : '';
+---
+
+<Tag
+  {transition}
+  {id}
+  style={`${transform} ${wrap} ${monospace} ${truncate}
+  ${Astro.props.size ? `font-size: ${Astro.props.size}px;` : ''}
+ ${Astro.props.style ?? ''}`}
+  class={`${size} ${weight} ${width}
+  max-width
+  ${Astro.props.class ?? null}
+  `}
+>
+  {Astro.props.title ? Astro.props.title : <slot />}
+</Tag>
+
+<style is:inline>
+  .max-width {
+    max-width: 100%;
+  }
+  .width-60 {
+    width: 60ch;
+  }
+  .width-fit {
+    width: fit-content;
+  }
+
+  .h1 {
+    font-size: 40px;
+  }
+  .h2 {
+    font-size: 32px;
+  }
+  .h3 {
+    font-size: 24px;
+  }
+  .h4 {
+    font-size: 20px;
+  }
+  .p {
+    font-size: 16px;
+  }
+  .span {
+    font-size: 12px;
+  }
+  .weight-100 {
+    font-weight: 100;
+  }
+  .weight-200 {
+    font-weight: 200;
+  }
+  .weight-300 {
+    font-weight: 300;
+  }
+  .weight-400 {
+    font-weight: 400;
+  }
+  .weight-500 {
+    font-weight: 500;
+  }
+  .weight-600 {
+    font-weight: 600;
+  }
+  .weight-700 {
+    font-weight: 700;
+  }
+  .weight-800 {
+    font-weight: 800;
+  }
+  .weight-900 {
+    font-weight: 900;
+  }
+</style>

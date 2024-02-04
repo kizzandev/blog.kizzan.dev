@@ -1,0 +1,50 @@
+---
+import Flex from '@components/design/flex/Flex.astro';
+import Texto from '@components/design/texto/Texto.astro';
+import Layout from '@layouts/Layout.astro';
+
+const allArticles = await Astro.glob('../article/*.md');
+const tags = [
+  ...new Set(
+    allArticles
+      .map((article) => article.frontmatter.tags)
+      .flat()
+      .sort()
+  ),
+];
+---
+
+<Layout
+  title="Kizen Blog | Tag Index"
+  description="A collection of articles about web development, design, and other things."
+>
+  <div>
+    <Flex>
+      <Texto
+        as="h2"
+        title="Tag Index"
+        class="text-4xl font-bold text-zinc-100 mb-8"
+      />
+      <ul
+        style="grid-template-columns: repeat(4, minmax(50px, 1fr));"
+        class="grid gap-8"
+      >
+        {
+          tags.map((tag) => (
+            <li
+              class="bg-zinc-800 font-semibold rounded-lg min-w-[50px] text-center hover:bg-zinc-700"
+              title={tag}
+            >
+              <a
+                class="inline-block w-full px-4 py-2 "
+                href={`/en/blog/tags/${tag}`}
+              >
+                {tag}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </Flex>
+  </div>
+</Layout>

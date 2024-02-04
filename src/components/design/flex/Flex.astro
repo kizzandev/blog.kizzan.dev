@@ -1,0 +1,60 @@
+---
+/*interface Props {
+  as?: SemanticElement;
+  id?: string;
+
+  gap?: number;
+  flex?: string | number;
+  space?: 'between' | 'around' | 'evenly';
+
+  row?: boolean;
+  wrap?: boolean;
+
+  style?: string;
+  class?: string;
+}*/
+
+// type SemanticElement =
+//   | 'div'
+//   | 'span'
+//   | 'article'
+//   | 'section'
+//   | 'header'
+//   | 'nav'
+//   | 'aside'
+//   | 'footer'
+//   | 'main'
+//   | 'form'
+//   | 'label'
+//   | 'ul'
+//   | 'ol'
+//   | 'li';
+const Tag = Astro.props.as ?? 'div';
+
+const row = Astro.props.row ?? false;
+
+const gap = 'gap: '.concat((Astro.props.gap ?? 16).toString(), 'px', ';');
+const direction = 'flex-direction: '.concat(row ? 'row' : 'column', ';');
+const wrap = 'flex-wrap: '.concat(Astro.props.wrap ? 'wrap' : 'nowrap', ';');
+// const flex = 'flex:'.concat(Astro.props.flex?.toString() ?? '1', ';');
+const space = 'justify-content: '.concat(
+  Astro.props.space === 'between'
+    ? 'space-between'
+    : Astro.props.space === 'around'
+      ? 'space-around'
+      : Astro.props.space === 'evenly'
+        ? 'space-evenly'
+        : 'flex-start',
+  ';'
+);
+---
+
+<Tag
+  style={`${gap} ${direction} ${space} ${wrap}
+  min-width: 0;
+  ${Astro.props.style ?? ''}`}
+  class={`flex
+  ${Astro.props.class ?? ''}`}
+>
+  <slot />
+</Tag>

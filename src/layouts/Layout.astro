@@ -1,0 +1,111 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+import Header from '@common/Header.astro';
+import Nav from '@common/Nav.astro';
+
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<!doctype html>
+<html lang="es-AR" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={Astro.props.description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{Astro.props.title}</title>
+    <ViewTransitions />
+  </head>
+  <!-- class="bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 transition-colors ease-in-out duration-200 motion-reduce:transition-none motion-reduce:duration-0" -->
+  <body class="bg-zinc-900 text-zinc-100 overflow-x-hidden">
+    <!-- max-w-screen-2xl -->
+    <div id="app" class="min-h-screen px-[32px] mx-auto pb-16 max-w-[1102px]">
+      <Header />
+      <Nav />
+      <slot />
+      <!-- <Footer /> -->
+      <!-- <button class="absolute top-[16px] right-[32px]" onclick="darklight()"
+        >MODO</button
+      > -->
+    </div>
+
+    <style is:global>
+      :root {
+      }
+
+      *,
+      *::before,
+      *::after {
+        position: relative;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          'Open Sans',
+          'Helvetica Neue',
+          sans-serif;
+
+        scrollbar-gutter: stable;
+      }
+
+      ::-webkit-scrollbar {
+        height: 8px;
+        width: 16px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(155, 155, 155, 0.5);
+        border-radius: 20px;
+        border: transparent;
+      }
+    </style>
+
+    <!-- <script lang="ts">
+  function darklight() {
+    const current = document.querySelector('html')?.classList.contains('dark');
+    document.querySelector('html')?.classList.toggle('dark');
+    localStorage.setItem('darkMode', !current);
+  }
+
+  function start() {
+    const bLocalStorage = localStorage.getItem('darkMode');
+
+    if (!bLocalStorage) {
+      // if no local storage, set it to the browser preference
+      localStorage.setItem(
+        'darkMode',
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      );
+      return;
+    }
+
+    const isDarkMode = bLocalStorage === 'true';
+    if (
+      isDarkMode &&
+      !document.querySelector('html')?.classList.contains('dark')
+    ) {
+      document.querySelector('html')?.classList.add('dark');
+    }
+  }
+
+  start();
+</script> -->
+  </body>
+</html>

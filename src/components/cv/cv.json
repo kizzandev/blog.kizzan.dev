@@ -1,0 +1,428 @@
+{
+  "basics": {
+    "name": "Kevin S. Zanzi",
+    "label": "Full Stack Developer",
+    "image": "/me.webp",
+    "email": "kevinzanzi@gmail.com",
+    "phone": "",
+    "url": "https://kizen.dev",
+    "summary": "Siempre buscando aprender nuevas cosas y mejorar mis habilidades, además de trabajar en equipo y compartir mis conocimientos con los demás. Principalmente laburo con TypeScript, React, y Node.js. Dispuesto a aprender y trabajar con nuevas tecnologías. Cuento con más de 3 meses de experiencia remota.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "CABA",
+      "countryCode": "AR",
+      "region": "Argentina"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "kevinzanzi",
+        "url": "https://www.linkedin.com/in/kevinzanzi/"
+      },
+      {
+        "network": "GitHub",
+        "username": "kizendev",
+        "url": "https://github.com/kizendev"
+      },
+      {
+        "network": "YouTube",
+        "username": "kizendev",
+        "url": "https://www.youtube.com/@kizendev"
+      },
+      {
+        "network": "Twitch",
+        "username": "kizendev",
+        "url": "https://www.twitch.tv/kizendev"
+      },
+      {
+        "network": "X",
+        "username": "kizendev",
+        "url": "https://twitter.com/kizendev"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "GCBA",
+      "position": "Analista Desarrollador & Frontend",
+      "url": "https://buenosaires.gob.ar",
+      "startDate": "2023-09-02",
+      "endDate": "2023-12-10",
+      "summary": "Contrato de 3 meses para desarrollar una aplicación web para la gestión de socios y eventos. Trabajé en el desarrollo del backend y frontend de la aplicación, utilizando tecnologías como SQL, React, y Docker; utilizando metodologías ágiles como Scrum y Kanban.",
+      "highlights": [
+        "\"No sé cómo lo hace, pero cada vez que le pregunto algo a Kevin, lo soluciona\"",
+        "Organizé el agile squad en la distribución de tareas y en la implementación de las mismas",
+        "Me desempeñé en dos roles diferentes: analista y desarrollador frontend"
+      ],
+      "modality": "Remoto"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "UTN",
+      "url": "https://utn.edu.ar",
+      "area": "Ingeniero en Sistemas de Información",
+      "studyType": "Bachelor",
+      "startDate": "2023-01-01",
+      "endDate": "2026-01-01",
+      "score": "8.5",
+      "courses": ["DB1101 - Basic SQL"]
+    },
+    {
+      "institution": "GCBA",
+      "url": "",
+      "area": "Desarrollo Web Full Stack",
+      "studyType": "Course",
+      "startDate": "2022-01-02",
+      "endDate": "2022-01-02",
+      "score": "10",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Master",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z' /><path d='M15.5 8h-7l.5 4h6l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5' /></svg>",
+      "keywords": ["Desarrollo Web", "Frontend"],
+      "category": "Web Development"
+    },
+    {
+      "name": "CSS",
+      "level": "Master",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z' /><path d='M8.5 8h7l-4.5 4h4l-.5 3.5l-2.5 .75l-2.5 -.75l-.1 -.5' /></svg>",
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"],
+      "category": "Web Development"
+    },
+    {
+      "name": "JavaScript",
+      "level": "Avanzado+",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M20 4l-2 14.5l-6 2l-6 -2l-2 -14.5z' /><path d='M7.5 8h3v8l-2 -1' /><path d='M16.5 8h-2.5a.5 .5 0 0 0 -.5 .5v3a.5 .5 0 0 0 .5 .5h1.423a.5 .5 0 0 1 .495 .57l-.418 2.93l-2 .5' /></svg>",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"],
+      "category": "Programming Language"
+    },
+    {
+      "name": "Tailwind",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M11.667 6c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 2 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968zm-4 6.5c-2.49 0 -4.044 1.222 -4.667 3.667c.933 -1.223 2.023 -1.68 3.267 -1.375c.71 .174 1.217 .68 1.778 1.24c.916 .912 1.975 1.968 4.288 1.968c2.49 0 4.044 -1.222 4.667 -3.667c-.933 1.223 -2.023 1.68 -3.267 1.375c-.71 -.174 -1.217 -.68 -1.778 -1.24c-.916 -.912 -1.975 -1.968 -4.288 -1.968z' /></svg>",
+      "keywords": [
+        "Diseño Responsive",
+        "Frontend",
+        "CSS Framework",
+        "Desarrollo Web"
+      ],
+      "category": "Framework"
+    },
+    {
+      "name": "TypeScript",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M15 17.5c.32 .32 .754 .5 1.207 .5h.543c.69 0 1.25 -.56 1.25 -1.25v-.25a1.5 1.5 0 0 0 -1.5 -1.5a1.5 1.5 0 0 1 -1.5 -1.5v-.25c0 -.69 .56 -1.25 1.25 -1.25h.543c.453 0 .887 .18 1.207 .5' /><path d='M9 12h4' /><path d='M11 12v6' /><path d='M21 19v-14a2 2 0 0 0 -2 -2h-14a2 2 0 0 0 -2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2 -2z' /></svg>",
+      "keywords": [
+        "Desarrollo Web",
+        "Frontend",
+        "Backend",
+        "JavaScript Superset"
+      ],
+      "category": "Programming Language"
+    },
+    {
+      "name": "Node",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M9 9v8.044a2 2 0 0 1 -2.996 1.734l-1.568 -.9a3 3 0 0 1 -1.436 -2.561v-6.635a3 3 0 0 1 1.436 -2.56l6 -3.667a3 3 0 0 1 3.128 0l6 3.667a3 3 0 0 1 1.436 2.561v6.634a3 3 0 0 1 -1.436 2.56l-6 3.667a3 3 0 0 1 -3.128 0' /><path d='M17 9h-3.5a1.5 1.5 0 0 0 0 3h2a1.5 1.5 0 0 1 0 3h-3.5' /></svg>",
+      "keywords": ["Desarrollo Web", "Backend", "Servidor", "JavaScript"],
+      "category": "Web Development"
+    },
+    {
+      "name": "MySQL",
+      "level": "Normal",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M13 21c-1.427 -1.026 -3.59 -3.854 -4 -6c-.486 .77 -1.501 2 -2 2c-1.499 -.888 -.574 -3.973 0 -6c-1.596 -1.433 -2.468 -2.458 -2.5 -4c-3.35 -3.44 -.444 -5.27 2.5 -3h1c8.482 .5 6.421 8.07 9 11.5c2.295 .522 3.665 2.254 5 3.5c-2.086 -.2 -2.784 -.344 -3.5 0c.478 1.64 2.123 2.2 3.5 3' /><path d='M9 7h.01' /></svg>",
+      "keywords": [
+        "Base de Datos",
+        "SQL",
+        "Backend",
+        "Almacenamiento de Datos"
+      ],
+      "category": "Database"
+    },
+    {
+      "name": "Git",
+      "level": "Normal",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M16 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /><path d='M12 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /><path d='M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /><path d='M12 15v-6' /><path d='M15 11l-2 -2' /><path d='M11 7l-1.9 -1.9' /><path d='M13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1 -2.892 0l-7.955 -7.955a2.045 2.045 0 0 1 0 -2.892l7.955 -7.955a2.045 2.045 0 0 1 2.892 0z' /></svg>",
+      "keywords": ["Control de Versiones", "Colaboración", "Código Fuente"],
+      "category": "Version Control"
+    },
+    {
+      "name": "GitHub",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5' /></svg>",
+      "keywords": [
+        "Control de Versiones",
+        "Colaboración",
+        "Código Fuente",
+        "Git"
+      ],
+      "category": "Developer Tool"
+    },
+    {
+      "name": "Next.js",
+      "level": "Leo Docs",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M9 15v-6l7.745 10.65a9 9 0 1 1 2.255 -1.993' /><path d='M15 12v-3' /></svg>",
+      "keywords": [
+        "React Framework",
+        "Frontend",
+        "Desarrollo Web",
+        "SSR",
+        "Static Generation"
+      ],
+      "category": "Framework"
+    },
+    {
+      "name": "React",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M6.306 8.711c-2.602 .723 -4.306 1.926 -4.306 3.289c0 2.21 4.477 4 10 4c.773 0 1.526 -.035 2.248 -.102' /><path d='M17.692 15.289c2.603 -.722 4.308 -1.926 4.308 -3.289c0 -2.21 -4.477 -4 -10 -4c-.773 0 -1.526 .035 -2.25 .102' /><path d='M6.305 15.287c-.676 2.615 -.485 4.693 .695 5.373c1.913 1.105 5.703 -1.877 8.464 -6.66c.387 -.67 .733 -1.339 1.036 -2' /><path d='M17.694 8.716c.677 -2.616 .487 -4.696 -.694 -5.376c-1.913 -1.105 -5.703 1.877 -8.464 6.66c-.387 .67 -.733 1.34 -1.037 2' /><path d='M12 5.424c-1.925 -1.892 -3.82 -2.766 -5 -2.084c-1.913 1.104 -1.226 5.877 1.536 10.66c.386 .67 .793 1.304 1.212 1.896' /><path d='M12 18.574c1.926 1.893 3.821 2.768 5 2.086c1.913 -1.104 1.226 -5.877 -1.536 -10.66c-.375 -.65 -.78 -1.283 -1.212 -1.897' /><path d='M11.5 12.866a1 1 0 1 0 1 -1.732a1 1 0 0 0 -1 1.732z' /></svg>",
+      "keywords": ["Desarrollo Web", "Frontend", "JavaScript", "Librería"],
+      "category": "Library"
+    },
+    {
+      "name": "Python",
+      "level": "Normal",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M12 9h-7a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h3' /><path d='M12 15h7a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-3' /><path d='M8 9v-4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v5a2 2 0 0 1 -2 2h-4a2 2 0 0 0 -2 2v5a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2v-4' /><path d='M11 6l0 .01' /><path d='M13 18l0 .01' /></svg>",
+      "keywords": [
+        "Desarrollo Web",
+        "Backend",
+        "Data Science",
+        "Machine Learning"
+      ],
+      "category": "Programming Language"
+    },
+    {
+      "name": "C++",
+      "level": "Normal",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M18 12h4' /><path d='M20 10v4' /><path d='M11 12h4' /><path d='M13 10v4' /><path d='M9 9a3 3 0 0 0 -3 -3h-.5a3.5 3.5 0 0 0 -3.5 3.5v5a3.5 3.5 0 0 0 3.5 3.5h.5a3 3 0 0 0 3 -3' /></svg>",
+      "keywords": [
+        "Desarrollo de Software",
+        "Backend",
+        "Algoritmos",
+        "Estructuras de Datos"
+      ],
+      "category": "Programming Language"
+    },
+    {
+      "name": "Markdown",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M3 5m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z' /><path d='M7 15v-6l2 2l2 -2v6' /><path d='M14 13l2 2l2 -2m-2 2v-6' /></svg>",
+      "keywords": [
+        "Documentación",
+        "Escritura",
+        "Colaboración",
+        "Lenguaje de Marcado"
+      ],
+      "category": "Developer Tool"
+    },
+    {
+      "name": "VSCode",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-brand-vscode' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M16 3v18l4 -2.5v-13z' /><path d='M9.165 13.903l-4.165 3.597l-2 -1l4.333 -4.5m1.735 -1.802l6.932 -7.198v5l-4.795 4.141' /><path d='M16 16.5l-11 -10l-2 1l13 13.5' /></svg>",
+      "keywords": [
+        "Editor de Código",
+        "Desarrollo Web",
+        "Desarrollo de Software",
+        "IDE"
+      ],
+      "category": "Developer Tool"
+    },
+    {
+      "name": "Communication",
+      "level": "Avanzado",
+      "icon": "",
+      "keywords": [
+        "Comunicación",
+        "Trabajo en Equipo",
+        "Colaboración",
+        "Soft Skill"
+      ],
+      "category": "Soft Skill"
+    },
+    {
+      "name": "Teamwork",
+      "level": "Avanzado",
+      "icon": "",
+      "keywords": [
+        "Comunicación",
+        "Trabajo en Equipo",
+        "Colaboración",
+        "Soft Skill"
+      ],
+      "category": "Soft Skill"
+    },
+    {
+      "name": "Adaptability",
+      "level": "Avanzado",
+      "icon": "",
+      "keywords": ["Adaptabilidad", "Flexibilidad", "Soft Skill"],
+      "category": "Soft Skill"
+    },
+    {
+      "name": "Agile",
+      "level": "Avanzado",
+      "icon": "",
+      "keywords": ["Metodología", "Desarrollo Ágil", "Scrum", "Kanban"],
+      "category": "Methodology"
+    },
+    {
+      "name": "RESTful",
+      "level": "Avanzado",
+      "icon": "",
+      "keywords": ["API", "Arquitectura", "Desarrollo Web", "Backend"],
+      "category": "API"
+    },
+    {
+      "name": "Slack",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-brand-slack' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M12 12v-6a2 2 0 0 1 4 0v6m0 -2a2 2 0 1 1 2 2h-6' /><path d='M12 12h6a2 2 0 0 1 0 4h-6m2 0a2 2 0 1 1 -2 2v-6' /><path d='M12 12v6a2 2 0 0 1 -4 0v-6m0 2a2 2 0 1 1 -2 -2h6' /><path d='M12 12h-6a2 2 0 0 1 0 -4h6m-2 0a2 2 0 1 1 2 -2v6' /></svg>",
+      "keywords": [
+        "Comunicación",
+        "Colaboración",
+        "Trabajo en Equipo",
+        "Colaboración"
+      ],
+      "category": "Collaboration Tool"
+    },
+    {
+      "name": "Windows",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-brand-windows' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M17.8 20l-12 -1.5c-1 -.1 -1.8 -.9 -1.8 -1.9v-9.2c0 -1 .8 -1.8 1.8 -1.9l12 -1.5c1.2 -.1 2.2 .8 2.2 1.9v12.1c0 1.2 -1.1 2.1 -2.2 1.9z' /><path d='M12 5l0 14' /><path d='M4 12l16 0' /></svg>",
+      "keywords": ["Sistema Operativo", "OS", "Windows"],
+      "category": "Operating System"
+    },
+    {
+      "name": "npm",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-brand-npm' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M1 8h22v7h-12v2h-4v-2h-6z' /><path d='M7 8v7' /><path d='M14 8v7' /><path d='M17 11v4' /><path d='M4 11v4' /><path d='M11 11v1' /><path d='M20 11v4' /></svg>",
+      "keywords": [
+        "Gestión de Dependencias",
+        "Desarrollo Web",
+        "Backend",
+        "Node.js"
+      ],
+      "category": "Dependency Management"
+    },
+    {
+      "name": "pnpm",
+      "level": "Avanzado",
+      "icon": "<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-brand-pnpm' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M3 17h4v4h-4z' /><path d='M10 17h4v4h-4z' /><path d='M17 17h4v4h-4z' /><path d='M17 10h4v4h-4z' /><path d='M17 3h4v4h-4z' /><path d='M10 10h4v4h-4z' /><path d='M10 3h4v4h-4z' /><path d='M3 3h4v4h-4z' /></svg>",
+      "keywords": [
+        "Gestión de Dependencias",
+        "Desarrollo Web",
+        "Backend",
+        "Node.js"
+      ],
+      "category": "Dependency Management"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Argentino",
+      "code": "ar",
+      "fluency": "Nativa"
+    },
+    {
+      "language": "Inglés",
+      "code": "en",
+      "fluency": "Advanzada"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    {
+      "name": "kizen.dev",
+      "startDate": "2024-01-01",
+      "endDate": "2024-02-10",
+      "description": "Blog personal y portfolio.",
+      "highlights": ["blog", "astro", "multilingual"],
+      "url": "https://kizen.dev",
+      "isActive": true,
+      "github": "https://github.com/kizendev/kizendev.github.io"
+    }
+  ],
+  "skillCategories": [
+    "Programming Language",
+
+    "Web Development",
+    "Framework",
+    "Library",
+    "API",
+
+    "Security",
+
+    "Database",
+
+    "Testing",
+
+    "DevOps",
+
+    "Soft Skill",
+
+    "Mobile",
+    "Cloud",
+
+    "Design",
+
+    "Version Control",
+    "Collaboration Tool",
+    "Docs",
+    "Developer Tool",
+    "Methodology",
+
+    "Operating System",
+    "Dependency Management"
+  ]
+}

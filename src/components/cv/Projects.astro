@@ -1,0 +1,150 @@
+---
+import { projects } from '@cv/cv.json';
+import { projects as enProjects } from '@cv/cv-en.json';
+
+import IconGitHub from '../icons/IconGitHub.astro';
+
+let currentLang = Astro.url.pathname.split('/')[1];
+if (currentLang === 'cv') currentLang = 'ar';
+
+let projectTitle = '';
+let src = '';
+
+if (currentLang === 'ar') {
+  projectTitle = 'Ver el proyecto';
+  src = 'Ver el código fuente del proyecto';
+} else if (currentLang === 'en') {
+  projectTitle = 'See the project';
+  src = 'See the source code of the project';
+}
+---
+
+<ul>
+  {
+    projects.map(
+      ({ name, description, url, highlights, isActive, github }, idx) => {
+        const isDisabled = !url;
+
+        let theHighlights = highlights;
+        if (currentLang === 'en') theHighlights = enProjects[idx].highlights;
+        let theDescription = description;
+        if (currentLang === 'en') theDescription = enProjects[idx].description;
+
+        return (
+          <li>
+            <article>
+              <header>
+                <h3>
+                  <a
+                    href={url}
+                    title={`${projectTitle} ${name}`}
+                    target="_blank"
+                    aria-disabled={isDisabled}
+                    rel="noopener"
+                  >
+                    {name}
+                  </a>
+                  {isActive && <span>&bull;</span>}
+                  {github && (
+                    <a
+                      href={github}
+                      title={`${src} ${name}`}
+                      aria-label={`${src} ${name}`}
+                      target="_blank"
+                    >
+                      <IconGitHub width={16} height={16} />
+                    </a>
+                  )}
+                </h3>
+                <p>{theDescription}</p>
+              </header>
+              {theHighlights.length > 0 && (
+                <footer>
+                  {theHighlights.map((highlight) => (
+                    <span>{highlight}</span>
+                  ))}
+                </footer>
+              )}
+            </article>
+          </li>
+        );
+      }
+    )
+  }
+</ul>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  @media screen and (min-width: 350px) {
+    ul {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 342px));
+    }
+  }
+
+  article {
+    border-radius: 8px;
+    border: 1px solid var(--color-zinc-700);
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    height: 100%;
+  }
+
+  article header {
+    flex: 1;
+  }
+
+  article h3 {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  article h3 span {
+    color: var(--color-green-400);
+  }
+
+  article a {
+    color: var(--color-zinc-100);
+    font-weight: 600;
+  }
+
+  article a:hover {
+    text-decoration: underline;
+    color: var(--color-cyan-400);
+  }
+  article a[aria-disabled] {
+    text-decoration: none;
+    color: inherit;
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  article p {
+    font-size: 0.75rem;
+    line-height: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.6rem;
+  }
+
+  footer span {
+    border-radius: 6px;
+    background-color: var(--color-zinc-800);
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+  }
+</style>

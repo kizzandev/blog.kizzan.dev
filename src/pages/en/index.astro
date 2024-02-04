@@ -1,0 +1,204 @@
+---
+import LayoutAside from '@layouts/LayoutAside.astro';
+
+import { basics } from '@cv/cv-en.json';
+
+import BlogItemH from '@components/atom/BlogItemH.astro';
+// import BlogItemV from '@components/atom/BlogItemV.astro';
+import IconSearch from '@components/icons/IconSearch.astro';
+import Flex from '@components/design/flex/Flex.astro';
+import Texto from '@components/design/texto/Texto.astro';
+import IconChevronRight from '@components/icons/IconChevronRight.astro';
+import Aside from '@common/Aside.astro';
+import type { MarkdownInstance } from 'astro';
+import IconChevronRightDouble from '@components/icons/IconChevronRightDouble.astro';
+
+import { ARTICLES_PER_PAGE } from '@/articles';
+
+async function getData() {
+  const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
+    '../../pages/en/blog/article/*.md'
+  );
+  const filteredArticles = allArticles
+    .filter((article) => article.frontmatter.status === 'published')
+    .sort(
+      (a, b) =>
+        new Date(b.frontmatter.pubDate).getTime() -
+        new Date(a.frontmatter.pubDate).getTime()
+    );
+
+  const total = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
+
+  return {
+    firstPageArticles: filteredArticles.slice(0, ARTICLES_PER_PAGE),
+    totalPages: total,
+    nextPage: total > 1 ? '/en/page/2' : '',
+  };
+}
+
+const data = await getData();
+---
+
+<LayoutAside title="Kizendev" description={basics.summary}>
+  <Flex as="section" class="lg:col-span-2" slot="main">
+    <div
+      class="hidden _flex items-center justify-between px-2 py-2 border border-zinc-700 rounded-md max-w-[634px]"
+    >
+      <input
+        autocapitalize="none"
+        autocomplete="off"
+        autocorrect="off"
+        class="inline-flex w-full h-full bg-transparent border-none focus:ring-0 focus:outline-none"
+        placeholder="Search..."
+        spellcheck="false"
+        title="Search..."
+        type="text"
+        value=""
+      />
+
+      <span
+        class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md"
+        style="transform: scale(-1,1);"
+        ><IconSearch class="h-4 w-4" />
+      </span>
+    </div>
+
+    <ul class="space-y-2">
+      {
+        (data.firstPageArticles.length > 0 &&
+          data.firstPageArticles.map((article) => {
+            return (
+              <BlogItemH
+                title={article.frontmatter.title}
+                description={article.frontmatter.description}
+                lang="en"
+              />
+            );
+          })) || (
+          <Texto
+            as="p"
+            class="text-lg font-semibold mt-8 ml-2"
+            title="There are no articles yet..."
+          />
+        )
+      }
+    </ul>
+
+    <div class="flex items-center justify-center space-x-2 mt-4">
+      <button
+        class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
+        aria-disabled="true"
+        aria-label="Go to the first page"
+        ><IconChevronRightDouble class="rotate-180 w-fit h-fit" /></button
+      >
+
+      <button
+        class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
+        aria-disabled="true"
+        aria-label="Go to the previous page"
+        ><IconChevronRight class="rotate-180 w-fit h-fit" /></button
+      >
+
+      <span class="text-lg tracking-widest">1 / {data.totalPages}</span>
+
+      <a
+        class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
+        aria-disabled={1 === data.totalPages}
+        aria-label="Go to the next page"
+        href={data.nextPage}><IconChevronRight class="w-fit h-fit" /></a
+      >
+
+      <a
+        class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
+        aria-disabled={1 === data.totalPages}
+        aria-label="Go to the last page"
+        href={data.totalPages > 1 ? `/en/page/${data.totalPages}` : ''}
+        ><IconChevronRightDouble class="w-fit h-fit" /></a
+      >
+    </div>
+
+    <article>
+      <Texto
+        as="h2"
+        class="text-2xl font-semibold mt-8 ml-2 mb-4"
+        title="My latest videos"
+      />
+
+      <ul
+        id="lastest-videos"
+        class="grid grid-cols-2 gap-4 place-content-start"
+        transition:name="latest-videos"
+        transition:persist
+      >
+        <li class="flex flex-col">
+          <span class="text-sm font-semibold ml-2">
+            There are no videos yet...
+          </span>
+        </li>
+      </ul>
+    </article>
+  </Flex>
+
+  <script>
+    const CHANNEL_ID = 'UChUg0FSY3YIeo5t6SNtlo9Q';
+
+    const getVideos = async () => {
+      const channelURL = encodeURIComponent(
+        `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`
+      );
+      const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`;
+      const result = await fetch(reqURL).then((response) => response.json());
+
+      const videos = result.items;
+      const lastestVideos = videos.slice(0, 4);
+
+      const lastestVideosEl = document.getElementById('lastest-videos');
+
+      if (!lastestVideosEl) return;
+
+      if (lastestVideos.length > 0) lastestVideosEl.innerHTML = '';
+
+      // just adding iframe for now
+      lastestVideos.forEach((video: any) => {
+        // create iframe
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('width', '100%');
+        iframe.setAttribute('height', 'auto');
+        iframe.setAttribute('loading', 'lazy');
+
+        iframe.classList.add('rounded-md', 'mb-2');
+
+        // get video id
+        const videoId = video.link.split('=')[1];
+
+        // set iframe src
+        iframe.setAttribute(
+          'src',
+          `https://www.youtube.com/embed/${videoId}?controls=0`
+        );
+
+        // create li
+        const li = document.createElement('li');
+        li.classList.add('flex', 'flex-col');
+
+        // append iframe to li
+        li.appendChild(iframe);
+
+        // create span
+        const span = document.createElement('span');
+        span.classList.add('text-sm', 'font-semibold');
+        span.textContent = video.title ?? '';
+
+        // append span to li
+        li.appendChild(span);
+
+        // append li to ul
+        lastestVideosEl?.appendChild(li);
+      });
+    };
+
+    getVideos();
+  </script>
+
+  <Aside slot="aside" />
+</LayoutAside>

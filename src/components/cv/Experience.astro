@@ -1,0 +1,150 @@
+---
+import { work } from '@cv/cv.json';
+import { work as enWork } from '@cv/cv-en.json';
+
+let currentLang = Astro.url.pathname.split('/')[1];
+if (currentLang === 'cv') currentLang = 'ar';
+---
+
+<ul>
+  {
+    work.map(
+      (
+        {
+          name,
+          position,
+          startDate,
+          endDate,
+          summary,
+          highlights,
+          url,
+          modality,
+        },
+        idx
+      ) => {
+        const _startDate = new Date(startDate);
+        const _endDate = endDate !== null ? new Date(endDate) : 'Actual';
+
+        const startYear = _startDate.getFullYear();
+        const endYear =
+          _endDate === 'Actual' ? 'Actual' : _endDate.getFullYear();
+
+        let years = `${startYear} - ${endYear}`;
+
+        if (startYear === endYear) {
+          const startMonth = _startDate.toLocaleString('default', {
+            month: 'short',
+          });
+          const endMonth = _endDate.toLocaleString('default', {
+            month: 'short',
+          });
+          years = `${startMonth} ${startYear} - ${endMonth} ${endYear}`;
+        }
+
+        if (currentLang === 'ar') {
+          return (
+            <li>
+              <article>
+                <header>
+                  <h3>
+                    <a href={url} title={`Ver ${name}`} target="_blank">
+                      {name}
+                    </a>
+                    <span>{modality}</span>
+                  </h3>
+                  <time>{years}</time>
+                </header>
+                <h4>{position}</h4>
+                <footer>
+                  <p>{summary}</p>
+                  {highlights.map((highlight) => (
+                    <span>{highlight}</span>
+                  ))}
+                </footer>
+              </article>
+            </li>
+          );
+        } else if (currentLang === 'en') {
+          return (
+            <li>
+              <article>
+                <header>
+                  <h3>
+                    <a href={url} title={`View ${name}`} target="_blank">
+                      {name}
+                    </a>
+                    <span>{enWork[idx].modality}</span>
+                  </h3>
+                  <time>{years}</time>
+                </header>
+                <h4>{enWork[idx].position}</h4>
+                <footer>
+                  <p>{enWork[idx].summary}</p>
+                  {enWork[idx].highlights.map((highlight) => (
+                    <span>{highlight}</span>
+                  ))}
+                </footer>
+              </article>
+            </li>
+          );
+        }
+      }
+    )
+  }
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  h4 {
+    font-weight: 400;
+    color: var(--color-zinc-400);
+    margin-bottom: 4px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  time {
+    font-size: 0.85rem;
+    color: var(--color-zinc-400);
+  }
+
+  /* EXTRAS */
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.6rem;
+  }
+
+  footer span,
+  h3 span {
+    margin-top: 4px;
+    gap: 8px;
+    line-height: 1.1;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: italic;
+    padding: 0.2rem 0.6rem;
+    color: var(--color-zinc-400);
+    background-color: var(--color-zinc-800);
+    border-radius: 6px;
+  }
+
+  h3 span {
+    font-style: normal;
+    margin-left: 8px;
+  }
+</style>

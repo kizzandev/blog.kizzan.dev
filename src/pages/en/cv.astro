@@ -1,0 +1,34 @@
+---
+import LayoutCV from '@layouts/LayoutCV.astro';
+
+import About from '@cv/About.astro';
+import Education from '@cv/Education.astro';
+import Experience from '@cv/Experience.astro';
+import Hero from '@cv/Hero.astro';
+import KeyboardManager from '@cv/KeyboardManager.astro';
+import Projects from '@cv/Projects.astro';
+import Skills from '@cv/Skills.astro';
+
+import Section from '@/components/cv/Section.astro';
+---
+
+<LayoutCV title="Kevin S Zanzi CV">
+  <main>
+    <Section><Hero /></Section>
+    <Section title="About"><About /></Section>
+    <Section title="Experience"><Experience /></Section>
+    <Section title="Education"><Education /></Section>
+    <Section title="Projecs"><Projects /></Section>
+    <Section title="Skills"><Skills /></Section>
+  </main>
+
+  <KeyboardManager />
+</LayoutCV>
+
+<style>
+  main {
+    padding: 32px;
+    margin: auto;
+    width: 100%;
+  }
+</style>

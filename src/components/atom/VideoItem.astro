@@ -1,0 +1,27 @@
+---
+interface Props {
+  url?: string;
+  title?: string;
+  description?: string;
+}
+---
+
+<!-- 
+    Card:
+    - embeded video from link
+    - title
+    - description
+ -->
+<div class="card">
+  <div class="card__video">
+    <iframe
+      src={Astro.props.url}
+      frame-border="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <div class="card__content">
+    <h3 class="card__title">{Astro.props.title}</h3>
+    <p class="card__description">{Astro.props.description}</p>
+  </div>
+</div>
