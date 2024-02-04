@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  class?: string;
+  currentNav: string;
+}
+
+const { title, href, currentNav } = Astro.props;
+//
+---
+
+<li
+  class={`cursor-pointer underline font-semibold hover:text-cyan-400 list-none p-0 m-0 ${
+    currentNav === title.toLowerCase() ? 'text-cyan-400' : ''
+  } ${Astro.props.class}`}
+>
+  <a class="py-2 inline-block" href={href}>{title}</a>
+</li>

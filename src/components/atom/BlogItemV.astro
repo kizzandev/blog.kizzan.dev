@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  description: string;
+
+  maxChars?: number;
+}
+
+import Flex from '@components/design/flex/Flex.astro';
+import Texto from '@components/design/texto/Texto.astro';
+import IconJS from '@components/icons/IconJS.astro';
+---
+
+<li>
+  <button class="hover:bg-zinc-800 py-4 px-2 rounded-md w-full">
+    <Flex row as="section">
+      <IconJS width={84} height={84} class="min-w-[84px]" />
+      <Texto
+        as="h3"
+        class={`text-xl font-bold max-w-[${Astro.props.maxChars ?? '60'}ch]`}
+        truncate={3}
+        title={Astro.props.title}
+      >
+        {Astro.props.title}
+      </Texto>
+    </Flex>
+    <Texto
+      as="p"
+      class={`max-w-[${Astro.props.maxChars ?? '60'}ch] ml-2 mt-1`}
+      truncate={2}
+      title={Astro.props.description}
+    >
+      {Astro.props.description}
+    </Texto>
+  </button>
+</li>

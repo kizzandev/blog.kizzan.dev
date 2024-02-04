@@ -1,0 +1,91 @@
+{
+  "basics": {
+    "label": "Full Stack Developer",
+    "summary": "Sempre alla ricerca di imparare cose nuove e migliorare le mie abilità, così come lavorare in un team e condividere le mie conoscenze con gli altri. Lavoro principalmente con TypeScript, React e Node.js. Disposto a imparare e lavorare con nuove tecnologie. Ho più di 3 mesi di esperienza remota."
+  },
+  "work": [
+    {
+      "name": "GCBA",
+      "position": "Analista Sviluppatore & Frontend",
+      "summary": "Contratto di 3 mesi per sviluppare un'applicazione web per la gestione di partner ed eventi. Ho lavorato allo sviluppo del backend e del frontend dell'applicazione, utilizzando tecnologie come SQL, React e Docker; utilizzando metodologie agili come Scrum e Kanban.",
+      "highlights": [
+        "\"Non so come faccia, ma ogni volta che chiedo qualcosa a Kevin, lui lo risolve\"",
+        "Ho organizzato lo squadrone agile nella distribuzione dei compiti e nell'implementazione di essi",
+        "Ho svolto due ruoli diversi: analista e sviluppatore frontend"
+      ],
+      "modality": "Remoto"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Organization",
+      "position": "Volunteer",
+      "summary": "Description…",
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "UTN",
+      "area": "Ingegneria Informatica",
+      "courses": ["DB1101 - Basic SQL"]
+    },
+    {
+      "institution": "GCBA",
+      "area": "Full Stack Web Development",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Award",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "issuer": "Company"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "summary": "Description…"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Argentino",
+      "code": "ar"
+    },
+    {
+      "language": "Inglese",
+      "code": "en"
+    },
+    {
+      "language": "Italiano",
+      "code": "it"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Wildlife",
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ],
+  "projects": [
+    {
+      "description": "Blog personale e portfolio.",
+      "highlights": ["blog", "astro", "multilingue"]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+---
+import NavItem from '@components/atom/NavItem.astro';
+
+const pathname = Astro.url.pathname;
+const isBlog =
+  pathname === '/' ||
+  Astro.url.pathname.includes('/page/') ||
+  pathname === '/en' ||
+  Astro.url.pathname.includes('/en/page/');
+
+const currentNav = isBlog ? 'blog' : Astro.url.pathname.slice(1);
+
+let link = `/`;
+if (Astro.url.pathname.split('/')[1] === 'en') link = `/en`;
+---
+
+<section class="border-y-[1px] my-[16px] border-zinc-600 md:mb-[32px]">
+  <ul class="flex justify-between items-center gap-4 p-0 m-0 px-2">
+    <NavItem title="Blog" href={link} class="mr-auto" currentNav={currentNav} />
+    <!-- <NavItem title="CV" href="/cv" currentNav={currentNav} /> -->
+  </ul>
+</section>
+
+<script lang="ts"></script>

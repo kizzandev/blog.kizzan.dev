@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+
+  items: {
+    title: string;
+    url: string;
+    image?: string;
+  }[];
+
+  lastItem?: boolean;
+}
+---
+
+<h3 class="text-lg font-bold text-zinc-100 mb-2">{Astro.props.title}</h3>
+<ul class={`flex flex-col gap-2 ${Astro.props.lastItem ?? 'mb-6'}`}>
+  {
+    Astro.props.items.map((item) => (
+      <li>
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 hover:underline hover:pl-2 transition-all ease-in-out duration-200"
+        >
+          {item.image && (
+            <img src={item.image} alt={item.title} class="w-8 h-8" />
+          )}
+          {item.title}
+        </a>
+      </li>
+    ))
+  }
+</ul>

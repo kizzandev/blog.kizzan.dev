@@ -1,0 +1,186 @@
+---
+// import Books from '@components/atom/Books.astro';
+
+const currentYear = new Date().getFullYear();
+
+let isActive = `ar`;
+if (Astro.url.pathname.split('/')[1] === 'en') isActive = `en`;
+---
+
+<aside class="col-span-1 flex flex-col gap-4 max-w-[634px]" slot="aside">
+  <section
+    class="bg-zinc-800 shadow-md rounded-lg p-4 grid gap-[8px]"
+    style="grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));"
+  >
+    <a
+      href="/"
+      class={`flex flex-col gap-1 transition-all ease-in-out duration-200 px-2 py-1 rounded-md text-center
+      ${isActive === 'ar' && `bg-zinc-700`}`}
+    >
+      <span class="text-sm">🇦🇷 Argentino</span>
+    </a>
+    <a
+      href="/en"
+      class={`flex flex-col gap-1 transition-all ease-in-out duration-200 px-2 py-1 rounded-md text-center
+      ${isActive === 'en' && `bg-zinc-700`}`}
+    >
+      <span class="text-sm">🇬🇧 English</span>
+    </a>
+  </section>
+
+  <!-- <section class="bg-zinc-800 shadow-md rounded-lg p-4">
+    <h2 class="text-xl font-bold text-zinc-100 mb-1">
+      Subscribe to the newsletter
+    </h2>
+    <p class="text-zinc-300 text-sm mb-4">
+      Get the latest articles and videos directly in your inbox.
+    </p>
+    <form
+      class=""
+      action="/"
+      method="post"
+      target="popupwindow"
+      onsubmit=""
+      class="embeddable-buttondown-form"
+    >
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="rounded-lg border border-zinc-700 p-2 bg-transparent w-full mt-2"
+      />
+      <button
+        type="submit"
+        class="block w-full rounded-lg border border-zinc-700 p-2 bg-transparent mt-4 hover:bg-zinc-700 hover:border-zinc-600 transition-colors duration-200 ease-in-out"
+        >Subscribe</button
+      >
+    </form>
+  </section> -->
+
+  <!-- <section class="bg-zinc-800 shadow-md rounded-lg p-4">
+    <h2 class="text-xl font-bold text-zinc-100 mb-1">Some cool books</h2>
+    <p class="text-zinc-300 text-sm mb-4">
+      I've read some cool books that I think you might like.
+    </p>
+
+    <Books
+      title="Software"
+      items={[
+        {
+          title: 'The Pragmatic Programmer',
+          url: 'https://amzn.to/',
+          image:
+            'https://images-na.ssl-images-amazon.com/images/I/41as+WafrFL._SX258_BO1,204,203,200_.jpg',
+        },
+        {
+          title: 'The Clean Coder',
+          url: 'https://amzn.to/',
+        },
+      ]}
+    />
+    <Books
+      lastItem
+      title="Fiction"
+      items={[
+        {
+          title: 'The Pragmatic Programmer',
+          url: 'https://amzn.to/',
+          image:
+            'https://images-na.ssl-images-amazon.com/images/I/41as+WafrFL._SX258_BO1,204,203,200_.jpg',
+        },
+        {
+          title: 'The Clean Coder',
+          url: 'https://amzn.to/',
+        },
+      ]}
+    />
+  </section> -->
+
+  <!-- <section class="bg-zinc-800 shadow-md rounded-lg p-4">
+    <h2 class="text-xl font-bold text-zinc-100 mb-1">Trending articles</h2>
+    <p class="text-zinc-300 text-sm mb-4">
+      Here are some articles that are trending right now.
+    </p>
+    <ul class="grid grid-cols-1 gap-4">
+      <li>
+        <a
+          href="/"
+          class="flex flex-col gap-1 hover:underline hover:pl-2 transition-all ease-in-out duration-200"
+        >
+          <span class="text-sm">Article title</span>
+          <span class="text-zinc-300 text-xs">2.4k views</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          class="flex flex-col gap-1 hover:underline hover:pl-2 transition-all ease-in-out duration-200"
+        >
+          <span class="text-sm">Article title</span>
+          <span class="text-zinc-300 text-xs">2.4k views</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          class="flex flex-col gap-1 hover:underline hover:pl-2 transition-all ease-in-out duration-200"
+        >
+          <span class="text-sm">Article title</span>
+          <span class="text-zinc-300 text-xs">2.4k views</span>
+        </a>
+      </li>
+    </ul>
+  </section> -->
+
+  <!-- <section class="bg-zinc-800 shadow-md rounded-lg p-4">
+    <h2 class="text-xl font-bold text-zinc-100 mb-1">Most popular articles</h2>
+    <p class="text-zinc-300 text-sm mb-4">
+      Here are some of my most popular articles.
+    </p>
+    <ul class="grid grid-cols-1 gap-4">
+      <li>
+        <a
+          href="/"
+          class="flex flex-col gap-1 hover:underline hover:pl-2 transition-all ease-in-out duration-200"
+        >
+          <span class="text-sm">Article title</span>
+          <span class="text-zinc-300 text-xs">2.4k views</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          class="flex flex-col gap-1 hover:underline hover:pl-2 transition-all ease-in-out duration-200"
+        >
+          <span class="text-sm">Article title</span>
+          <span class="text-zinc-300 text-xs">2.4k views</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          class="flex flex-col gap-1 hover:underline hover:pl-2 transition-all ease-in-out duration-200"
+        >
+          <span class="text-sm">Article title</span>
+          <span class="text-zinc-300 text-xs">2.4k views</span>
+        </a>
+      </li>
+    </ul>
+  </section> -->
+
+  <section class="bg-zinc-800 shadow-md rounded-lg p-4 [&>*]:mb-2">
+    <a
+      href={`${isActive !== 'ar' ? '/en' : ''}/rss.xml`}
+      class="hover:underline"
+    >
+      <span class="text-sm">RSS feed</span>
+    </a>
+    <p class="text-sm hover:underline">
+      <a href="/legal">Legal</a>
+    </p>
+    <p class="text-sm">
+      &copy; {currentYear} Kizendev • All other rights reserved.
+    </p>
+  </section>
+</aside>

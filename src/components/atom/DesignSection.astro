@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  secciones: string[];
+}
+
+// Get current page URL
+let path = Astro.url.pathname;
+path = path.slice(8, path.length);
+path.indexOf('/') !== -1 ? (path = path.slice(0, path.indexOf('/'))) : null;
+
+let links = Astro.props.secciones;
+
+links = links.map((seccion) =>
+  seccion
+    .replace(/\s/g, '-')
+    .toLowerCase()
+    .replace(/ñ/g, 'n')
+    .replace(/á/g, 'a')
+    .replace(/é/g, 'e')
+    .replace(/í/g, 'i')
+    .replace(/ó/g, 'o')
+    .replace(/ú/g, 'u')
+);
+---
+
+<div>
+  <h3 class="text-lg font-semibold mb-1">
+    {Astro.props.title}
+  </h3>
+  <ul class="space-y-1">
+    {
+      links.map((seccion) => (
+        <li>
+          <a
+            href={`/diseno/${seccion}`}
+            class={`text-zinc-300 hover:text-zinc-100 hover:bg-zinc-800 rounded px-3 py-2 text-sm font-medium w-full inline-flex ${path === seccion ? 'bg-zinc-800 text-zinc-100' : ''}}`}
+          >
+            {Astro.props.secciones[links.indexOf(seccion)]}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
