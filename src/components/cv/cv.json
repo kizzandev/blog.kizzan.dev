@@ -387,7 +387,7 @@
       "startDate": "2024-01-01",
       "endDate": "2024-02-10",
       "description": "Blog personal y portfolio.",
-      "highlights": ["blog", "astro", "multilingual"],
+      "highlights": ["blog", "astro", "multilingual", "i18n rss feed"],
       "url": "https://kizen.dev",
       "isActive": true,
       "github": "https://github.com/kizendev/kizendev.github.io"

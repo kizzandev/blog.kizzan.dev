@@ -81,7 +81,7 @@
   "projects": [
     {
       "description": "Personal blog and portfolio.",
-      "highlights": ["blog", "astro", "multilingual"]
+      "highlights": ["blog", "astro", "multilingual", "i18n rss feed"]
     }
   ]
 }
