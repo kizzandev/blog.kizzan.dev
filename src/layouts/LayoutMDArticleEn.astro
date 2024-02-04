@@ -158,17 +158,17 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
           </span>
 
           {author && (
-            <article class="grid grid-cols-3 pt-24 border-t-2 border-zinc-800">
+            <article class="flex flex-col items-center gap-[32px] lg:grid grid-cols-3 pt-24 border-t-2 border-zinc-800">
               <img
                 src={author.frontmatter.image.url}
                 alt={author.frontmatter.image.alt}
-                class="w-[256px] h-[256px] rounded-full justify-self-center"
+                class="w-[256px] h-[256px] rounded-full justify-self-center min-w-[256px]"
               />
               <Flex gap={2} class="col-span-2">
                 <Texto
                   as="h4"
                   title={author.frontmatter.author}
-                  class="text-lg md:text-xl font-semibold text-zinc-100 mb-1"
+                  class="text-lg md:text-xl font-semibold text-zinc-100 mb-1 text-center lg:text-left"
                 />
                 <Texto
                   id="author-description"
@@ -209,17 +209,14 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
               title="Tags:"
               class="text-lg md:text-xl font-semibold text-zinc-100 mt-8"
             />
-            <ul
-              style="grid-template-columns: repeat(8, minmax(0, 1fr));"
-              class="grid gap-2 m-0 p-0"
-            >
+            <ul class="flex flex-wrap gap-2 m-0 p-0">
               {frontmatter.tags.map((tag: string) => (
                 <li
-                  class="bg-zinc-800 font-semibold rounded-lg text-center hover:bg-zinc-700 list-none p-0 m-0"
+                  class="bg-zinc-800 font-semibold rounded-lg text-center hover:bg-zinc-700 list-none p-0 m-0 min-w-fit"
                   title={tag}
                 >
                   <a
-                    class="inline-block w-full px-2 py-1 "
+                    class="inline-block w-full px-2 py-1"
                     href={`/en/blog/tags/${tag}`}
                   >
                     {tag}
