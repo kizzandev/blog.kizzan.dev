@@ -18,7 +18,8 @@ const maxWidth = Astro.props.maxChars
 
 const slug = Astro.props.title.toLowerCase().replace(/\s/g, '-');
 
-const link = `${Astro.props.lang ?? ''}/blog/article/${slug}`;
+let link = `/blog/article/${slug}`;
+if (Astro.props.lang) link = `/${Astro.props.lang}/blog/article/${slug}`;
 ---
 
 <li>
