@@ -76,9 +76,9 @@ Por otro lado, se encuentra la citación en forma de bloque, por ejemplo, a un m
 
 > **Ejemplo de email**
 >
-> **From:** Albert Einstein &lt;albert@kizen.dev&gt;
+> **From:** Albert Einstein &lt;albert@mail.mail&gt;
 >
-> **To:** Kevin Zanzi &lt;hola@kizen.dev&gt;
+> **To:** Kevin Zanzi &lt;hola@mail.mail&gt;
 >
 > **Subject:** Laburo
 >

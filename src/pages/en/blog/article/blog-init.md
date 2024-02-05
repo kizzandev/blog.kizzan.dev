@@ -77,9 +77,9 @@ And then there's the blockquote for paragraphs, such as emails or letters.
 
 > **Example of email**
 >
-> **From:** Albert Einstein &lt;albert@kizen.dev&gt;
+> **From:** Albert Einstein &lt;albert@mail.mail&gt;
 >
-> **To:** Kevin Zanzi &lt;hola@kizen.dev&gt;
+> **To:** Kevin Zanzi &lt;hola@mail.mail&gt;
 >
 > **Subject:** Job
 >

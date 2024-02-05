@@ -5,7 +5,7 @@
     "image": "/me.webp",
     "email": "kevinzanzi@gmail.com",
     "phone": "",
-    "url": "https://kizen.dev",
+    "url": "https://kizendev.github.io/",
     "summary": "Siempre buscando aprender nuevas cosas y mejorar mis habilidades, además de trabajar en equipo y compartir mis conocimientos con los demás. Principalmente laburo con TypeScript, React, y Node.js. Dispuesto a aprender y trabajar con nuevas tecnologías. Cuento con más de 3 meses de experiencia remota.",
     "location": {
       "address": "",
@@ -383,12 +383,12 @@
   ],
   "projects": [
     {
-      "name": "kizen.dev",
+      "name": "Blog",
       "startDate": "2024-01-01",
       "endDate": "2024-02-10",
       "description": "Blog personal y portfolio.",
       "highlights": ["blog", "astro", "multilingual", "i18n rss feed"],
-      "url": "https://kizen.dev",
+      "url": "https://kizendev.github.io/",
       "isActive": true,
       "github": "https://github.com/kizendev/kizendev.github.io"
     }
