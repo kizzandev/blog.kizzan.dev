@@ -113,7 +113,7 @@ They can be used, for example, to show a list of steps.
       1. Subsubstep 1
       2. Subsubstep 2
 
-## Small boxes
+<!-- ## Small boxes
 
 <section class="details-summary" >
   <details>
@@ -156,7 +156,7 @@ They can be used, for example, to show a list of steps.
       <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
     </article>
   </section>
-</article>
+</article> -->
 
 ## And lastly,
 

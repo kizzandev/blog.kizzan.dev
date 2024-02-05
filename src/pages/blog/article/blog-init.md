@@ -112,7 +112,7 @@ Se pueden utilizar, por ejemplo, para mostrar una lista de pasos.
       1. Subsubpaso 1
       2. Subsubpaso 2
 
-## Pequeños cajones
+<!-- ## Pequeños cajones
 
 <section class="details-summary" >
   <details>
@@ -155,7 +155,7 @@ Se pueden utilizar, por ejemplo, para mostrar una lista de pasos.
       <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
     </article>
   </section>
-</article>
+</article> -->
 
 ## Y por ende,
 
