@@ -4,7 +4,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://192.168.0.5:3000',
+  // site: 'http://192.168.0.5:3000', // dev
+  site: 'https://kizendev.github.io', // gh-pages
   // integrations: [react(), tailwind()],
   integrations: [tailwind()],
   image: {
