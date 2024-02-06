@@ -5,7 +5,7 @@ const pathname = Astro.url.pathname;
 const isBlog =
   pathname === '/' ||
   Astro.url.pathname.includes('/page/') ||
-  pathname === '/en' ||
+  pathname === '/en/' ||
   Astro.url.pathname.includes('/en/page/');
 
 const currentNav = isBlog ? 'blog' : Astro.url.pathname.slice(1);
