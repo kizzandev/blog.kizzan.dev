@@ -14,13 +14,13 @@ import YouTube from '@icons/IconYouTube.astro';
 import Twitch from '../icons/IconTwitch.astro';
 import IconDev from '../icons/IconDev.astro';
 
-const { name, label, image, location, profiles, phone, email } = basics;
+const { name, label, image, location, profiles, phone, email, url } = basics;
 const { city, region } = location;
 
 const likendInfo = profiles.find(({ network }) => network === 'LinkedIn');
 const linkedInUrl = likendInfo?.url;
 
-const printInfo = [email, phone, linkedInUrl].filter(Boolean).join(' • ');
+const printInfo = [email, phone, linkedInUrl, url].filter(Boolean).join(' • ');
 
 // LANGUAGES
 let currentLang = Astro.url.pathname.split('/')[1];
@@ -225,6 +225,7 @@ if (currentLang === 'ar') {
     gap: 4px;
     margin-top: 8px;
     font-size: 0.65rem;
+    letter-spacing: 0.08rem;
   }
 
   footer a {
