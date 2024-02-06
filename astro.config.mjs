@@ -23,7 +23,9 @@ export default defineConfig({
         }
         if (
           item.url === 'https://kizendev.github.io/' ||
-          item.url === 'https://kizendev.github.io/en/'
+          item.url === 'https://kizendev.github.io/en/' ||
+          item.url === `https://kizendev.github.io/page/${/\d+/}` ||
+          item.url === `https://kizendev.github.io/en/page/${/\d+/}`
         ) {
           return {
             url: item.url,
