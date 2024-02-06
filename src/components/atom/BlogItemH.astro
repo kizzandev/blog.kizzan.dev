@@ -3,6 +3,9 @@ interface Props {
   title: string;
   description: string;
 
+  icon: string;
+  iconalt: string;
+
   maxChars?: number;
 
   lang?: string;
@@ -10,7 +13,6 @@ interface Props {
 
 import Flex from '@components/design/flex/Flex.astro';
 import Texto from '@components/design/texto/Texto.astro';
-import IconJS from '@components/icons/IconJS.astro';
 
 const maxWidth = Astro.props.maxChars
   ? `max-w-[${Astro.props.maxChars}ch]`
@@ -24,10 +26,11 @@ if (Astro.props.lang) link = `/${Astro.props.lang}/blog/article/${slug}`;
 
 <li>
   <a
-    class={`flex gap-4 hover:bg-zinc-800 py-4 px-2 rounded-md max-w-fit cursor-pointer`}
+    class={`blog-article-anchor flex gap-4 hover:bg-zinc-800 py-4 px-2 rounded-md max-w-fit cursor-pointer`}
     href={link}
+    data-article-icon={Astro.props.icon}
+    data-article-icon-alt={Astro.props.iconalt}
   >
-    <IconJS class="w-[48px] sm:min-w-[84px] sm:min-h-[84px]" />
     <Flex as="section" gap={4} class={`${maxWidth}`}>
       <Texto
         as="h3"
@@ -44,3 +47,23 @@ if (Astro.props.lang) link = `/${Astro.props.lang}/blog/article/${slug}`;
     </Flex>
   </a>
 </li>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const span = document.querySelectorAll(`.blog-article-anchor`);
+    for (const s of span) {
+      s.innerHTML = (s.getAttribute('data-article-icon') ?? '') + s.innerHTML;
+      const firstEl = s.firstElementChild;
+      if (firstEl) {
+        firstEl.classList.add('w-[48px]', 'sm:min-w-[84px]', 'sm:min-h-[84px]');
+        firstEl.setAttribute(
+          'aria-label',
+          s.getAttribute('data-article-icon-alt') ?? ''
+        );
+      }
+
+      s.removeAttribute('data-article-icon');
+      s.removeAttribute('data-article-icon-alt');
+    }
+  });
+</script>

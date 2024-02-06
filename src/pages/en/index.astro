@@ -72,6 +72,8 @@ const data = await getData();
                 title={article.frontmatter.title}
                 description={article.frontmatter.description}
                 lang="en"
+                icon={article.frontmatter.icon.url}
+                iconalt={article.frontmatter.icon.alt}
               />
             );
           })) || (

@@ -69,6 +69,8 @@ const { page } = Astro.props;
               <BlogItemH
                 title={article.frontmatter.title}
                 description={article.frontmatter.description}
+                icon={article.frontmatter.icon.url}
+                iconalt={article.frontmatter.icon.alt}
               />
             );
           })) || (
