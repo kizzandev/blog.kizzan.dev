@@ -21,11 +21,24 @@ export default defineConfig({
         if (item.url === 'https://kizendev.github.io/404') {
           return undefined;
         }
+        // Check if item.url ends with /page/${number}/ or /en/page/${number}/
+        // if so, extract the number
+        const match = item.url.match(/\/page\/(\d+)\/?$/);
+        const matchEn = item.url.match(/\/en\/page\/(\d+)\/?$/);
+
+        let number;
+        if (match) number = match[1];
+        let numberEn;
+        if (matchEn) numberEn = matchEn[1];
+
         if (
           item.url === 'https://kizendev.github.io/' ||
           item.url === 'https://kizendev.github.io/en/' ||
-          item.url === `https://kizendev.github.io/page/${/\d+/}/` ||
-          item.url === `https://kizendev.github.io/en/page/${/\d+/}/`
+          item.url ===
+            `https://kizendev.github.io/page/${
+              match ? `${number + '/'}` : ''
+            }` ||
+          item.url === `https://kizendev.github.io/en/page/${matchEn ? `${numberEn + '/'}` : ''}`
         ) {
           return {
             url: item.url,
