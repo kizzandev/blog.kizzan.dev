@@ -29,7 +29,7 @@ Un **H3** es un título que se usa para departamentalizar contenido. Es decir, p
 
 #### Subdepartamentalizando la departamentalización del contenido
 
-Un **H4** es un título que se usa para subdepartamentalizar contenido. Es decir, para dividir una subsección en subsubsecciones. Además el la subdivisión más pequeña que se usa en este blog.
+Un **H4** es un título que se usa para subdepartamentalizar contenido. Es decir, para dividir una subsección en subsubsecciones. Además es la subdivisión más pequeña que se usa en este blog.
 
 ## Las imágenes y sus descripciones
 
@@ -42,9 +42,7 @@ _Foto de Kevin Zanzi_
 
 ## Código
 
-Hay ocasiones en las que se necesita mostrar código, y para eso se usa un bloque de código.
-
-Por un lado tenes el bloque de código, que se usa para mostrar código de una manera más visual.
+Hay ocasiones en las que se necesita mostrar código, y para ello, se usa un bloque de código.
 
 ```js
 const toAdd = [1, 2, 3, 4, 5];
@@ -76,11 +74,11 @@ Por otro lado, se encuentra la citación en forma de bloque, por ejemplo, a un m
 
 > **Ejemplo de email**
 >
-> **From:** Albert Einstein &lt;albert@mail.mail&gt;
+> **De:** Albert Einstein &lt;albert@mail.mail&gt;
 >
-> **To:** Kevin Zanzi &lt;hola@mail.mail&gt;
+> **Para:** Kevin Zanzi &lt;hola@mail.mail&gt;
 >
-> **Subject:** Laburo
+> **Asunto:** Laburo
 >
 > &nbsp;
 >

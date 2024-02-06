@@ -44,8 +44,6 @@ _Photo of Kevin Zanzi_
 
 There are times when you need to show code, and for that you use a code block.
 
-On the one hand, you have the code block, which is used to display code in a more visual way.
-
 ```js
 const toAdd = [1, 2, 3, 4, 5];
 const addNums = (nums) => nums.reduce((acc, num) => acc + num, 0);
