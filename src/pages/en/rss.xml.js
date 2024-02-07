@@ -6,7 +6,7 @@ export async function GET(context) {
   return rss({
     title: 'Kizen Blog',
     description: basics.summary,
-    site: context.site,
+    site: context.site + '/en/',
     items: await pagesGlobToRssItems(
       import.meta.glob('./blog/article/*.{md,mdx}')
     ),
