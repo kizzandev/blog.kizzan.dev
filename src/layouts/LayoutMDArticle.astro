@@ -231,6 +231,8 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
   </main>
 </Layout>
 
+<script></script>
+
 <style is:global>
   :root {
   }
@@ -555,66 +557,43 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
   }
 
   .details-summary {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
   }
 
-  /* DETAILS ANIMATION: EXPANDS */
-  .details-summary > article {
+  details + article {
     overflow: hidden;
     padding-left: 8px;
     padding-right: 32px;
     padding-top: 8px;
-    transition: max-height 2s ease-in-out;
     max-height: 0;
-    transition-delay: 0ms;
-  }
-  .details-summary > details[open] + article {
-    max-height: 1000px;
+    transition: max-height 0.2s ease-in-out;
   }
 
-  /*
-    ALTERNATIVE DETAILS WITHOUT THE DETAILS NOR SUMMARY TAGS
-    - details is replaced by header
-    - summary is replaced by span
-
-    • This version is for testing, and details-group is not supported.
-    • Seems to be as slow as the details tag when closing.
-  */
-  .details-summary > header > span {
-    display: block;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .details-summary > header > span::after {
-    content: '+';
-    display: inline-block;
-
-    margin-left: 8px;
-
-    font-size: 32px;
-    font-weight: 700;
-
-    transition: transform 0.2s ease-in-out;
-
-    transform: rotate(0deg);
-
-    transform-origin: center;
-
-    position: absolute;
-    right: 0;
-    bottom: -8px;
-  }
-  .details-summary > header[aria-expanded] > span::after {
-    transform: rotate(45deg);
-  }
-  .details-summary > header[aria-expanded] + article {
-    max-height: 1000px;
+  kbd {
+    padding: 0.05rem 0.2rem;
+    margin-left: 0.025rem;
+    margin-right: 0.025rem;
+    border-radius: 4px;
+    border-width: 1px;
+    font-size: 14px;
   }
 </style>
 
 <script is:inline>
+  /* SINGLE DETAILS: EXPAND AND CLOSE */
+  const details = document.querySelectorAll('details');
+  details.forEach((detail) => {
+    const article = detail.nextElementSibling;
+    detail.addEventListener('toggle', () => {
+      if (detail.open) {
+        article.style.maxHeight = article.scrollHeight + 'px';
+      } else {
+        article.style.maxHeight = 0;
+      }
+    });
+  });
+
   /* MULTIPLE DETAILS: WHEN ONE EXPANDS, THE REST CLOSE */
   const detailsGroup = document.querySelectorAll('.details-group');
   detailsGroup.forEach((group) => {

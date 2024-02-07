@@ -114,50 +114,63 @@ Se pueden utilizar, por ejemplo, para mostrar una lista de pasos.
       1. Subsubpaso 1
       2. Subsubpaso 2
 
-<!-- ## Pequeños cajones
+## Cajoncitos
+
+Los cajoncitos permiten mostrar información de manera ordenada y desplegable. Ofrecen un título y un contenido que se muestra al hacer click en el título.
+
+### Cajoncitos Solitarios
+
+Un ejemplo de uso para un cajoncito solitario sería, por ejemplo, mostrar un mensaje de error.
 
 <section class="details-summary" >
   <details>
-    <summary>I'm a summary!</summary>
+    <summary>Estoy solito &rpar;:</summary>
   </details>
   <article>
-    <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
+    <p>¡Y así te quedarás!</p>
   </article>
 </section>
 
 ---
 
-<section class="details-summary" >
-  <header>
-    <span onclick="this.parentElement.toggleAttribute('aria-expanded')" aria-expanded="false">I'm a summary!</span>
-  </header>
-  <article>
-    <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
-  </article>
-</section>
+### Cajoncitos en Grupo
 
----
-
-### Grupos de pequeños cajones
+Por otro lado, los cajoncitos en grupo permiten, por ejemplo, utilizarlos para mostrar una lista de preguntas frecuentes.
 
 <article class="details-group">
   <section class="details-summary" >
     <details>
-      <summary>I'm a summary!</summary>
+      <summary>¿Qué es un cajoncito?</summary>
     </details>
     <article>
-      <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
+      <p>Un cajoncito es un elemento que permite mostrar información de manera ordenada y desplegable. Ofrece un título y un contenido que se muestra al hacer click en el título.</p>
     </article>
   </section>
   <section class="details-summary" >
     <details>
-      <summary>I'm a summary!</summary>
+      <summary>¿Cómo se usa un cajoncito?</summary>
     </details>
     <article>
-      <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
+      <p>Para usar un cajoncito, se debe <kbd>click</kbd> en el título. Al hacerlo, se desplegará el contenido del cajoncito.</p>
     </article>
   </section>
-</article> -->
+  <section class="details-summary" >
+    <details>
+      <summary>¿Cuántos cajoncitos se pueden usar?</summary>
+    </details>
+    <article>
+      <p>¡La cantidad de cajoncitos que se pueden usar es ilimitada!</p>
+    </article>
+  </section>
+  <section class="details-summary" >
+    <details>
+      <summary>¿Por qué los cajoncitos parecen ir en escalera?</summary>
+    </details>
+    <article>
+      <p>Los cajoncitos parecen ir en escalera porque cada vez tienen más caracteres. Por ejemplo, esta pregunta tiene más caracteres que la anterior.</p>
+    </article>
+  </section>
+</article>
 
 ## Y por ende,
 

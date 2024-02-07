@@ -114,50 +114,63 @@ They can be used, for example, to show a list of steps.
       1. Subsubstep 1
       2. Subsubstep 2
 
-<!-- ## Small boxes
+## Smol boxes
+
+Smol boxes are a way to show information in a small and organized way. They can be used to show a summary and the details of that summary.
+
+### Solitary Smol boxes
+
+An example of use for a solitary smol box would be, for example, to show an error message.
 
 <section class="details-summary" >
   <details>
-    <summary>I'm a summary!</summary>
+    <summary>I'm alone &rpar;:</summary>
   </details>
   <article>
-    <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
+    <p>And so you will remain!</p>
   </article>
 </section>
 
 ---
 
-<section class="details-summary" >
-  <header>
-    <span onclick="this.parentElement.toggleAttribute('aria-expanded')" aria-expanded="false">I'm a summary!</span>
-  </header>
-  <article>
-    <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
-  </article>
-</section>
+### Smol boxes in Grouping
 
----
-
-### Grupos de pequeños cajones
+On the other hand, smol boxes allow, as an example, to show a list of frequently asked questions.
 
 <article class="details-group">
   <section class="details-summary" >
     <details>
-      <summary>I'm a summary!</summary>
+      <summary>What is a smol box?</summary>
     </details>
     <article>
-      <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
+      <p>A smol box is an element that allows you to show information in an ordered and expandable way. It offers a title and content that is displayed when you click on the title.</p>      
     </article>
   </section>
   <section class="details-summary" >
     <details>
-      <summary>I'm a summary!</summary>
+      <summary>How do you use a smol box?</summary>
     </details>
     <article>
-      <p>I'm a details element! Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipi sicing elit. Quisquam, quod.</p>
+      <p>To use a smol box, you must <kbd>click</kbd> on the title. When you do, the content of the smol box will be displayed.</p>     
     </article>
   </section>
-</article> -->
+  <section class="details-summary" >
+    <details>
+      <summary>How many smol boxes can be used?</summary>
+    </details>
+    <article>
+      <p>The amount of smol boxes that can be used is unlimited!</p>
+    </article>
+  </section>
+  <section class="details-summary" >
+    <details>
+      <summary>Why do the smol boxes seem to go in a ladder?</summary>
+    </details>
+    <article>
+      <p>The smol boxes seem to go in a ladder because each time they have more characters. For example, this question has more characters than the previous one.</p>
+    </article>
+  </section>
+</article>
 
 ## And lastly,
 
