@@ -32,4 +32,4 @@ git switch -c nombre-de-la-rama
 
 ## Licencia
 
-El contenido de este blog está bajo la licencia [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+El blog está bajo la licencia [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
