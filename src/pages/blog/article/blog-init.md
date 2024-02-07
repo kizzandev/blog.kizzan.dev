@@ -8,7 +8,6 @@ description: Referencia de estilo completa para la amplia gama de formatos en es
 author: Kevin Zanzi
 
 pubDate: '2024-01-24'
-lastMod: '2024-01-24'
 
 image:
   url: '/favicon.svg'
