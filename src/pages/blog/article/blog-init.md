@@ -7,7 +7,7 @@ title: Blog Init
 description: Referencia de estilo completa para la amplia gama de formatos en este blog, mostrando la representación visual de cada estilo al renderizarlo.
 author: Kevin Zanzi
 
-pubDate: '2024-01-24'
+pubDate: '2024-02-04'
 
 image:
   url: '/favicon.svg'

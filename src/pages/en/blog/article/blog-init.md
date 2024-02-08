@@ -7,7 +7,7 @@ title: Blog Init
 description: Comprehensive style reference for the diverse range of formatting in this blog, showcasing the visual representation of each style when rendered.
 author: Kevin Zanzi
 
-pubDate: '2024-01-24'
+pubDate: '2024-02-04'
 
 image:
   url: '/favicon.svg'
