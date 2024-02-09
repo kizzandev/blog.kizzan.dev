@@ -11,8 +11,7 @@ import Skills from '@cv/Skills.astro';
 
 import Section from '@/components/cv/Section.astro';
 
-const mb = 'margin-bottom: 48px';
-const mb_edu = 'margin-bottom: 80px';
+const mb = 'margin-bottom: 56px';
 ---
 
 <LayoutCV title="Kevin S Zanzi CV">
@@ -20,7 +19,7 @@ const mb_edu = 'margin-bottom: 80px';
     <Section style={mb}><Hero /></Section>
     <Section style={mb} title="Sobre mí"><About /></Section>
     <Section style={mb} title="Experiencia"><Experience /></Section>
-    <Section style={mb_edu} title="Educación"><Education /></Section>
+    <Section style={mb} title="Educación"><Education /></Section>
     <Section style={mb} title="Proyectos"><Projects /></Section>
     <Section style={mb} title="Habilidades"><Skills /></Section>
   </main>
