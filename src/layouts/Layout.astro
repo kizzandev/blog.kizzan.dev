@@ -261,57 +261,57 @@ import { ViewTransitions } from 'astro:transitions';
       // ADDING A COPY BUTTON TO CODE BLOCKS
       const codeBlocks = document.querySelectorAll(
         'pre code'
+        // Should be a CODE element inside a PRE element
       ) as NodeListOf<HTMLElement>;
 
-      const codeBlockCopySvg = document
-        .querySelector('#code-block-copy-svg')
-        ?.cloneNode(true);
+      codeBlocks.forEach((codeBlock) => {
+        const codeBlockCopySvg = document
+          .querySelector('#code-block-copy-svg')
+          ?.cloneNode(true);
 
-      if (codeBlockCopySvg) {
-        (codeBlockCopySvg as HTMLElement).classList.remove('hidden');
+        (codeBlockCopySvg as SVGElement).classList.remove('hidden');
 
-        codeBlocks.forEach((codeBlock) => {
-          const button = document.createElement('button');
-          button.appendChild(codeBlockCopySvg);
-          button.classList.add('code-block-copy');
-          button.onclick = () => {
-            // An oddessy to copy the text to the clipboard
-            const text = codeBlock.innerText;
-            const el = document.createElement('textarea');
-            el.value = text;
-            el.style.position = 'absolute';
-            el.style.left = '-9999px';
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
+        const button = document.createElement('button');
+        if (codeBlockCopySvg) button.appendChild(codeBlockCopySvg);
+        else button.innerText = 'Copy';
+        button.classList.add('code-block-copy');
+        button.onclick = () => {
+          // An oddessy to copy the text to the clipboard
+          const text = codeBlock.innerText;
+          const el = document.createElement('textarea');
+          el.value = text;
+          el.style.position = 'absolute';
+          el.style.left = '-9999px';
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand('copy');
+          document.body.removeChild(el);
 
-            // Cloning the template an config
-            const notification = document
-              .querySelector('.notification-item')
-              ?.cloneNode(true) as HTMLElement;
-            const notification_text = notification.querySelector(
-              '.notification-text'
-            ) as HTMLElement;
-            notification_text.innerText = 'Code copied to clipboard!';
+          // Cloning the template an config
+          const notification = document
+            .querySelector('.notification-item')
+            ?.cloneNode(true) as HTMLElement;
+          const notification_text = notification.querySelector(
+            '.notification-text'
+          ) as HTMLElement;
+          notification_text.innerText = 'Code copied to clipboard!';
 
-            document
-              .querySelector('.notification-list')
-              ?.appendChild(notification);
+          document
+            .querySelector('.notification-list')
+            ?.appendChild(notification);
 
-            notification.style.display = 'block';
-            setTimeout(() => {
-              notification.style.opacity = '1';
-              notification.style.transform = 'translateY(0)';
-            }, 1);
+          notification.style.display = 'block';
+          setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
+          }, 1);
 
-            setTimeout(() => {
-              notification.remove();
-            }, 3000);
-          };
-          codeBlock.parentNode?.insertBefore(button, codeBlock);
-        });
-      }
+          setTimeout(() => {
+            notification.remove();
+          }, 3000);
+        };
+        codeBlock.parentNode?.insertBefore(button, codeBlock);
+      });
     </script>
 
     <!-- ARTICLES END -->
