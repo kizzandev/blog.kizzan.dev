@@ -10,16 +10,19 @@ import Projects from '@cv/Projects.astro';
 import Skills from '@cv/Skills.astro';
 
 import Section from '@/components/cv/Section.astro';
+
+const mb = 'margin-bottom: 48px';
+const mb_ar = 'margin-bottom: 80px';
 ---
 
 <LayoutCV title="Kevin S Zanzi CV">
   <main>
-    <Section><Hero /></Section>
-    <Section title="Sobre mí"><About /></Section>
-    <Section title="Experiencia"><Experience /></Section>
-    <Section title="Educación"><Education /></Section>
-    <Section title="Proyectos"><Projects /></Section>
-    <Section title="Habilidades"><Skills /></Section>
+    <Section style={mb}><Hero /></Section>
+    <Section style={mb} title="Sobre mí"><About /></Section>
+    <Section style={mb} title="Experiencia"><Experience /></Section>
+    <Section style={mb} title="Educación"><Education /></Section>
+    <Section style={mb} title="Proyectos"><Projects /></Section>
+    <Section style={mb} title="Habilidades"><Skills /></Section>
   </main>
 
   <KeyboardManager />

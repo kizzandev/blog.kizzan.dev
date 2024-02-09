@@ -1,7 +1,7 @@
 {
   "basics": {
-    "label": "Full Stack Developer",
-    "summary": "Always looking to learn new things and improve my skills, as well as work in a team and share my knowledge with others. I mainly work with TypeScript, React, and Node.js. Willing to learn and work with new technologies. I have more than 3 months of remote experience."
+    "label": "Frontend Developer",
+    "summary": "Software developer with remote experience in frontend using React, JavaScript, TypeScript, and Tailwind css. Developed my own blog through Astro, which is available in Spanish (ar) and English (en) along with their respective rss feeds, and is deployed with GitHub Actions."
   },
   "work": [
     {
@@ -16,14 +16,6 @@
       "modality": "Remote"
     }
   ],
-  "volunteer": [
-    {
-      "organization": "Organization",
-      "position": "Volunteer",
-      "summary": "Description…",
-      "highlights": ["Awarded 'Volunteer of the Month'"]
-    }
-  ],
   "education": [
     {
       "institution": "UTN",
@@ -36,26 +28,6 @@
       "courses": ["DB1101 - Basic SQL"]
     }
   ],
-  "awards": [
-    {
-      "title": "Award",
-      "awarder": "Company",
-      "summary": "There is no spoon."
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Certificate",
-      "issuer": "Company"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "summary": "Description…"
-    }
-  ],
   "languages": [
     {
       "language": "Spanish (AR)",
@@ -66,22 +38,31 @@
       "code": "en"
     }
   ],
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": ["Ferrets", "Unicorns"]
-    }
-  ],
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference…"
-    }
-  ],
   "projects": [
     {
-      "description": "Personal blog and portfolio.",
-      "highlights": ["blog", "astro", "multilingual", "i18n rss feed"]
+      "name": "Personal Blog and Portfolio",
+      "description": "Personal blog and portfolio developed with Astro, available in multiple languages and with their respective RSS feeds.",
+      "highlights": ["blog", "astro", "multilingual", "rss feed"]
+    },
+    {
+      "name": "Click Counter Game",
+      "description": "Technical test with React and TypeScript that consists of counting the number of clicks you made during 5 seconds.",
+      "highlights": ["React", "TypeScript", "Game"]
+    },
+    {
+      "name": "To Do List",
+      "description": "To Do List with the possibility of adding, deleting, and marking them as completed.",
+      "highlights": ["Node.js", "Express", "CRUD", "TypeScript"]
+    },
+    {
+      "name": "Text File Compressor and Decompressor",
+      "description": "Text file compressor and decompressor with the Huffman algorithm for the Algorithms and Data Structures class.",
+      "highlights": ["C++", "Huffman Algorithm"]
+    },
+    {
+      "name": "Questions and Answers Game",
+      "description": "Create your own games and share them. The questions are always shown in random order and shows the final score.",
+      "highlights": ["Python", "Game"]
     }
   ]
 }

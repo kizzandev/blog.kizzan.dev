@@ -20,7 +20,8 @@ const { city, region } = location;
 const likendInfo = profiles.find(({ network }) => network === 'LinkedIn');
 const linkedInUrl = likendInfo?.url;
 
-const printInfo = [email, phone, linkedInUrl, url].filter(Boolean).join(' • ');
+// const printInfo = [email, phone, linkedInUrl, url].filter(Boolean).join(' • ');
+const printInfo = [email, phone, linkedInUrl, url].filter(Boolean);
 
 // LANGUAGES
 let currentLang = Astro.url.pathname.split('/')[1];
@@ -64,7 +65,6 @@ if (currentLang === 'ar') {
           let lang = `/${code}/cv`;
 
           if (code === 'ar') lang = `/cv`;
-          // if (currentLang === code) lang = `/${code}/cv`;
 
           if (currentLang === 'en') {
             return (
@@ -90,8 +90,12 @@ if (currentLang === 'ar') {
         })
       }</span
     >
-    <footer class="print">
-      {printInfo}
+    <footer class="print printing-vertical">
+      {
+        printInfo.map((info) => {
+          return <span>{info}</span>;
+        })
+      }
     </footer>
     <footer class="no-print">
       <a

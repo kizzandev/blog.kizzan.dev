@@ -25,6 +25,8 @@ if (currentLang === 'ar') {
       ({ name, description, url, highlights, isActive, github }, idx) => {
         const isDisabled = !url;
 
+        let theName = name;
+        if (currentLang === 'en') theName = enProjects[idx].name;
         let theHighlights = highlights;
         if (currentLang === 'en') theHighlights = enProjects[idx].highlights;
         let theDescription = description;
@@ -37,12 +39,12 @@ if (currentLang === 'ar') {
                 <h3>
                   <a
                     href={url}
-                    title={`${projectTitle} ${name}`}
+                    title={`${projectTitle} ${theName}`}
                     target="_blank"
                     aria-disabled={isDisabled}
                     rel="noopener"
                   >
-                    {name}
+                    {theName}
                   </a>
                   {isActive && <span>&bull;</span>}
                   {github && (
@@ -76,14 +78,8 @@ if (currentLang === 'ar') {
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
-  }
-
-  @media screen and (min-width: 350px) {
-    ul {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 342px));
-    }
   }
 
   article {
@@ -94,6 +90,12 @@ if (currentLang === 'ar') {
     flex-direction: column;
     padding: 16px;
     height: 100%;
+  }
+
+  @media screen and (min-width: 520px) {
+    article {
+      max-width: 342px;
+    }
   }
 
   article header {
