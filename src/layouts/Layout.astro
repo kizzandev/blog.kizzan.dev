@@ -108,5 +108,212 @@ import { ViewTransitions } from 'astro:transitions';
 
   start();
 </script> -->
+
+    <!-- BLOG ITEM -->
+
+    <script>
+      document.addEventListener('astro:page-load', () => {
+        const span = document.querySelectorAll(`.blog-article-anchor`);
+        for (const s of span) {
+          s.innerHTML =
+            (s.getAttribute('data-article-icon') ?? '') + s.innerHTML;
+          const firstEl = s.firstElementChild;
+          if (firstEl) {
+            firstEl.classList.add(
+              'w-[48px]',
+              'sm:min-w-[84px]',
+              'sm:min-h-[84px]'
+            );
+            firstEl.setAttribute(
+              'aria-label',
+              s.getAttribute('data-article-icon-alt') ?? ''
+            );
+          }
+        }
+      });
+    </script>
+
+    <!-- BLOG ITEM END -->
+
+    <!-- INDEX -->
+
+    <script>
+      const CHANNEL_ID = 'UChUg0FSY3YIeo5t6SNtlo9Q';
+
+      const getVideos = async () => {
+        const channelURL = encodeURIComponent(
+          `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`
+        );
+        const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`;
+        const result = await fetch(reqURL).then((response) => response.json());
+
+        const videos = result.items;
+        const lastestVideos = videos.slice(0, 4);
+
+        const lastestVideosEl = document.getElementById('lastest-videos');
+
+        if (!lastestVideosEl) return;
+
+        if (lastestVideos.length > 0) lastestVideosEl.innerHTML = '';
+
+        // just adding iframe for now
+        lastestVideos.forEach((video: any) => {
+          // create iframe
+          const iframe = document.createElement('iframe');
+          iframe.setAttribute('width', '100%');
+          iframe.setAttribute('height', 'auto');
+          iframe.setAttribute('loading', 'lazy');
+
+          iframe.classList.add('rounded-md', 'mb-2');
+
+          // get video id
+          const videoId = video.link.split('=')[1];
+
+          // set iframe src
+          iframe.setAttribute(
+            'src',
+            `https://www.youtube.com/embed/${videoId}?controls=0`
+          );
+
+          // create li
+          const li = document.createElement('li');
+          li.classList.add('flex', 'flex-col');
+
+          // append iframe to li
+          li.appendChild(iframe);
+
+          // create span
+          const span = document.createElement('span');
+          span.classList.add('text-sm', 'font-semibold');
+          span.textContent = video.title ?? '';
+
+          // append span to li
+          li.appendChild(span);
+
+          // append li to ul
+          lastestVideosEl?.appendChild(li);
+        });
+      };
+
+      const lastestVideosEl = document.getElementById('lastest-videos');
+      if (lastestVideosEl) getVideos();
+    </script>
+
+    <!-- INDEX END -->
+
+    <!-- ARTICLES -->
+
+    <script>
+      // Load banner image in article
+      document.addEventListener('astro:page-load', () => {
+        let articleImage = document.querySelector('#article-image');
+
+        if (articleImage)
+          articleImage.innerHTML = articleImage.innerHTML
+            .replaceAll(/&gt;/g, '>')
+            .replaceAll(/&lt;/g, '<');
+      });
+    </script>
+
+    <script>
+      // SINGLE DETAILS: EXPAND AND CLOSE
+      const details = document.querySelectorAll('details');
+      details.forEach((detail) => {
+        const article = detail.nextElementSibling as HTMLElement;
+        detail.addEventListener('toggle', () => {
+          if (detail.open) {
+            article.style.maxHeight = article.scrollHeight + 'px';
+          } else {
+            article.style.maxHeight = '0';
+          }
+        });
+      });
+
+      // MULTIPLE DETAILS: WHEN ONE EXPANDS, THE REST CLOSE
+      const detailsGroup = document.querySelectorAll('.details-group');
+      detailsGroup.forEach((group) => {
+        // select all the sections
+        const detailsSummary = group.querySelectorAll('.details-summary');
+
+        // for each section
+        detailsSummary.forEach((summary) => {
+          // select the details element
+          const details = summary.querySelector('details');
+
+          // when the details element is toggled
+          details?.addEventListener('toggle', () => {
+            // if the details element is open
+            if (details.open) {
+              // close all the other details elements
+              detailsSummary.forEach((s) => {
+                const d = s.querySelector('details');
+                if (d && d !== details) {
+                  d.removeAttribute('open');
+                }
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <script>
+      // ADDING A COPY BUTTON TO CODE BLOCKS
+      const codeBlocks = document.querySelectorAll(
+        'pre code'
+      ) as NodeListOf<HTMLElement>;
+
+      const codeBlockCopySvg = document
+        .querySelector('#code-block-copy-svg')
+        ?.cloneNode(true);
+
+      if (codeBlockCopySvg) {
+        (codeBlockCopySvg as HTMLElement).classList.remove('hidden');
+
+        codeBlocks.forEach((codeBlock) => {
+          const button = document.createElement('button');
+          button.appendChild(codeBlockCopySvg);
+          button.classList.add('code-block-copy');
+          button.onclick = () => {
+            // An oddessy to copy the text to the clipboard
+            const text = codeBlock.innerText;
+            const el = document.createElement('textarea');
+            el.value = text;
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            // Cloning the template an config
+            const notification = document
+              .querySelector('.notification-item')
+              ?.cloneNode(true) as HTMLElement;
+            const notification_text = notification.querySelector(
+              '.notification-text'
+            ) as HTMLElement;
+            notification_text.innerText = 'Code copied to clipboard!';
+
+            document
+              .querySelector('.notification-list')
+              ?.appendChild(notification);
+
+            notification.style.display = 'block';
+            setTimeout(() => {
+              notification.style.opacity = '1';
+              notification.style.transform = 'translateY(0)';
+            }, 1);
+
+            setTimeout(() => {
+              notification.remove();
+            }, 3000);
+          };
+          codeBlock.parentNode?.insertBefore(button, codeBlock);
+        });
+      }
+    </script>
+
+    <!-- ARTICLES END -->
   </body>
 </html>

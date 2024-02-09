@@ -47,20 +47,3 @@ if (Astro.props.lang) link = `/${Astro.props.lang}/blog/article/${slug}`;
     </Flex>
   </a>
 </li>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const span = document.querySelectorAll(`.blog-article-anchor`);
-    for (const s of span) {
-      s.innerHTML = (s.getAttribute('data-article-icon') ?? '') + s.innerHTML;
-      const firstEl = s.firstElementChild;
-      if (firstEl) {
-        firstEl.classList.add('w-[48px]', 'sm:min-w-[84px]', 'sm:min-h-[84px]');
-        firstEl.setAttribute(
-          'aria-label',
-          s.getAttribute('data-article-icon-alt') ?? ''
-        );
-      }
-    }
-  });
-</script>

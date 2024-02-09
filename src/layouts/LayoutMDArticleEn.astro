@@ -13,7 +13,12 @@ interface Props {
     pubDate: string;
     lastMod: string;
 
-    image: {
+    image?: {
+      url: string;
+      alt: string;
+    };
+
+    icon: {
       url: string;
       alt: string;
     };
@@ -63,6 +68,13 @@ const currentArticle = await Astro.glob('../pages/en/blog/article/*.md').then(
 
 const minutesToRead = getReadTime(currentArticle?.rawContent() || '');
 const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
+
+const articleIconPaths = frontmatter.icon.url
+  .replace(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">',
+    ''
+  )
+  .replace('</svg>', '');
 ---
 
 <Layout
@@ -91,13 +103,33 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
             </div>
           )}
 
-          {frontmatter.image && (
-            <img
-              src={frontmatter.image.url}
-              alt={frontmatter.image.alt}
-              class="w-full h-[300px] object-contain object-center"
-            />
-          )}
+          <>
+            {(frontmatter.image && (
+              <img
+                src={frontmatter.image?.url}
+                alt={frontmatter.image?.alt}
+                class="w-full h-[300px] object-contain object-center"
+              />
+            )) ||
+              (frontmatter.icon && (
+                <svg
+                  id="article-image"
+                  class="w-full h-[300px] object-contain object-center"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-label={frontmatter.icon.alt}
+                >
+                  {articleIconPaths}
+                </svg>
+              ))}
+          </>
 
           <Texto
             as="h1"
@@ -236,6 +268,25 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
     </span>
   </span>
 </Layout>
+
+<svg
+  id="code-block-copy-svg"
+  xmlns="http://www.w3.org/2000/svg"
+  class="hidden"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  fill="none"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+    d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z"
+  ></path><path
+    d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
+  ></path></svg
+>
 
 <style is:global>
   *,
@@ -616,108 +667,3 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
     font-weight: 400;
   }
 </style>
-
-<script is:inline>
-  /* SINGLE DETAILS: EXPAND AND CLOSE */
-  const details = document.querySelectorAll('details');
-  details.forEach((detail) => {
-    const article = detail.nextElementSibling;
-    detail.addEventListener('toggle', () => {
-      if (detail.open) {
-        article.style.maxHeight = article.scrollHeight + 'px';
-      } else {
-        article.style.maxHeight = 0;
-      }
-    });
-  });
-
-  /* MULTIPLE DETAILS: WHEN ONE EXPANDS, THE REST CLOSE */
-  const detailsGroup = document.querySelectorAll('.details-group');
-  detailsGroup.forEach((group) => {
-    // select all the sections
-    const detailsSummary = group.querySelectorAll('.details-summary');
-
-    // for each section
-    detailsSummary.forEach((summary) => {
-      // select the details element
-      const details = summary.querySelector('details');
-
-      // when the details element is toggled
-      details.addEventListener('toggle', () => {
-        // if the details element is open
-        if (details.open) {
-          // close all the other details elements
-          detailsSummary.forEach((s) => {
-            const d = s.querySelector('details');
-            if (d !== details) {
-              d.removeAttribute('open');
-            }
-          });
-        }
-      });
-    });
-  });
-
-  /* LIKE BUTTON */
-  /*function sendLike() {
-    const likeCount = document.getElementById('likeCount');
-    const count = parseInt(likeCount.innerText);
-    likeCount.innerText = count + 1;
-
-    // save like count to a text file
-    const articleSlug = window.location.pathname.split('/').pop();
-
-    fetch(`/api/savearticlelikes`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ likes: count + 1, title: articleSlug }),
-    });
-  }*/
-</script>
-
-<script is:inline>
-  // ADDING A COPY BUTTON TO CODE BLOCKS
-  const codeBlocks = document.querySelectorAll('pre code');
-
-  const codeBlockCopySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>`;
-
-  codeBlocks.forEach((codeBlock) => {
-    const button = document.createElement('button');
-    button.innerHTML = codeBlockCopySvg;
-    button.classList.add('code-block-copy');
-    button.onclick = () => {
-      // An oddessy to copy the text to the clipboard
-      const text = codeBlock.innerText;
-      const el = document.createElement('textarea');
-      el.value = text;
-      el.style.position = 'absolute';
-      el.style.left = '-9999px';
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-
-      // Cloning the template an config
-      const notification = document
-        .querySelector('.notification-item')
-        .cloneNode(true);
-      notification.querySelector('.notification-text').innerText =
-        'Code copied to clipboard!';
-
-      document.querySelector('.notification-list').appendChild(notification);
-
-      notification.style.display = 'block';
-      setTimeout(() => {
-        notification.style.opacity = 1;
-        notification.style.transform = 'translateY(0)';
-      }, 1);
-
-      setTimeout(() => {
-        notification.remove();
-      }, 3000);
-    };
-    codeBlock.parentNode.insertBefore(button, codeBlock);
-  });
-</script>

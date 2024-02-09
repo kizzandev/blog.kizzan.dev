@@ -2,15 +2,14 @@
 import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout
-  title="Legal | Kizendev"
-  description="Información legal sobre el blog"
->
+<Layout title="Legal | Kizendev" description="Información legal sobre el blog">
   <section class="px-2 max-w-[60ch] [&>*]:mb-[16px]" style="text-wrap: pretty">
     <h1 class="text-3xl font-bold">Legal</h1>
     <h3 class="text-2xl font-semibold">
       Reconocimientos y licencias de software
     </h3>
+    <!-- MIT -->
+    <h4 class="text-xl font-semibold mt-4">Licencia de software MIT</h4>
     <p>
       El CV que se encuentra en el link ubicado en el header fue basado en el
       diseño de <a
@@ -23,7 +22,7 @@ import Layout from '@/layouts/Layout.astro';
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/midudev/minimalist-portfolio-json">Midudev</a
-      >, y luego vuelto a ser adaptado por mí. Licencia MIT.
+      >, y luego vuelto a ser adaptado por mí.
     </p>
     <p>
       Los íconos que encontrarás en el sitio web son de <a
@@ -31,23 +30,7 @@ import Layout from '@/layouts/Layout.astro';
         target="_blank"
         rel="noopener noreferrer"
         href="https://tabler.io/icons">Tabler Icons</a
-      >, una biblioteca de licencia MIT.
-    </p>
-    <p>
-      El sitio web fue construido con <a
-        class="text-cyan-400 hover:underline"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://astro.build">Astro</a
       >.
-    </p>
-    <p>
-      Mayormente se utilizó <a
-        class="text-cyan-400 hover:underline"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://tailwindcss.com">Tailwind CSS</a
-      > para el diseño.
     </p>
   </section>
 </Layout>

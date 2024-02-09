@@ -115,7 +115,7 @@ const data = await getData();
         class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
         aria-disabled={1 === data.totalPages}
         aria-label="Ir a la última página"
-        href={data.totalPages > 1 ? `/page/${data.totalPages}` : '#'}
+        href={data.totalPages > 1 ? `/page/${data.totalPages}` : ''}
         ><IconChevronRightDouble class="w-fit h-fit" /></a
       >
     </div>
@@ -139,67 +139,6 @@ const data = await getData();
       </ul>
     </article>
   </Flex>
-
-  <script>
-    const CHANNEL_ID = 'UChUg0FSY3YIeo5t6SNtlo9Q';
-
-    const getVideos = async () => {
-      const channelURL = encodeURIComponent(
-        `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`
-      );
-      const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`;
-      const result = await fetch(reqURL).then((response) => response.json());
-
-      const videos = result.items;
-      const lastestVideos = videos.slice(0, 4);
-
-      const lastestVideosEl = document.getElementById('lastest-videos');
-
-      if (!lastestVideosEl) return;
-
-      if (lastestVideos.length > 0) lastestVideosEl.innerHTML = '';
-
-      // just adding iframe for now
-      lastestVideos.forEach((video: any) => {
-        // create iframe
-        const iframe = document.createElement('iframe');
-        iframe.setAttribute('width', '100%');
-        iframe.setAttribute('height', 'auto');
-        iframe.setAttribute('loading', 'lazy');
-
-        iframe.classList.add('rounded-md', 'mb-2');
-
-        // get video id
-        const videoId = video.link.split('=')[1];
-
-        // set iframe src
-        iframe.setAttribute(
-          'src',
-          `https://www.youtube.com/embed/${videoId}?controls=0`
-        );
-
-        // create li
-        const li = document.createElement('li');
-        li.classList.add('flex', 'flex-col');
-
-        // append iframe to li
-        li.appendChild(iframe);
-
-        // create span
-        const span = document.createElement('span');
-        span.classList.add('text-sm', 'font-semibold');
-        span.textContent = video.title ?? '';
-
-        // append span to li
-        li.appendChild(span);
-
-        // append li to ul
-        lastestVideosEl?.appendChild(li);
-      });
-    };
-
-    getVideos();
-  </script>
 
   <Aside slot="aside" />
 </LayoutAside>
