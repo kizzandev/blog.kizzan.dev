@@ -15,9 +15,8 @@ import { ARTICLES_PER_PAGE } from '@/articles';
 
 import adsList from '@/private/ads/adList.json';
 
-const { ads } = adsList;
-
 export const getStaticPaths = (async ({ paginate }) => {
+  const { ads } = adsList;
   const filtered_ads = ads.filter((ad: any) => ad.lang === 'en');
 
   const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
