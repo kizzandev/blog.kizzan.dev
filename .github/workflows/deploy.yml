@@ -38,6 +38,7 @@ jobs:
           run: git submodule update --init --recursive
       - name: Await
           run: sleep 5s
+          shell: bash
       - name: Install, build, and upload your site
         uses: withastro/action@v1
         with:
