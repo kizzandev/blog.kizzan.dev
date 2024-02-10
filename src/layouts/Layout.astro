@@ -115,6 +115,36 @@ import { ViewTransitions } from 'astro:transitions';
       document.addEventListener('astro:page-load', () => {
         const span = document.querySelectorAll(`.blog-article-anchor`);
         for (const s of span) {
+          if (s.getAttribute('data-article-is-ad') === 'true') {
+            // Instead of an Icon, we have an URL of the image
+            s.innerHTML =
+              `<img src="${s.getAttribute(
+                'data-article-icon',
+              )}" alt="${s.getAttribute('data-article-icon-alt')}"
+              class="w-[48px] sm:min-w-[84px] sm:min-h-[84px] rounded-md"
+              />` +
+              s.innerHTML +
+              `<svg
+                class="absolute top-2 right-2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M3 5m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+                ></path><path d="M14 9v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1z"
+                ></path><path d="M7 15v-4.5a1.5 1.5 0 0 1 3 0v4.5"></path><path
+                  d="M7 13h3"></path></svg
+              >`;
+
+            continue;
+          }
+
           s.innerHTML =
             (s.getAttribute('data-article-icon') ?? '') + s.innerHTML;
           const firstEl = s.firstElementChild;
@@ -122,11 +152,12 @@ import { ViewTransitions } from 'astro:transitions';
             firstEl.classList.add(
               'w-[48px]',
               'sm:min-w-[84px]',
-              'sm:min-h-[84px]'
+              'sm:min-h-[84px]',
+              'rounded-md',
             );
             firstEl.setAttribute(
               'aria-label',
-              s.getAttribute('data-article-icon-alt') ?? ''
+              s.getAttribute('data-article-icon-alt') ?? '',
             );
           }
         }
@@ -142,7 +173,7 @@ import { ViewTransitions } from 'astro:transitions';
 
       const getVideos = async () => {
         const channelURL = encodeURIComponent(
-          `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`
+          `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`,
         );
         const reqURL = `https://api.rss2json.com/v1/api.json?rss_url=${channelURL}`;
         const result = await fetch(reqURL).then((response) => response.json());
@@ -172,7 +203,7 @@ import { ViewTransitions } from 'astro:transitions';
           // set iframe src
           iframe.setAttribute(
             'src',
-            `https://www.youtube.com/embed/${videoId}?controls=0`
+            `https://www.youtube.com/embed/${videoId}?controls=0`,
           );
 
           // create li
@@ -260,7 +291,7 @@ import { ViewTransitions } from 'astro:transitions';
     <script>
       // ADDING A COPY BUTTON TO CODE BLOCKS
       const codeBlocks = document.querySelectorAll(
-        'pre code'
+        'pre code',
         // Should be a CODE element inside a PRE element
       ) as NodeListOf<HTMLElement>;
 
@@ -292,7 +323,7 @@ import { ViewTransitions } from 'astro:transitions';
             .querySelector('.notification-item')
             ?.cloneNode(true) as HTMLElement;
           const notification_text = notification.querySelector(
-            '.notification-text'
+            '.notification-text',
           ) as HTMLElement;
           notification_text.innerText = 'Code copied to clipboard!';
 

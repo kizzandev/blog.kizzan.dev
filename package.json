@@ -14,8 +14,8 @@
   "dependencies": {
     "@astrojs/check": "0.4.1",
     "@astrojs/react": "3.0.9",
-    "@astrojs/rss": "^4.0.4",
-    "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/rss": "4.0.4",
+    "@astrojs/sitemap": "3.0.5",
     "@astrojs/tailwind": "5.1.0",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
@@ -27,7 +27,7 @@
     "typescript": "5.3.3"
   },
   "devDependencies": {
-    "@playwright/test": "^1.41.2",
+    "@playwright/test": "1.41.2",
     "@types/node": "20.11.8"
   }
 }
