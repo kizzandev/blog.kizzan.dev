@@ -19,13 +19,11 @@
   "education": [
     {
       "institution": "UTN",
-      "area": "Information Systems Engineering",
-      "courses": ["DB1101 - Basic SQL"]
+      "area": "Information Systems Engineering"
     },
     {
       "institution": "GCBA",
-      "area": "Full Stack Web Development",
-      "courses": ["DB1101 - Basic SQL"]
+      "area": "Full Stack Web Development"
     }
   ],
   "languages": [

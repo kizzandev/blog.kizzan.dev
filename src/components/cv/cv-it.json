@@ -1,7 +1,7 @@
 {
   "basics": {
-    "label": "Full Stack Developer",
-    "summary": "Sempre alla ricerca di imparare cose nuove e migliorare le mie abilità, così come lavorare in un team e condividere le mie conoscenze con gli altri. Lavoro principalmente con TypeScript, React e Node.js. Disposto a imparare e lavorare con nuove tecnologie. Ho più di 3 mesi di esperienza remota."
+    "label": "Sviluppatore Frontend",
+    "summary": "Sviluppatore software con esperienza remota nel frontend utilizzando React, JavaScript, TypeScript e Tailwind css. Ho sviluppato il mio blog personale attraverso Astro, disponibile in spagnolo (ar) e inglese (en) insieme ai rispettivi rss feed, e distribuito con GitHub Actions."
   },
   "work": [
     {
@@ -16,76 +16,52 @@
       "modality": "Remoto"
     }
   ],
-  "volunteer": [
-    {
-      "organization": "Organization",
-      "position": "Volunteer",
-      "summary": "Description…",
-      "highlights": ["Awarded 'Volunteer of the Month'"]
-    }
-  ],
   "education": [
     {
       "institution": "UTN",
-      "area": "Ingegneria Informatica",
-      "courses": ["DB1101 - Basic SQL"]
+      "area": "Ingegneria Informatica"
     },
     {
       "institution": "GCBA",
-      "area": "Full Stack Web Development",
-      "courses": ["DB1101 - Basic SQL"]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Award",
-      "awarder": "Company",
-      "summary": "There is no spoon."
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Certificate",
-      "issuer": "Company"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "summary": "Description…"
+      "area": "Sviluppo Web Full Stack"
     }
   ],
   "languages": [
     {
-      "language": "Español (AR)",
-      "code": "ar"
+      "language": "Español (AR)"
     },
     {
-      "language": "Inglese",
-      "code": "en"
+      "language": "Inglese"
     },
     {
-      "language": "Italiano",
-      "code": "it"
-    }
-  ],
-  "interests": [
-    {
-      "name": "Wildlife",
-      "keywords": ["Ferrets", "Unicorns"]
-    }
-  ],
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference…"
+      "language": "Italiano"
     }
   ],
   "projects": [
     {
-      "description": "Blog personale e portfolio.",
-      "highlights": ["blog", "astro", "multilingue", "i18n rss feed"]
+      "name": "Blog personale e portfolio",
+      "description": "Blog personale e portfolio sviluppato con Astro, disponibile in più lingue e con i rispettivi RSS feeds.",
+      "highlights": ["blog", "astro", "multilingua", "feed RSS"]
+    },
+    {
+      "name": "Gioco del Contatore di Click",
+      "description": "Test tecnico con React e TypeScript che consiste nel contare il numero di clic che hai fatto durante 5 secondi.",
+      "highlights": ["React", "TypeScript", "Gioco"]
+    },
+    {
+      "name": "Lista delle cose da fare",
+      "description": "Lista delle cose da fare con la possibilità di aggiungerle, eliminarle e contrassegnarle come completate.",
+      "highlights": ["Node.js", "Express", "CRUD", "TypeScript"]
+    },
+    {
+      "name": "Compressore e Decompressore di File di Testo",
+      "description": "Compressore e decompressore di file di testo con l'algoritmo di Huffman per la classe di Algoritmi e Strutture Dati.",
+      "highlights": ["C++", "Algoritmo di Huffman"]
+    },
+    {
+      "name": "Gioco delle domande e risposte",
+      "description": "Crea i tuoi giochi e condividili. Le domande vengono sempre mostrate in ordine casuale e mostra il punteggio finale.",
+      "highlights": ["Python", "Gioco"]
     }
   ]
 }
