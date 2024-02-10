@@ -9,6 +9,8 @@ interface Props {
   maxChars?: number;
 
   lang?: string;
+  isAd?: boolean;
+  outerLink?: string;
 }
 
 import Flex from '@components/design/flex/Flex.astro';
@@ -22,14 +24,19 @@ const slug = Astro.props.title.toLowerCase().replace(/\s/g, '-');
 
 let link = `/blog/article/${slug}`;
 if (Astro.props.lang) link = `/${Astro.props.lang}/blog/article/${slug}`;
+
+if (Astro.props.outerLink) link = Astro.props.outerLink;
 ---
 
 <li>
   <a
-    class={`blog-article-anchor flex gap-4 hover:bg-zinc-800 py-4 px-2 rounded-md max-w-fit cursor-pointer`}
+    class={`blog-article-anchor flex gap-4 hover:bg-zinc-800 py-4 px-2 rounded-md max-w-fit cursor-pointer
+    ${Astro.props.isAd ? 'bg-zinc-800/35' : ''}
+    `}
     href={link}
     data-article-icon={Astro.props.icon}
     data-article-icon-alt={Astro.props.iconalt}
+    data-article-is-ad={Astro.props.isAd ? 'true' : 'false'}
   >
     <Flex as="section" gap={4} class={`${maxWidth}`}>
       <Texto
