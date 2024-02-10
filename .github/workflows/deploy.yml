@@ -15,7 +15,7 @@ permissions:
   id-token: write
 
 jobs:
-  prevbuild:
+  prebuild:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
