@@ -25,6 +25,7 @@ jobs:
       - name: Initialize and update submodule
         run: git submodule update --init --recursive
       - name: Install, build, and upload your site
+        needs: initialize-and-update-submodule
         uses: withastro/action@v1
         with:
           # path: . # The root location of your Astro project inside the repository. (optional)
