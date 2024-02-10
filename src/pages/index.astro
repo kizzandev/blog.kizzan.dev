@@ -18,7 +18,7 @@ import { ARTICLES_PER_PAGE } from '@/articles';
 import adsList from '@/private/ads/adList.json';
 
 const { ads } = adsList;
-const filetered_ads = ads.filter((ad) => ad.lang === 'es');
+const filetered_ads = ads.filter((ad: any) => ad.lang === 'es');
 
 async function getData() {
   const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
