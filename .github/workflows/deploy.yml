@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - name: Initialize and update submodule
         run: git submodule update --init --recursive
 
