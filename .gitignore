@@ -35,3 +35,7 @@ pnpm-debug.log*
 # dev
 .notes
 /hide/
+
+# private
+src/private/
+.gitmodules
