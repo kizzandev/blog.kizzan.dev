@@ -15,22 +15,106 @@ import IconChevronRightDouble from '@components/icons/IconChevronRightDouble.ast
 
 import { ARTICLES_PER_PAGE } from '@/articles';
 
+import adsList from '@/private/ads/adList.json';
+
+const { ads } = adsList;
+const adsInEnglish = ads.filter((ad) => ad.lang === 'en');
+
 async function getData() {
   const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
-    '../../pages/en/blog/article/*.md'
+    '../../pages/en/blog/article/*.md',
   );
   const filteredArticles = allArticles
     .filter((article) => article.frontmatter.status === 'published')
     .sort(
       (a, b) =>
         new Date(b.frontmatter.pubDate).getTime() -
-        new Date(a.frontmatter.pubDate).getTime()
+        new Date(a.frontmatter.pubDate).getTime(),
     );
 
-  const total = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
+  // Every four articles, one is an ad
+  const real_amount_of_articles = (ARTICLES_PER_PAGE / 5) * 4;
+
+  const total = Math.ceil(filteredArticles.length / real_amount_of_articles);
+
+  const pageArticles = filteredArticles.slice(0, real_amount_of_articles);
+
+  // ADS
+  function weightedRandomSelect(items: any[]) {
+    // Calculate total weight
+    const totalWeight = items.reduce((acc, item) => acc + item.priority, 0);
+
+    // Generate a random number between 0 and the total weight
+    const random = Math.random() * totalWeight;
+
+    // Loop through the items and pick one based on weights
+    let cumulativeWeight = 0;
+    for (let i = 0; i < items.length; i++) {
+      cumulativeWeight += items[i].priority;
+      if (random <= cumulativeWeight) {
+        return i;
+      }
+    }
+  }
+
+  let pageArticlesWithAds = pageArticles;
+  let idx = weightedRandomSelect(adsInEnglish) || 0;
+  if (adsInEnglish.length > 0 && pageArticles.length > 5) {
+    pageArticlesWithAds = pageArticles.reduce((acc: any, article, index) => {
+      if (index % 5 === 0 && index !== 0) {
+        // Copy an article
+        let theAd = pageArticles.at(0);
+        // Change the title, description, and icon
+        if (theAd)
+          theAd = {
+            ...theAd,
+            frontmatter: {
+              ...theAd.frontmatter,
+              title: adsInEnglish.at(idx)?.title,
+              description: adsInEnglish.at(idx)?.description,
+              icon: {
+                ...theAd.frontmatter.icon,
+                url: adsInEnglish.at(idx)?.icon.url,
+                alt: adsInEnglish.at(idx)?.icon.alt,
+              },
+              isAd: true,
+              outerLink: ads.at(idx)?.outerLink,
+            },
+          };
+
+        acc.push(theAd);
+      }
+
+      acc.push(article);
+
+      return acc;
+    }, []);
+  } else {
+    // Copy an article
+    let theAd = pageArticles.at(0);
+    // Change the title, description, and icon
+    if (adsInEnglish.length > 0 && theAd) {
+      theAd = {
+        ...theAd,
+        frontmatter: {
+          ...theAd.frontmatter,
+          title: adsInEnglish.at(idx)?.title,
+          description: adsInEnglish.at(idx)?.description,
+          icon: {
+            ...theAd.frontmatter.icon,
+            url: adsInEnglish.at(idx)?.icon.url,
+            alt: adsInEnglish.at(idx)?.icon.alt,
+          },
+          isAd: true,
+          outerLink: adsInEnglish.at(idx)?.outerLink,
+        },
+      };
+      pageArticlesWithAds.push(theAd);
+    }
+  }
 
   return {
-    firstPageArticles: filteredArticles.slice(0, ARTICLES_PER_PAGE),
+    firstPageArticles: pageArticlesWithAds,
     totalPages: total,
     nextPage: total > 1 ? '/en/page/2' : '',
   };
@@ -74,6 +158,8 @@ const data = await getData();
                 lang="en"
                 icon={article.frontmatter.icon.url}
                 iconalt={article.frontmatter.icon.alt}
+                isAd={article.frontmatter.isAd || false}
+                outerLink={article.frontmatter.outerLink}
               />
             );
           })) || (
