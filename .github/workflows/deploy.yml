@@ -15,29 +15,16 @@ permissions:
   id-token: write
 
 jobs:
-  prebuild:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout your repository using git
-      uses: actions/checkout@v3
-      with:
-        submodules: 'recursive'
-        node-version: 20
-    - name: Initialize and update submodule
-      run: |
-        git submodule deinit -f .
-        git submodule add -f ${{ secrets.PRIVATE_SUBMODULE_URL }} src/private
-        git submodule update --init --recursive
-
-
   build:
-    needs: prebuild
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
-        with:
-          node-version: 20
+      - name: Initialize and update submodule
+        run: |
+          git submodule deinit -f .
+          git submodule add -f ${{ secrets.PRIVATE_SUBMODULE_URL }} src/private
+          git submodule update --init --recursive
       - name: Install, build, and upload your site
         uses: withastro/action@v1
         with:
