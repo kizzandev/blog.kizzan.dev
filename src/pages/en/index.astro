@@ -18,7 +18,7 @@ import { ARTICLES_PER_PAGE } from '@/articles';
 import adsList from '@/private/ads/adList.json';
 
 const { ads } = adsList;
-const adsInEnglish = ads.filter((ad) => ad.lang === 'en');
+const filtered_ads = ads.filter((ad) => ad.lang === 'en');
 
 async function getData() {
   const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
@@ -58,8 +58,8 @@ async function getData() {
   }
 
   let pageArticlesWithAds = pageArticles;
-  let idx = weightedRandomSelect(adsInEnglish) || 0;
-  if (adsInEnglish.length > 0 && pageArticles.length > 5) {
+  let idx = weightedRandomSelect(filtered_ads) || 0;
+  if (filtered_ads.length > 0 && pageArticles.length > 5) {
     pageArticlesWithAds = pageArticles.reduce((acc: any, article, index) => {
       if (index % 5 === 0 && index !== 0) {
         // Copy an article
@@ -70,12 +70,12 @@ async function getData() {
             ...theAd,
             frontmatter: {
               ...theAd.frontmatter,
-              title: adsInEnglish.at(idx)?.title,
-              description: adsInEnglish.at(idx)?.description,
+              title: filtered_ads.at(idx)?.title,
+              description: filtered_ads.at(idx)?.description,
               icon: {
                 ...theAd.frontmatter.icon,
-                url: adsInEnglish.at(idx)?.icon.url,
-                alt: adsInEnglish.at(idx)?.icon.alt,
+                url: filtered_ads.at(idx)?.icon.url,
+                alt: filtered_ads.at(idx)?.icon.alt,
               },
               isAd: true,
               outerLink: ads.at(idx)?.outerLink,
@@ -93,20 +93,20 @@ async function getData() {
     // Copy an article
     let theAd = pageArticles.at(0);
     // Change the title, description, and icon
-    if (adsInEnglish.length > 0 && theAd) {
+    if (filtered_ads.length > 0 && theAd) {
       theAd = {
         ...theAd,
         frontmatter: {
           ...theAd.frontmatter,
-          title: adsInEnglish.at(idx)?.title,
-          description: adsInEnglish.at(idx)?.description,
+          title: filtered_ads.at(idx)?.title,
+          description: filtered_ads.at(idx)?.description,
           icon: {
             ...theAd.frontmatter.icon,
-            url: adsInEnglish.at(idx)?.icon.url,
-            alt: adsInEnglish.at(idx)?.icon.alt,
+            url: filtered_ads.at(idx)?.icon.url,
+            alt: filtered_ads.at(idx)?.icon.alt,
           },
           isAd: true,
-          outerLink: adsInEnglish.at(idx)?.outerLink,
+          outerLink: filtered_ads.at(idx)?.outerLink,
         },
       };
       pageArticlesWithAds.push(theAd);

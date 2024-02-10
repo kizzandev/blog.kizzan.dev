@@ -16,6 +16,7 @@ import { ARTICLES_PER_PAGE } from '@/articles';
 import adsList from '@/private/ads/adList.json';
 
 const { ads } = adsList;
+const filtered_ads = ads.filter((ad) => ad.lang === 'en');
 
 export const getStaticPaths = (async ({ paginate }) => {
   const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
@@ -54,7 +55,7 @@ export const getStaticPaths = (async ({ paginate }) => {
   }
 
   let pageArticlesWithAds = filteredArticles;
-  let idx = weightedRandomSelect(ads) || 0;
+  let idx = weightedRandomSelect(filtered_ads) || 0;
   if (filteredArticles.length > 5) {
     pageArticlesWithAds = filteredArticles.reduce(
       (acc: any, article, index) => {
@@ -67,15 +68,15 @@ export const getStaticPaths = (async ({ paginate }) => {
               ...theAd,
               frontmatter: {
                 ...theAd.frontmatter,
-                title: ads.at(idx)?.title,
-                description: ads.at(idx)?.description,
+                title: filtered_ads.at(idx)?.title,
+                description: filtered_ads.at(idx)?.description,
                 icon: {
                   ...theAd.frontmatter.icon,
-                  url: ads.at(idx)?.icon.url,
-                  alt: ads.at(idx)?.icon.alt,
+                  url: filtered_ads.at(idx)?.icon.url,
+                  alt: filtered_ads.at(idx)?.icon.alt,
                 },
                 isAd: true,
-                outerLink: ads.at(idx)?.outerLink,
+                outerLink: filtered_ads.at(idx)?.outerLink,
               },
             };
 
@@ -97,15 +98,15 @@ export const getStaticPaths = (async ({ paginate }) => {
         ...theAd,
         frontmatter: {
           ...theAd.frontmatter,
-          title: ads.at(idx)?.title,
-          description: ads.at(idx)?.description,
+          title: filtered_ads.at(idx)?.title,
+          description: filtered_ads.at(idx)?.description,
           icon: {
             ...theAd.frontmatter.icon,
-            url: ads.at(idx)?.icon.url,
-            alt: ads.at(idx)?.icon.alt,
+            url: filtered_ads.at(idx)?.icon.url,
+            alt: filtered_ads.at(idx)?.icon.alt,
           },
           isAd: true,
-          outerLink: ads.at(idx)?.outerLink,
+          outerLink: filtered_ads.at(idx)?.outerLink,
         },
       };
       pageArticlesWithAds.push(theAd);
