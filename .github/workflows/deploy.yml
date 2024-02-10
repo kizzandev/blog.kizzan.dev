@@ -15,7 +15,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  prevbuild:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -24,8 +24,12 @@ jobs:
           submodules: 'recursive' #
       - name: Initialize and update submodule
         run: git submodule update --init --recursive
+
+  build:
+    needs: prebuild
+    runs-on: ubuntu-latest
+    steps:
       - name: Install, build, and upload your site
-        needs: initialize-and-update-submodule
         uses: withastro/action@v1
         with:
           # path: . # The root location of your Astro project inside the repository. (optional)
