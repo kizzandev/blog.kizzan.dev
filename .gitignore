@@ -35,3 +35,6 @@ pnpm-debug.log*
 # dev
 .notes
 /hide/
+
+# hide
+src/private/
