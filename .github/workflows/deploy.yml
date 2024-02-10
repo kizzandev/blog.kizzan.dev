@@ -25,8 +25,8 @@ jobs:
           path: src/private
       - name: Initialize and update submodule
         run: |
-        git submodule sync
-        git submodule update --init --recursive
+          git submodule sync
+          git submodule update --init --recursive
       - name: Install, build, and upload your site
         uses: withastro/action@v1
         with:
