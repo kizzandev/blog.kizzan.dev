@@ -40,7 +40,7 @@ import Texto from '@components/design/texto/Texto.astro';
 // author from /blog/author/[author].md
 const allAuthor = await Astro.glob('../pages/en/blog/author/*.md');
 const author = allAuthor.find(
-  (page) => page.frontmatter.author === frontmatter.author
+  (page) => page.frontmatter.author === frontmatter.author,
 );
 
 import IconGithub from '@components/icons/IconGitHub.astro';
@@ -55,7 +55,7 @@ const getReadTime = (content: string) => {
     .split(/\s/g)
     .filter(
       (word) =>
-        word !== '' && !HEADINGS.includes(word) && !word.startsWith('```')
+        word !== '' && !HEADINGS.includes(word) && !word.startsWith('```'),
     ).length;
   const minutes = numberOfWords / wordsPerMinute;
   const readTime = Math.ceil(minutes);
@@ -63,7 +63,7 @@ const getReadTime = (content: string) => {
 };
 
 const currentArticle = await Astro.glob('../pages/en/blog/article/*.md').then(
-  (pages) => pages.find((page) => page.frontmatter.title === frontmatter.title)
+  (pages) => pages.find((page) => page.frontmatter.title === frontmatter.title),
 );
 
 const minutesToRead = getReadTime(currentArticle?.rawContent() || '');
@@ -72,7 +72,7 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
 const articleIconPaths = frontmatter.icon.url
   .replace(
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">',
-    ''
+    '',
   )
   .replace('</svg>', '');
 ---
@@ -174,7 +174,7 @@ const articleIconPaths = frontmatter.icon.url
             >
               <IconTwitter />
             </a>
-            <a
+            {/*<a
               href={`https://www.linkedin.com/shareArticle?mini=true&url=${Astro.url}&title=${frontmatter.title}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -182,7 +182,7 @@ const articleIconPaths = frontmatter.icon.url
               class="inline-flex items-center w-[32px] h-[32px] p-[4px] rounded-md overflow-hidden hover:bg-zinc-800"
             >
               <IconLinkedIn />
-            </a>
+            </a>//*/}
           </Flex>
 
           <span id="md">
