@@ -149,7 +149,8 @@ import { ViewTransitions } from 'astro:transitions';
             if (!firstEl) continue;
 
             firstEl.classList.add(
-              'w-[48px]',
+              'hidden',
+              'sm:block',
               'sm:min-w-[84px]',
               'sm:min-h-[84px]',
               'rounded-md',
@@ -171,7 +172,7 @@ import { ViewTransitions } from 'astro:transitions';
             `<img src="${s.getAttribute(
               'data-article-icon',
             )}" alt="${s.getAttribute('data-article-icon-alt')}"
-              class="w-[48px] sm:min-w-[84px] sm:min-h-[84px] rounded-md"
+              class="hidden sm:block sm:min-w-[84px] sm:min-h-[84px] rounded-md"
               />` + s.innerHTML;
         }
       });
