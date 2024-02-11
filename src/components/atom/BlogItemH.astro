@@ -17,8 +17,8 @@ import Flex from '@components/design/flex/Flex.astro';
 import Texto from '@components/design/texto/Texto.astro';
 
 const maxWidth = Astro.props.maxChars
-  ? `max-w-[${Astro.props.maxChars}ch]`
-  : 'max-w-[60ch]';
+  ? `sm:max-w-[${Astro.props.maxChars}ch]`
+  : 'sm:max-w-[60ch]';
 
 function crearSlug(title: string) {
   return title
@@ -49,7 +49,7 @@ if (Astro.props.outerLink) link = Astro.props.outerLink;
     data-article-icon-alt={Astro.props.iconalt}
     data-article-is-ad={Astro.props.isAd ? 'true' : 'false'}
   >
-    <Flex as="section" gap={4} class={`${maxWidth}`}>
+    <Flex as="section" gap={4} class={`max-w-full ${maxWidth}`}>
       <Texto
         as="h3"
         truncate={1}
