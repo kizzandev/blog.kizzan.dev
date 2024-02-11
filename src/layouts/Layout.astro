@@ -115,14 +115,9 @@ import { ViewTransitions } from 'astro:transitions';
       document.addEventListener('astro:page-load', () => {
         const span = document.querySelectorAll(`.blog-article-anchor`);
         for (const s of span) {
+          // Set the Ad label
           if (s.getAttribute('data-article-is-ad') === 'true') {
-            // Instead of an Icon, we have an URL of the image
             s.innerHTML =
-              `<img src="${s.getAttribute(
-                'data-article-icon',
-              )}" alt="${s.getAttribute('data-article-icon-alt')}"
-              class="w-[48px] sm:min-w-[84px] sm:min-h-[84px] rounded-md"
-              />` +
               s.innerHTML +
               `<svg
                 class="absolute top-2 right-2"
@@ -141,25 +136,43 @@ import { ViewTransitions } from 'astro:transitions';
                 ></path><path d="M7 15v-4.5a1.5 1.5 0 0 1 3 0v4.5"></path><path
                   d="M7 13h3"></path></svg
               >`;
-
-            continue;
           }
 
-          s.innerHTML =
-            (s.getAttribute('data-article-icon') ?? '') + s.innerHTML;
-          const firstEl = s.firstElementChild;
-          if (firstEl) {
+          const data_article_icon = s.getAttribute('data-article-icon') ?? '';
+          if (data_article_icon === '') continue;
+
+          // It's an svg
+          if (data_article_icon.startsWith('<svg')) {
+            s.innerHTML = data_article_icon + s.innerHTML;
+
+            const firstEl = s.firstElementChild;
+            if (!firstEl) continue;
+
             firstEl.classList.add(
               'w-[48px]',
               'sm:min-w-[84px]',
               'sm:min-h-[84px]',
               'rounded-md',
             );
+
             firstEl.setAttribute(
               'aria-label',
-              s.getAttribute('data-article-icon-alt') ?? '',
+              s.getAttribute('data-article-icon-alt') ?? 'An icon',
             );
+
+            continue;
           }
+
+          // Should be an image
+          if (!data_article_icon.startsWith('http')) continue;
+
+          // Instead of an Icon, we have an URL of the image
+          s.innerHTML =
+            `<img src="${s.getAttribute(
+              'data-article-icon',
+            )}" alt="${s.getAttribute('data-article-icon-alt')}"
+              class="w-[48px] sm:min-w-[84px] sm:min-h-[84px] rounded-md"
+              />` + s.innerHTML;
         }
       });
     </script>
