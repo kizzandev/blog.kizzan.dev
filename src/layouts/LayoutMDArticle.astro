@@ -132,6 +132,7 @@ const articleIconPaths = frontmatter.icon.url
           </>
 
           <Texto
+            id="titulo-del-articulo"
             as="h1"
             title={frontmatter.title}
             class="text-3xl md:text-4xl font-bold text-zinc-100 mb-2"
@@ -758,6 +759,17 @@ const articleIconPaths = frontmatter.icon.url
     border-radius: 0 8px 0 8px;
     background-color: rgba(244, 244, 245, 0.03);
     cursor: pointer;
+  }
+
+  /* REFERENCIAS */
+  h6 > a > sup {
+    font-size: 12px;
+    font-weight: 400;
+    color: #22d3ee;
+    margin-left: 8px;
+  }
+  h6:hover > a {
+    color: #22d3ee;
   }
 
   /* STACKING NOTIFICATIONS */
