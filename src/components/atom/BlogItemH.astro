@@ -20,7 +20,18 @@ const maxWidth = Astro.props.maxChars
   ? `max-w-[${Astro.props.maxChars}ch]`
   : 'max-w-[60ch]';
 
-const slug = Astro.props.title.toLowerCase().replace(/\s/g, '-');
+function crearSlug(title: string) {
+  return title
+    .toLowerCase()
+    .replace(/\s/g, '-') // Reemplaza espacios por guiones
+    .replace(/á/g, 'a') // Reemplaza caracteres con tilde
+    .replace(/é/g, 'e')
+    .replace(/í/g, 'i')
+    .replace(/ó/g, 'o')
+    .replace(/ú/g, 'u');
+}
+
+const slug = crearSlug(Astro.props.title);
 
 let link = `/blog/article/${slug}`;
 if (Astro.props.lang) link = `/${Astro.props.lang}/blog/article/${slug}`;
