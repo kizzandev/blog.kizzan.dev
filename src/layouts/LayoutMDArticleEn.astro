@@ -24,6 +24,8 @@ interface Props {
     };
 
     tags: string[];
+
+    sponsored?: boolean;
   };
 }
 
@@ -164,7 +166,7 @@ const articleIconPaths = frontmatter.icon.url
             class="text-lg md:text-xl font-semibold text-zinc-100 mb-4"
           />
 
-          <Flex row class="w-fit">
+          <Flex as="section" row>
             <Texto as="p" title="Share:" class="text-lg" />
             <a
               href={`https://twitter.com/intent/tweet?text=${frontmatter.title}&url=${Astro.url}`}
@@ -184,6 +186,13 @@ const articleIconPaths = frontmatter.icon.url
             >
               <IconLinkedIn />
             </a>//*/}
+            {Astro.props.frontmatter.sponsored && (
+              <Texto
+                as="p"
+                class="ml-auto bg-zinc-800 rounded-md px-2 text-xs inline-flex items-center opacity-75"
+                title="Sponsored"
+              />
+            )}
           </Flex>
 
           <span id="md">
