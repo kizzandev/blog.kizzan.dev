@@ -1,21 +1,15 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-// import react from '@astrojs/react';
 
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // site: 'http://192.168.0.5:3000', // dev
-  site: 'https://kizendev.github.io', // gh-pages
+  site: 'https://kizendev.github.io',
   integrations: [
     tailwind(),
     sitemap({
       filter: (page) => page !== 'https://kizendev.github.io/404',
-      // changefreq: 'weekly',
-      // priority: 0.7,
-      // lastmod: new Date('2024-02-06'),
-
       serialize(item) {
         // Exclude 404 page
         if (item.url === 'https://kizendev.github.io/404') {
