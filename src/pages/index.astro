@@ -15,10 +15,10 @@ import IconChevronRightDouble from '@components/icons/IconChevronRightDouble.ast
 
 import { ARTICLES_PER_PAGE } from '@/articles';
 
-import adsList from '@/private/ads/adList.json';
+// import adsList from '@/private/ads/adList.json';
 
-const { ads } = adsList;
-const filetered_ads = ads.filter((ad: any) => ad.lang === 'es');
+// const { ads } = adsList;
+// const filetered_ads = ads.filter((ad: any) => ad.lang === 'es');
 
 async function getData() {
   const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
@@ -57,7 +57,7 @@ async function getData() {
     }
   }
 
-  let pageArticlesWithAds = pageArticles;
+  /*let pageArticlesWithAds = pageArticles;
   let idx = weightedRandomSelect(filetered_ads) || 0;
   if (pageArticles.length > 5) {
     pageArticlesWithAds = pageArticles.reduce((acc: any, article, index) => {
@@ -111,10 +111,11 @@ async function getData() {
       };
       pageArticlesWithAds.push(theAd);
     }
-  }
+  }*/
 
   return {
-    firstPageArticles: pageArticlesWithAds,
+    // firstPageArticles: pageArticlesWithAds,
+    firstPageArticles: filteredArticles,
     totalPages: total,
     nextPage: total > 1 ? '/page/2' : '',
   };
