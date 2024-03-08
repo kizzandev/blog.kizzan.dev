@@ -13,11 +13,11 @@ import IconChevronRightDouble from '@components/icons/IconChevronRightDouble.ast
 
 import { ARTICLES_PER_PAGE } from '@/articles';
 
-import adsList from '@/private/ads/adList.json';
+// import adsList from '@/private/ads/adList.json';
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const { ads } = adsList;
-  const filtered_ads = ads.filter((ad: any) => ad.lang === 'en');
+  // const { ads } = adsList;
+  // const filtered_ads = ads.filter((ad: any) => ad.lang === 'en');
 
   const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
     '../../../pages/en/blog/article/*.md',
@@ -54,7 +54,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     }
   }
 
-  let pageArticlesWithAds = filteredArticles;
+  /*let pageArticlesWithAds = filteredArticles;
   let idx = weightedRandomSelect(filtered_ads) || 0;
   if (filtered_ads.length > 0 && filteredArticles.length > 5) {
     pageArticlesWithAds = filteredArticles.reduce(
@@ -111,9 +111,10 @@ export const getStaticPaths = (async ({ paginate }) => {
       };
       pageArticlesWithAds.push(theAd);
     }
-  }
+  }*/
 
-  return paginate(pageArticlesWithAds, {
+  // return paginate(pageArticlesWithAds, {
+  return paginate(filteredArticles, {
     pageSize: total,
   });
 }) satisfies GetStaticPaths;
