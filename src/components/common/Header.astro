@@ -1,77 +1,13 @@
 ---
-import Flex from '@components/design/flex/Flex.astro';
-
-import IconCV from '@components/icons/IconCV.astro';
-import IconGitHub from '@components/icons/IconGitHub.astro';
-import IconInstagram from '@components/icons/IconInstagram.astro';
-import IconLinkedIn from '@components/icons/IconLinkedIn.astro';
-import IconTwitch from '@components/icons/IconTwitch.astro';
-import IconTwitter from '@components/icons/IconTwitter.astro';
-import IconYouTube from '@components/icons/IconYouTube.astro';
-
-import { basics } from '@cv/cv.json';
-
-const profiles = basics.profiles;
-
-interface Social {
-  network: string;
-  url: string;
-}
-
-let link = `/cv`;
-if (Astro.url.pathname.split('/')[1] === 'en') link = `/en/cv`;
-
-const socials = [...profiles, { network: 'CV', url: link }];
+const title = 'Aurum';
+const slogan = 'Shiny';
 ---
 
-<section class="py-[16px] flex flex-col md:flex-row gap-4 items-center">
-  <img
-    src="/me.webp"
-    alt="Imagen de Kevin Zanzi"
-    class="h-32 w-32 rounded-full grayscale-[35%]"
-  />
-  <article class="flex flex-col gap-4 items-center md:items-start">
-    <span>
-      <h1 class="text-4xl font-semibold">Kevin Zanzi</h1>
-      <h3 class="text-xl text-zinc-300">{basics.label}</h3>
-    </span>
-    <Flex row wrap>
-      {
-        socials.map(({ network, url }: Social) => {
-          return (
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center w-[32px] h-[32px] group rounded-md overflow-hidden hover:bg-zinc-800 p-[4px] transition-colors duration-300 ease-in-out"
-              title={`Red social de Kevin Zanzi en ${network}`}
-              aria-label={`Red social de Kevin Zanzi en ${network}`}
-            >
-              {(network === 'Twitter' || network === 'X') && (
-                <IconTwitter class="group-hover:text-cyan-400 transition-colors duration-300 ease-in-out" />
-              )}
-              {network === 'GitHub' && (
-                <IconGitHub class="group-hover:text-cyan-400 transition-colors duration-300 ease-in-out" />
-              )}
-              {network === 'LinkedIn' && (
-                <IconLinkedIn class="group-hover:text-cyan-400 transition-colors duration-300 ease-in-out" />
-              )}
-              {network === 'YouTube' && (
-                <IconYouTube class="group-hover:text-cyan-400 transition-colors duration-300 ease-in-out" />
-              )}
-              {network === 'Twitch' && (
-                <IconTwitch class="group-hover:text-cyan-400 transition-colors duration-300 ease-in-out" />
-              )}
-              {network === 'Instagram' && (
-                <IconInstagram class="group-hover:text-cyan-400 transition-colors duration-300 ease-in-out" />
-              )}
-              {network === 'CV' && (
-                <IconCV class="group-hover:text-cyan-400 transition-colors duration-300 ease-in-out" />
-              )}
-            </a>
-          );
-        })
-      }
-    </Flex>
+<section class="py-[16px]">
+  <article class="flex flex-col gap-4">
+    <h1 class="text-[24px] md:text-[64px] font-bold text-center">{title}</h1>
+    <h3 class="text-[16px] md:text-[24px] text-center text-zinc-300">
+      {slogan}
+    </h3>
   </article>
 </section>
