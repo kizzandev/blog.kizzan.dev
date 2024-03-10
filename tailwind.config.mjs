@@ -15,10 +15,9 @@
 export default {
   content: [
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    '!./src/pages/cv.astro',
-    '!./src/layouts/LayoutCV.astro',
-    '!./src/components/cv/*.astro',
     '!./src/components/icons/*.astro',
   ],
+  safelist: ['max-w-[700px]'],
+  darkMode: 'class',
   plugins: [],
 };

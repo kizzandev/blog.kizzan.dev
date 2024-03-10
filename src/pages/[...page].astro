@@ -1,0 +1,157 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+import BlogItemH from '@components/atom/BlogItemH.astro';
+import IconSearch from '@components/icons/IconSearch.astro';
+import Flex from '@components/design/flex/Flex.astro';
+import Texto from '@components/design/texto/Texto.astro';
+import IconChevronRight from '@components/icons/IconChevronRight.astro';
+import type { GetStaticPaths, MarkdownInstance } from 'astro';
+import IconChevronRightDouble from '@components/icons/IconChevronRightDouble.astro';
+
+import { ARTICLES_PER_PAGE } from '@/articles';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
+    '../pages/article/*.md'
+  );
+  const filteredArticles = allArticles
+    .filter(
+      (article) =>
+        article.frontmatter.status === 'published' ||
+        article.frontmatter.isArchived
+    )
+    .sort((a, b) => {
+      const dateA = new Date(a.frontmatter.pubDate);
+      const dateB = new Date(b.frontmatter.pubDate);
+
+      return dateB.getTime() - dateA.getTime();
+    });
+
+  return paginate(filteredArticles, {
+    pageSize: ARTICLES_PER_PAGE,
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<Layout title="Kizendev" description="Kizendev es un Desarrollador de Software">
+  <Flex as="main">
+    <div
+      class="hidden _flex items-center justify-between px-2 py-2 border border-zinc-700 rounded-md max-w-[634px]"
+    >
+      <input
+        autocapitalize="none"
+        autocomplete="off"
+        autocorrect="off"
+        class="inline-flex w-full h-full bg-transparent border-none focus:ring-0 focus:outline-none"
+        placeholder="Buscar..."
+        spellcheck="false"
+        title="Buscar..."
+        type="text"
+        value=""
+      />
+
+      <span
+        class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md"
+        style="transform: scale(-1,1);"
+        ><IconSearch class="h-4 w-4" />
+      </span>
+    </div>
+
+    <ul class="space-y-2">
+      {
+        (page.data.length > 0 &&
+          page.data.map((article) => {
+            return (
+              <BlogItemH
+                title={article.frontmatter.title}
+                isAd={article.frontmatter.isAd || false}
+                outerLink={article.frontmatter.outerLink}
+                pubDate={article.frontmatter.pubDate}
+                isArchived={article.frontmatter.isArchived}
+              />
+            );
+          })) || (
+          <Texto
+            as="p"
+            class="text-lg font-semibold mt-8 ml-2"
+            title="No hay artículos..."
+          />
+        )
+      }
+    </ul>
+
+    {
+      page.lastPage > 1 && (
+        <div class="flex items-center justify-center space-x-2 mt-4">
+          <a
+            class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
+            aria-disabled={page.currentPage === 1}
+            aria-label="Ir a la primera página"
+            href={page.url.prev ?? page.url.current}
+          >
+            <IconChevronRightDouble class="rotate-180 w-fit h-fit" />
+          </a>
+
+          <a
+            class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
+            aria-disabled={page.currentPage === 1}
+            aria-label="Ir a la página anterior"
+            href={page.url.prev ?? page.url.current}
+          >
+            <IconChevronRight class="rotate-180 w-fit h-fit" />
+          </a>
+
+          <span class="text-lg tracking-widest">
+            {page.currentPage} / {page.lastPage}
+          </span>
+
+          <a
+            class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
+            aria-disabled={page.currentPage === page.lastPage}
+            aria-label="Ir a la página siguiente"
+            href={page.url.next ?? page.url.current}
+          >
+            <IconChevronRight class="w-fit h-fit" />
+          </a>
+
+          <a
+            class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
+            aria-disabled={page.currentPage === page.lastPage}
+            aria-label="Ir a la última página"
+            href={
+              page.currentPage < page.total
+                ? `/${page.lastPage}`
+                : page.url.current
+            }
+          >
+            <IconChevronRightDouble class="w-fit h-fit" />
+          </a>
+        </div>
+      )
+    }
+
+    <article class="hidden">
+      <Texto
+        as="h2"
+        class="text-2xl font-semibold mt-8 ml-2 mb-4"
+        title="Mis últimos videos"
+      />
+
+      <ul
+        id="lastest-videos"
+        class="grid grid-cols-2 gap-4 place-content-start"
+        transition:name="latest-videos"
+        transition:persist
+      >
+        <li class="flex flex-col">
+          <span class="text-sm font-semibold ml-2">No hay videos...</span>
+        </li>
+      </ul>
+    </article>
+  </Flex>
+
+  <!-- <Aside slot="aside" /> -->
+</Layout>

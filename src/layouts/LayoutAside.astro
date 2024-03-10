@@ -2,7 +2,12 @@
 import Layout from './Layout.astro';
 ---
 
-<Layout title={Astro.props.title} description={Astro.props.description}>
+<Layout
+  title={Astro.props.title}
+  description={Astro.props.description}
+  lang={Astro.props.lang}
+  maxWidth={Astro.props.maxWidth}
+>
   <div
     class="grid grid-cols-1 lg:grid-cols-[1fr_1fr_420px] gap-4 lg:[&>section]:col-span-2 mx-auto w-fit"
   >

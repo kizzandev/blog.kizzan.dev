@@ -39,10 +39,9 @@ const status: 'draft' | 'published' | 'archived' =
 
 import Texto from '@components/design/texto/Texto.astro';
 
-// author from /blog/author/[author].md
-const allAuthor = await Astro.glob('../pages/blog/author/*.md');
+const allAuthor = await Astro.glob('../pages/author/*.md');
 const author = allAuthor.find(
-  (page) => page.frontmatter.author === frontmatter.author,
+  (page) => page.frontmatter.author === frontmatter.author
 );
 
 import IconGithub from '@components/icons/IconGitHub.astro';
@@ -57,15 +56,15 @@ const getReadTime = (content: string) => {
     .split(/\s/g)
     .filter(
       (word) =>
-        word !== '' && !HEADINGS.includes(word) && !word.startsWith('```'),
+        word !== '' && !HEADINGS.includes(word) && !word.startsWith('```')
     ).length;
   const minutes = numberOfWords / wordsPerMinute;
   const readTime = Math.ceil(minutes);
   return readTime;
 };
 
-const currentArticle = await Astro.glob('../pages/blog/article/*.md').then(
-  (pages) => pages.find((page) => page.frontmatter.title === frontmatter.title),
+const currentArticle = await Astro.glob('../pages/article/*.md').then((pages) =>
+  pages.find((page) => page.frontmatter.title === frontmatter.title)
 );
 
 const minutesToRead = getReadTime(currentArticle?.rawContent() || '');
@@ -74,7 +73,7 @@ const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
 const articleIconPaths = frontmatter.icon.url
   .replace(
     '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">',
-    '',
+    ''
   )
   .replace('</svg>', '');
 ---

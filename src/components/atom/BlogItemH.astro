@@ -1,10 +1,8 @@
 ---
 interface Props {
   title: string;
-  description: string;
-
-  icon: string;
-  iconalt: string;
+  pubDate?: string;
+  isArchived?: boolean;
 
   maxChars?: number;
 
@@ -15,10 +13,6 @@ interface Props {
 
 import Flex from '@components/design/flex/Flex.astro';
 import Texto from '@components/design/texto/Texto.astro';
-
-const maxWidth = Astro.props.maxChars
-  ? `sm:max-w-[${Astro.props.maxChars}ch]`
-  : 'sm:max-w-[60ch]';
 
 function crearSlug(title: string) {
   return title
@@ -33,23 +27,21 @@ function crearSlug(title: string) {
 
 const slug = crearSlug(Astro.props.title);
 
-let link = `/blog/article/${slug}`;
-if (Astro.props.lang) link = `/${Astro.props.lang}/blog/article/${slug}`;
+let link = `/article/${slug}`;
+if (Astro.props.lang) link = `/${Astro.props.lang}/article/${slug}`;
 
 if (Astro.props.outerLink) link = Astro.props.outerLink;
 ---
 
 <li>
   <a
-    class={`blog-article-anchor flex gap-4 hover:bg-zinc-800 py-4 px-2 rounded-md max-w-fit cursor-pointer
-    ${Astro.props.isAd ? 'bg-zinc-800/35' : ''}
+    class={`blog-article-anchor flex gap-4 hover:bg-zinc-200 dark:hover:bg-zinc-800 py-4 px-2 rounded-md max-w-fit cursor-pointer
+    ${Astro.props.isAd ? 'bg-zinc-200/35 dark:bg-zinc-800/35' : ''}
     `}
     href={link}
-    data-article-icon={Astro.props.icon}
-    data-article-icon-alt={Astro.props.iconalt}
     data-article-is-ad={Astro.props.isAd ? 'true' : 'false'}
   >
-    <Flex as="section" gap={4} class={`max-w-full ${maxWidth}`}>
+    <Flex as="section" gap={4} class={`max-w-full`}>
       <Texto
         as="h3"
         truncate={1}
@@ -59,8 +51,14 @@ if (Astro.props.outerLink) link = Astro.props.outerLink;
       >
         {Astro.props.title}
       </Texto>
-      <Texto as="p" truncate={2} title={Astro.props.description} width={60}>
-        {Astro.props.description}
+      <Texto
+        as="p"
+        truncate={2}
+        title={Astro.props.pubDate}
+        width={60}
+        class="text-sm text-zinc-400"
+      >
+        {Astro.props.pubDate}
       </Texto>
     </Flex>
   </a>
