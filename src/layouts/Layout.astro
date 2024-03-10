@@ -16,7 +16,7 @@ const { maxWidth } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={Astro.props.lang || 'es-AR'}>
+<html lang={Astro.props.lang || 'es-AR'} class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={Astro.props.description} />
@@ -29,16 +29,16 @@ const { maxWidth } = Astro.props;
   <body>
     <div
       id="app"
-      class={`bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 overflow-x-hidden transition-colors duration-500 ease-in-out min-h-screen px-[32px] pb-16`}
+      class={`bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 overflow-x-hidden min-h-screen px-[32px] pb-16`}
     >
       <div id="wrapper" class={`mx-auto max-w-[${maxWidth || 700}px]`}>
         <Header />
         <Nav />
         <slot />
         <Footer />
-        <button class="absolute top-[16px] right-[32px]" onclick="darklight()"
+        <!-- <button class="absolute top-[16px] right-[32px]" onclick="darklight()"
           >MODO</button
-        >
+        > -->
       </div>
     </div>
 
@@ -86,38 +86,34 @@ const { maxWidth } = Astro.props;
       }
     </style>
 
-    <script lang="ts">
+    <!-- <script is:inline>
+      if (!localStorage.getItem('darkMode')) {
+        const currentTheme = window.matchMedia('(prefers-color-scheme: dark)')
+          .matches
+          ? 'true'
+          : 'false';
+        localStorage.setItem('darkMode', currentTheme);
+      }
+    </script> -->
+
+    <!-- <script is:inline>
       function darklight() {
-        const current = document
-          .querySelector('html')
-          ?.classList.contains('dark');
         document.querySelector('html')?.classList.toggle('dark');
-        localStorage.setItem('darkMode', !current);
-      }
 
-      function start() {
-        const bLocalStorage = localStorage.getItem('darkMode');
+        const lsDarkMode = localStorage.getItem('darkMode');
+        let isDarkMode = lsDarkMode === 'true';
 
-        if (!bLocalStorage) {
-          // if no local storage, set it to the browser preference
-          localStorage.setItem(
-            'darkMode',
-            window.matchMedia('(prefers-color-scheme: dark)').matches
-          );
-          return;
+        if (!lsDarkMode) {
+          const currentTheme = window.matchMedia('(prefers-color-scheme: dark)')
+            .matches
+            ? 'true'
+            : 'false';
+          localStorage.setItem('darkMode', currentTheme);
         }
 
-        const isDarkMode = bLocalStorage === 'true';
-        if (
-          isDarkMode &&
-          !document.querySelector('html')?.classList.contains('dark')
-        ) {
-          document.querySelector('html')?.classList.add('dark');
-        }
+        localStorage.setItem('darkMode', isDarkMode ? 'false' : 'true');
       }
-
-      start();
-    </script>
+    </script> -->
 
     <!-- BLOG ITEM -->
 

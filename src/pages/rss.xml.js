@@ -1,15 +1,12 @@
 import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 
-import { basics } from '@cv/cv.json';
-
 export async function GET(context) {
   return rss({
-    title: 'Kizen Blog',
-    description: basics.summary,
+    title: 'Aurum',
+    description:
+      'Desarrollador de software con experiencia remota en frontend utilizando React, JavaScript, TypeScript, y Tailwind css. Desarrollé mi propio blog a través de Astro, el cual está disponible en español (ar) e inglés (en) junto a sus respectivos rss feeds, y se encuentra desplegado con GitHub Actions.',
     site: context.site,
-    items: await pagesGlobToRssItems(
-      import.meta.glob('./blog/article/*.{md,mdx}')
-    ),
+    items: await pagesGlobToRssItems(import.meta.glob('./article/*.{md,mdx}')),
     customData: `<language>es</language>`,
   });
 }

@@ -18,6 +18,6 @@ export default {
     '!./src/components/icons/*.astro',
   ],
   safelist: ['max-w-[700px]'],
-  darkMode: 'class',
+  darkMode: 'selector',
   plugins: [],
 };
