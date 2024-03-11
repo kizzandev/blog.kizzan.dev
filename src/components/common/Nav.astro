@@ -3,6 +3,7 @@ import NavItem from '@components/atom/NavItem.astro';
 
 let link = `/`;
 if (Astro.currentLocale === 'en') link = `/en`;
+const isEn = link === `/en`;
 ---
 
 <section
@@ -12,7 +13,7 @@ if (Astro.currentLocale === 'en') link = `/en`;
     <NavItem title="New" href={link} />
     <!-- <NavItem title="Popular" href={link} currentNav={currentNav} /> -->
     <NavItem
-      title="About Kizzan"
+      title={isEn ? 'About Kizzan' : 'Sobre Kizzan'}
       href={`https://cv.kizzan.dev${link}`}
       class="ml-auto"
       outlink={true}
