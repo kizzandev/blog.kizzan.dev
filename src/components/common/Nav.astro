@@ -10,8 +10,8 @@ const isEn = link === `/en`;
   class="border-y-[1px] my-[16px] border-zinc-400 dark:border-zinc-600 md:mb-[32px]"
 >
   <ul class="flex items-center gap-4 p-0 m-0 px-2">
-    <NavItem title="New" href={link} />
-    <!-- <NavItem title="Popular" href={link} currentNav={currentNav} /> -->
+    <NavItem title={isEn ? 'New' : 'Últimos'} href={link} />
+    <!-- <NavItem title="Popular" href={`${link}/popular`} currentNav={currentNav} /> -->
     <NavItem
       title={isEn ? 'About Kizzan' : 'Sobre Kizzan'}
       href={`https://cv.kizzan.dev${link}`}
