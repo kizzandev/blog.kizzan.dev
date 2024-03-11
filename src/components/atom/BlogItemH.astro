@@ -37,6 +37,7 @@ if (Astro.props.outerLink) link = Astro.props.outerLink;
 <li>
   <a
     class={`blog-article-anchor flex gap-4 hover:bg-zinc-200 dark:hover:bg-zinc-800 py-4 px-2 rounded-md max-w-fit cursor-pointer
+    hover:text-secondary group
     ${Astro.props.isAd ? 'bg-zinc-200/35 dark:bg-zinc-800/35' : ''}
     ${Astro.props.isArchived ? 'bg-zinc-200/15 dark:bg-zinc-800/15' : ''}
     `}
@@ -48,7 +49,7 @@ if (Astro.props.outerLink) link = Astro.props.outerLink;
       <Texto
         as="h3"
         truncate={1}
-        class="text-xl font-bold"
+        class="text-xl font-bold group-hover:underline group-hover:decoration-accent"
         title={Astro.props.title}
         width={60}
       >
