@@ -48,7 +48,7 @@ const filteredArticles = articles;
   title={`Tag: ${tag}`}
   description={`Lista del tag ${tag} del blog de Kizen.`}
 >
-  <Flex as="section" class="lg:col-span-2">
+  <Flex as="section">
     <Texto as="p" class="text-xl md:text-2xl font-bold text-zinc-100">
       Lista de posts con el tag <span class="italic font-semibold">{tag}</span>
     </Texto>
@@ -67,7 +67,7 @@ const filteredArticles = articles;
           <Texto
             as="p"
             class="text-lg font-semibold mt-8 ml-2"
-            title="No hay artículos..."
+            title="No hay artículos con este tag."
           />
         )
       }

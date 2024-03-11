@@ -40,7 +40,7 @@ const status: 'draft' | 'published' | 'archived' =
 import Texto from '@components/design/texto/Texto.astro';
 
 // author from /blog/author/[author].md
-const allAuthor = await Astro.glob('../pages/en/blog/author/*.md');
+const allAuthor = await Astro.glob('../pages/en/author/*.md');
 const author = allAuthor.find(
   (page) => page.frontmatter.author === frontmatter.author,
 );
@@ -64,7 +64,7 @@ const getReadTime = (content: string) => {
   return readTime;
 };
 
-const currentArticle = await Astro.glob('../pages/en/blog/article/*.md').then(
+const currentArticle = await Astro.glob('../pages/en/article/*.md').then(
   (pages) => pages.find((page) => page.frontmatter.title === frontmatter.title),
 );
 
@@ -259,7 +259,7 @@ const articleIconPaths = frontmatter.icon.url
                 >
                   <a
                     class="inline-block w-full px-2 py-1"
-                    href={`/en/blog/tags/${tag}`}
+                    href={`/en/tags/${tag}`}
                   >
                     {tag}
                   </a>

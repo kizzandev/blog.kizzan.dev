@@ -2,21 +2,34 @@
 import BlogItemH from '@components/atom/BlogItemH.astro';
 import Flex from '@components/design/flex/Flex.astro';
 import Texto from '@components/design/texto/Texto.astro';
-import LayoutAside from '@layouts/LayoutAside.astro';
+import Layout from '@layouts/Layout.astro';
 import type { MarkdownInstance } from 'astro';
 
+import { ARTICLES_PER_PAGE } from '@/articles';
+
 export async function getStaticPaths() {
-  const allArticles: MarkdownInstance<Record<string, any>>[] =
-    await Astro.glob('../article/*.md');
+  const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
+    '../../../pages/en/article/*.md'
+  );
 
   const uniqueTags = [
     ...new Set(allArticles.map((article) => article.frontmatter.tags).flat()),
   ];
 
   return uniqueTags.map((tag) => {
-    const filteredArticles = allArticles.filter((article) =>
-      article.frontmatter.tags?.includes(tag)
-    );
+    const filteredArticles = allArticles
+      .filter(
+        (article) =>
+          article.frontmatter.tags?.includes(tag) &&
+          (article.frontmatter.status === 'published' ||
+            article.frontmatter.isArchived)
+      )
+      .sort((a, b) => {
+        const dateA = new Date(a.frontmatter.pubDate);
+        const dateB = new Date(b.frontmatter.pubDate);
+
+        return dateB.getTime() - dateA.getTime();
+      });
 
     return {
       params: { tag },
@@ -28,18 +41,16 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { articles } = Astro.props;
 
-const filteredArticles = articles.filter(
-  (article) => article.frontmatter.status === 'published'
-);
+const filteredArticles = articles;
 ---
 
-<LayoutAside
+<Layout
   title={`Tag: ${tag}`}
   description={`List of articles with the ${tag} tag.`}
 >
-  <Flex as="section" class="lg:col-span-2" slot="main">
-    <Texto as="p" class="text-xl md:text-3xl font-bold text-zinc-100">
-      List of articles with the <span class="italic">{tag}</span> tag
+  <Flex as="section">
+    <Texto as="p" class="text-xl md:text-2xl font-bold text-zinc-100">
+      List of articles with the <span class="italic font-semibold">{tag}</span> tag
     </Texto>
     <ul class="space-y-2">
       {
@@ -47,10 +58,10 @@ const filteredArticles = articles.filter(
           articles.map((article: any) => (
             <BlogItemH
               title={article.frontmatter.title}
-              description={article.frontmatter.description}
-              icon={article.frontmatter.icon.url}
-              iconalt={article.frontmatter.icon.alt}
-              lang="en"
+              isAd={article.frontmatter.isAd || false}
+              outerLink={article.frontmatter.outerLink}
+              pubDate={article.frontmatter.pubDate}
+              isArchived={article.frontmatter.isArchived || false}
             />
           ))) || (
           <Texto
@@ -62,4 +73,4 @@ const filteredArticles = articles.filter(
       }
     </ul>
   </Flex>
-</LayoutAside>
+</Layout>
