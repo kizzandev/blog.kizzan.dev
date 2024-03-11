@@ -13,7 +13,7 @@ import { ARTICLES_PER_PAGE } from '@/articles';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
-    '../pages/article/*.md'
+    '../../pages/article/*.md'
   );
   const filteredArticles = allArticles
     .filter(
