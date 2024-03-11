@@ -13,10 +13,17 @@ import Footer from '@common/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
 
 const { maxWidth } = Astro.props;
+
+let keywords =
+  'Aurum, Blog, Blogging, Desarrollo, Programación, Tecnología, Web, Frontend, Backend, Fullstack';
+
+if (Astro.currentLocale === 'en')
+  keywords =
+    'Aurum, Blog, Blogging, Development, Programming, Technology, Web, Frontend, Backend, Fullstack';
 ---
 
 <!doctype html>
-<html lang={Astro.props.lang || 'es-AR'} class="dark">
+<html lang={Astro.currentLocale || 'es-AR'} class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={Astro.props.description} />
@@ -24,6 +31,7 @@ const { maxWidth } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{Astro.props.title} | Aurum | Blog</title>
+    <meta name="keywords" content={keywords} />
     <ViewTransitions />
   </head>
   <body>
