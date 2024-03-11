@@ -1,11 +1,9 @@
 import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 
-import { basics } from '@cv/cv-en.json';
-
 export async function GET(context) {
   return rss({
     title: 'Kizen Blog',
-    description: basics.summary,
+    description: 'Software developer with remote experience in frontend using React, JavaScript, TypeScript, and Tailwind css. I developed my own blog through Astro, which is available in Spanish (ar) and English (en) along with their respective rss feeds, and is deployed with Cloudflare.',
     site: context.site + '/en/',
     items: await pagesGlobToRssItems(
       import.meta.glob('./blog/article/*.{md,mdx}')
