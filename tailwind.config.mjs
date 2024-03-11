@@ -18,6 +18,14 @@ export default {
     '!./src/components/icons/*.astro',
   ],
   safelist: ['max-w-[700px]'],
+  theme: {
+    colors: {
+      ...require('tailwindcss/colors'),
+      primary: '#66ccff',
+      secondary: '#deb1f0',
+      accent: '#f39c12',
+    },
+  },
   darkMode: 'selector',
   plugins: [],
 };
