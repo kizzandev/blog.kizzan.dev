@@ -49,9 +49,9 @@ const { page } = Astro.props;
         autocomplete="off"
         autocorrect="off"
         class="inline-flex w-full h-full bg-transparent border-none focus:ring-0 focus:outline-none"
-        placeholder="Buscar..."
+        placeholder="Search..."
         spellcheck="false"
-        title="Buscar..."
+        title="Search..."
         type="text"
         value=""
       />
@@ -80,7 +80,7 @@ const { page } = Astro.props;
           <Texto
             as="p"
             class="text-lg font-semibold mt-8 ml-2"
-            title="No hay artículos..."
+            title="There are no articles..."
           />
         )
       }
@@ -92,7 +92,7 @@ const { page } = Astro.props;
           <a
             class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
             aria-disabled={page.currentPage === 1}
-            aria-label="Ir a la primera página"
+            aria-labek="Go to the first page"
             href={page.url.prev ?? page.url.current}
           >
             <IconChevronRightDouble class="rotate-180 w-fit h-fit" />
@@ -101,7 +101,7 @@ const { page } = Astro.props;
           <a
             class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
             aria-disabled={page.currentPage === 1}
-            aria-label="Ir a la página anterior"
+            aria-label="Go to the previous page"
             href={page.url.prev ?? page.url.current}
           >
             <IconChevronRight class="rotate-180 w-fit h-fit" />
@@ -114,7 +114,7 @@ const { page } = Astro.props;
           <a
             class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
             aria-disabled={page.currentPage === page.lastPage}
-            aria-label="Ir a la página siguiente"
+            aria-label="Go to the next page"
             href={page.url.next ?? page.url.current}
           >
             <IconChevronRight class="w-fit h-fit" />
@@ -123,7 +123,7 @@ const { page } = Astro.props;
           <a
             class="flex items-center justify-center w-8 h-8 border border-zinc-700 rounded-md aria-disabled:text-zinc-800 cursor-pointer aria-disabled:cursor-default"
             aria-disabled={page.currentPage === page.lastPage}
-            aria-label="Ir a la última página"
+            aria-label="Go to the last page"
             href={
               page.currentPage < page.total
                 ? `/${page.lastPage}`
@@ -140,7 +140,7 @@ const { page } = Astro.props;
       <Texto
         as="h2"
         class="text-2xl font-semibold mt-8 ml-2 mb-4"
-        title="Mis últimos videos"
+        title="My latest videos"
       />
 
       <ul
