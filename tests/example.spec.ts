@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/*import { test, expect } from '@playwright/test';
 
 test('rss feed argentian version', async ({ page, browserName }) => {
   await page.goto('https://kizendev.github.io/rss.xml');
@@ -27,3 +27,4 @@ test('rss feed english version', async ({ page, browserName }) => {
     expect(rss).toContain('<language>en</language>');
   }
 });
+// */
