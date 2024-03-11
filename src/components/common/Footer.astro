@@ -3,6 +3,8 @@ const currentYear = new Date().getFullYear();
 
 let cLang = '';
 if (Astro.currentLocale === 'en') cLang = 'en';
+
+const isEn = cLang === 'en';
 ---
 
 <footer class="flex flex-col gap-4 justify-center w-full h-[256px]">
@@ -11,15 +13,17 @@ if (Astro.currentLocale === 'en') cLang = 'en';
       <a href="/legal">Legal</a>
     </li>
     <li class="text-sm hover:underline">
-      <a href={`${cLang === 'en' ? '/en' : ''}/rss.xml`}>RSS feed</a>
+      <a href={`${isEn ? '/en' : ''}/rss.xml`}>RSS feed</a>
     </li>
 
     <li class="text-sm ml-auto">
       <select id="switchLanguage" class="bg-transparent border-none text-sm">
-        <option class="bg-zinc-900" value="es" hidden selected
+        <option class="bg-zinc-900" value="es" selected={!isEn} hidden={!isEn}
           >Español (ar)</option
         >
-        <option class="bg-zinc-900" value="en">English</option>
+        <option class="bg-zinc-900" value="en" selected={isEn} hidden={isEn}
+          >English</option
+        >
       </select>
     </li>
   </ul>
@@ -29,9 +33,9 @@ if (Astro.currentLocale === 'en') cLang = 'en';
 </footer>
 
 <script is:inline>
-  // Change language
   document.getElementById('switchLanguage')?.addEventListener('change', (e) => {
     const lang = e.target.value;
-    window.location.href = `/en`;
+    if (lang === 'es') return (window.location.href = `/`);
+    if (lang === 'en') return (window.location.href = `/en`);
   });
 </script>
