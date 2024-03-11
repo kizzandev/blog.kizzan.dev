@@ -86,35 +86,6 @@ const { maxWidth } = Astro.props;
       }
     </style>
 
-    <!-- <script is:inline>
-      if (!localStorage.getItem('darkMode')) {
-        const currentTheme = window.matchMedia('(prefers-color-scheme: dark)')
-          .matches
-          ? 'true'
-          : 'false';
-        localStorage.setItem('darkMode', currentTheme);
-      }
-    </script> -->
-
-    <!-- <script is:inline>
-      function darklight() {
-        document.querySelector('html')?.classList.toggle('dark');
-
-        const lsDarkMode = localStorage.getItem('darkMode');
-        let isDarkMode = lsDarkMode === 'true';
-
-        if (!lsDarkMode) {
-          const currentTheme = window.matchMedia('(prefers-color-scheme: dark)')
-            .matches
-            ? 'true'
-            : 'false';
-          localStorage.setItem('darkMode', currentTheme);
-        }
-
-        localStorage.setItem('darkMode', isDarkMode ? 'false' : 'true');
-      }
-    </script> -->
-
     <!-- BLOG ITEM -->
 
     <script>
