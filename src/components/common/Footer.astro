@@ -17,13 +17,16 @@ const isEn = cLang === 'en';
     </li>
 
     <li class="text-sm ml-auto">
-      <select id="switchLanguage" class="bg-transparent border-none text-sm">
-        <option class="bg-zinc-900" value="es" selected={!isEn} hidden={!isEn}
-          >Español (ar)</option
-        >
-        <option class="bg-zinc-900" value="en" selected={isEn} hidden={isEn}
-          >English</option
-        >
+      <select
+        id="switchLanguage"
+        data-lang={isEn ? 'en' : 'es'}
+        class="bg-transparent border-none text-sm"
+        transition:name="languageSwitcher"
+        transition:persist
+        transition:animate="none"
+      >
+        <option class="bg-zinc-900" value="es">Español (ar)</option>
+        <option class="bg-zinc-900" value="en">English</option>
       </select>
     </li>
   </ul>
@@ -35,9 +38,34 @@ const isEn = cLang === 'en';
 </footer>
 
 <script is:inline>
-  document.getElementById('switchLanguage')?.addEventListener('change', (e) => {
-    const lang = e.target.value;
-    if (lang === 'es') return (window.location.href = `/`);
-    if (lang === 'en') return (window.location.href = `/en`);
-  });
+  function footerStart() {
+    const langSwitcher = document.getElementById('switchLanguage');
+    if (!langSwitcher) return;
+
+    const currentLang = langSwitcher.getAttribute('data-lang');
+    const options = langSwitcher.querySelectorAll('option');
+    console.log(options, currentLang);
+    if (!options || !currentLang) return;
+
+    options.forEach((option) => {
+      if (option.value === currentLang) {
+        option.setAttribute('selected', 'true');
+        option.setAttribute('hidden', 'true');
+      }
+    });
+
+    langSwitcher.addEventListener('change', (e) => {
+      const lang = langSwitcher.getAttribute('data-lang');
+      if (lang === 'es') {
+        langSwitcher.setAttribute('data-lang', 'en');
+        return (window.location.href = `/en`);
+      }
+      if (lang === 'en') {
+        langSwitcher.setAttribute('data-lang', 'es');
+        return (window.location.href = `/`);
+      }
+    });
+  }
+
+  footerStart();
 </script>
