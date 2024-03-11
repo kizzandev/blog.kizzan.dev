@@ -44,7 +44,6 @@ const isEn = cLang === 'en';
 
     const currentLang = langSwitcher.getAttribute('data-lang');
     const options = langSwitcher.querySelectorAll('option');
-    console.log(options, currentLang);
     if (!options || !currentLang) return;
 
     options.forEach((option) => {
