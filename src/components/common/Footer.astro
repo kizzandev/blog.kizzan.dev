@@ -13,7 +13,7 @@ const isEn = cLang === 'en';
       <a href="/legal">Legal</a>
     </li>
     <li class="text-sm hover:underline">
-      <a href={`${isEn ? '/en' : ''}/rss.xml`}>RSS feed</a>
+      <a href={`${isEn ? '/en' : ''}/rss.xml`}>RSS</a>
     </li>
 
     <li class="text-sm ml-auto">
@@ -28,7 +28,9 @@ const isEn = cLang === 'en';
     </li>
   </ul>
   <p class="text-center text-sm">
-    &copy; {currentYear} Kizzandev • All rights reserved.
+    &copy; {currentYear} Kizzandev • {
+      isEn ? 'All rights reserved.' : 'Todos los derechos reservados.'
+    }
   </p>
 </footer>
 
