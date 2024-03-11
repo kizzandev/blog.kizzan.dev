@@ -19,11 +19,15 @@ export default {
   ],
   safelist: ['max-w-[700px]'],
   theme: {
-    colors: {
-      ...require('tailwindcss/colors'),
-      primary: '#66ccff',
-      secondary: '#deb1f0',
-      accent: '#f39c12',
+    extend: {
+      colors: {
+        primary: '#66ccff',
+        secondary: '#deb1f0',
+        accent: '#f39c12',
+      },
+      textDecorationColor: {
+        accent: '#f39c12',
+      },
     },
   },
   darkMode: 'selector',
