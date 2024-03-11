@@ -10,10 +10,13 @@ const { title, href } = Astro.props;
 ---
 
 <li
-  class={`cursor-pointer underline font-semibold hover:text-sky-700 dark:hover:text-cyan-400 list-none p-0 m-0 ${Astro.props.class}`}
+  class={`cursor-pointer underline font-semibold
+  _hover:text-sky-700 _dark:hover:text-cyan-400
+  hover:text-secondary group
+  list-none p-0 m-0 ${Astro.props.class}`}
 >
   <a
-    class="py-2 inline-block"
+    class="py-2 inline-block group-hover:underline group-hover:decoration-accent"
     href={href}
     target={Astro.props.outlink ? '_blank' : '_self'}
     rel={Astro.props.outlink ? 'noopener noreferrer' : ''}
