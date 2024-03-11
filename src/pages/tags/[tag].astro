@@ -2,21 +2,34 @@
 import BlogItemH from '@components/atom/BlogItemH.astro';
 import Flex from '@components/design/flex/Flex.astro';
 import Texto from '@components/design/texto/Texto.astro';
-import LayoutAside from '@layouts/LayoutAside.astro';
+import Layout from '@layouts/Layout.astro';
 import type { MarkdownInstance } from 'astro';
 
+import { ARTICLES_PER_PAGE } from '@/articles';
+
 export async function getStaticPaths() {
-  const allArticles: MarkdownInstance<Record<string, any>>[] =
-    await Astro.glob('../article/*.md');
+  const allArticles: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
+    '../../pages/article/*.md'
+  );
 
   const uniqueTags = [
     ...new Set(allArticles.map((article) => article.frontmatter.tags).flat()),
   ];
 
   return uniqueTags.map((tag) => {
-    const filteredArticles = allArticles.filter((article) =>
-      article.frontmatter.tags?.includes(tag)
-    );
+    const filteredArticles = allArticles
+      .filter(
+        (article) =>
+          article.frontmatter.tags?.includes(tag) &&
+          (article.frontmatter.status === 'published' ||
+            article.frontmatter.isArchived)
+      )
+      .sort((a, b) => {
+        const dateA = new Date(a.frontmatter.pubDate);
+        const dateB = new Date(b.frontmatter.pubDate);
+
+        return dateB.getTime() - dateA.getTime();
+      });
 
     return {
       params: { tag },
@@ -28,28 +41,27 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { articles } = Astro.props;
 
-const filteredArticles = articles.filter(
-  (article) => article.frontmatter.status === 'published'
-);
+const filteredArticles = articles;
 ---
 
-<LayoutAside
-  title={`Kizen Blog | Tag: ${tag}`}
+<Layout
+  title={`Tag: ${tag}`}
   description={`Lista del tag ${tag} del blog de Kizen.`}
 >
-  <Flex as="section" class="lg:col-span-2" slot="main">
-    <Texto as="p" class="text-xl md:text-3xl font-bold text-zinc-100">
-      Lista de posts con el tag <span class="italic">{tag}</span>
+  <Flex as="section" class="lg:col-span-2">
+    <Texto as="p" class="text-xl md:text-2xl font-bold text-zinc-100">
+      Lista de posts con el tag <span class="italic font-semibold">{tag}</span>
     </Texto>
     <ul class="space-y-2">
       {
         (filteredArticles.length > 0 &&
-          articles.map((article: any) => (
+          articles.map((article) => (
             <BlogItemH
               title={article.frontmatter.title}
-              description={article.frontmatter.description}
-                icon={article.frontmatter.icon.url}
-                iconalt={article.frontmatter.icon.alt}
+              isAd={article.frontmatter.isAd || false}
+              outerLink={article.frontmatter.outerLink}
+              pubDate={article.frontmatter.pubDate}
+              isArchived={article.frontmatter.isArchived || false}
             />
           ))) || (
           <Texto
@@ -61,4 +73,4 @@ const filteredArticles = articles.filter(
       }
     </ul>
   </Flex>
-</LayoutAside>
+</Layout>
