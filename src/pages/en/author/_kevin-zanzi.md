@@ -1,5 +1,5 @@
 ---
-githubUsername: kizendev
+githubUsername: kizzandev
 
 author: Kevin Zanzi
 
@@ -11,8 +11,7 @@ image:
 
 socials:
   [
-    { name: 'Twitter', url: 'https://twitter.com/kizendev' },
-    { name: 'GitHub', url: 'https://github.com/kizendev' },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/kevinzanzi' },
+    { name: 'GitHub', url: 'https://github.com/kizzandev' },
   ]
 ---
