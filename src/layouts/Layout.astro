@@ -34,12 +34,15 @@ if (Astro.currentLocale === 'en')
     <meta name="keywords" content={keywords} />
     <ViewTransitions />
   </head>
-  <body>
+  <body class="bg-zinc-100 dark:bg-zinc-900">
     <div
       id="app"
-      class={`bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 overflow-x-hidden min-h-screen px-[32px] pb-16`}
+      class={`bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-h-screen`}
     >
-      <div id="wrapper" class={`mx-auto max-w-[${maxWidth || 700}px]`}>
+      <div
+        id="wrapper"
+        class={`mx-auto max-w-[${maxWidth || 700 + 32}px] px-[16px] pb-16`}
+      >
         <Header />
         <Nav />
         <slot />

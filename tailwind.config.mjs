@@ -17,7 +17,7 @@ export default {
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
     '!./src/components/icons/*.astro',
   ],
-  safelist: ['max-w-[700px]'],
+  safelist: ['max-w-[700px]', 'max-w-[732px]'],
   theme: {
     extend: {
       colors: {
