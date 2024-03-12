@@ -2,6 +2,8 @@
 layout: '@layouts/LayoutMDArticleEn.astro'
 
 status: published
+isArchived: false
+isAd: false
 
 title: Blog Init
 description: Comprehensive style reference for the diverse range of formatting in this blog, showcasing the visual representation of each style when rendered.

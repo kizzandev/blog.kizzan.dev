@@ -2,6 +2,8 @@
 layout: '@layouts/LayoutMDArticle.astro'
 
 status: published
+isArchived: false
+isAd: false
 
 title: Blog Init
 description: Referencia de estilo completa para la amplia gama de formatos en este blog, mostrando la representación visual de cada estilo al renderizarlo.
