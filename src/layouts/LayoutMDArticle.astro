@@ -78,10 +78,7 @@ const articleIconPaths = frontmatter.icon.url
   .replace('</svg>', '');
 ---
 
-<Layout
-  title={`${frontmatter.title}`}
-  description={frontmatter.description}
->
+<Layout title={`${frontmatter.title}`} description={frontmatter.description}>
   <main class="max-w-[100ch] mx-auto">
     {
       (status === 'draft' && (
@@ -136,16 +133,14 @@ const articleIconPaths = frontmatter.icon.url
             id="titulo-del-articulo"
             as="h1"
             title={frontmatter.title}
-            class="text-3xl md:text-4xl font-bold text-zinc-100 mb-2"
+            class="text-3xl md:text-4xl font-bold mb-2 text-primary"
           />
 
           <Flex row space="between" class="items-center">
-            <Texto
-              as="p"
-              title={`By ${frontmatter.author} • ${readTime} min de lectura`}
-              class="text-base md:text-lg font-normal text-zinc-100 mb-4"
-              width={0}
-            />
+            <p class="text-base font-normal text-zinc-100 mb-4">
+              By <span class="text-secondary">{frontmatter.author}</span> •{' '}
+              {readTime} min de lectura
+            </p>
             <Flex as="span" row class="w-fit">
               {/*<button id="btn-like" class="flex gap-2" onclick="sendLike()">
                 <span id="likeCount">0</span> likes
@@ -153,7 +148,7 @@ const articleIconPaths = frontmatter.icon.url
               <Texto
                 as="p"
                 title={`${frontmatter.pubDate}`}
-                class="text-base md:text-lg font-normal text-zinc-100 mb-4"
+                class="text-base font-normal text-zinc-100 mb-4"
                 width={0}
               />
             </Flex>
