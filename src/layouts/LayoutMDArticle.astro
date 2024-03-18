@@ -70,12 +70,15 @@ const currentArticle = await Astro.glob('../pages/article/*.md').then((pages) =>
 const minutesToRead = getReadTime(currentArticle?.rawContent() || '');
 const readTime = minutesToRead === 1 ? '1' : `${minutesToRead}`;
 
-const articleIconPaths = frontmatter.icon.url
-  .replace(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">',
-    ''
-  )
-  .replace('</svg>', '');
+let articleIconPaths = '';
+if (frontmatter.icon) {
+  articleIconPaths = frontmatter.icon.url
+    .replace(
+      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">',
+      ''
+    )
+    .replace('</svg>', '');
+}
 ---
 
 <Layout title={`${frontmatter.title}`} description={frontmatter.description}>
