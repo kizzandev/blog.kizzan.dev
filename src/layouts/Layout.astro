@@ -315,8 +315,35 @@ if (Astro.currentLocale === 'en')
             notification.remove();
           }, 3000);
         };
+
+        button.ariaLabel =
+          Astro.currentLocale === 'en' ? 'Copy code' : 'Copiar código';
+        button.title =
+          Astro.currentLocale === 'en' ? 'Copy code' : 'Copiar código';
+
         codeBlock.parentNode?.insertBefore(button, codeBlock);
       });
+    </script>
+
+    <script>
+      // LIKE BUTTON
+      /*function sendLike() {
+        const likeCount = document.getElementById('likeCount');
+        if (!likeCount) return;
+        const count = parseInt(likeCount.innerText);
+        likeCount.innerText = (count + 1).toString();
+
+        // save like count to a text file
+        const articleSlug = window.location.pathname.split('/').pop();
+
+        fetch(`/api/savearticlelikes`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ likes: count + 1, title: articleSlug }),
+        });
+      } //*/
     </script>
 
     <!-- ARTICLES END -->
