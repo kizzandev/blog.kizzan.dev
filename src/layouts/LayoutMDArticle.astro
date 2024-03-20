@@ -158,7 +158,7 @@ if (frontmatter.icon) {
           </Flex>
 
           <Texto
-            as="h3"
+            as="h2"
             title={frontmatter.description}
             class="text-lg md:text-xl font-semibold text-zinc-100 mb-4"
           />
@@ -205,7 +205,7 @@ if (frontmatter.icon) {
               />
               <Flex gap={2} class="col-span-2">
                 <Texto
-                  as="h4"
+                  as="h1"
                   title={author.frontmatter.author}
                   class="text-lg md:text-xl font-semibold text-zinc-100 mb-1 text-center lg:text-left"
                 />
@@ -294,125 +294,6 @@ if (frontmatter.icon) {
     d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1"
   ></path></svg
 >
-
-<!-- <script is:inline>
-  /* SINGLE DETAILS: EXPAND AND CLOSE */
-  const details = document.querySelectorAll('details');
-  details.forEach((detail) => {
-    const article = detail.nextElementSibling;
-    detail.addEventListener('toggle', () => {
-      if (detail.open) {
-        article.style.maxHeight = article.scrollHeight + 'px';
-      } else {
-        article.style.maxHeight = 0;
-      }
-    });
-  });
-
-  /* MULTIPLE DETAILS: WHEN ONE EXPANDS, THE REST CLOSE */
-  const detailsGroup = document.querySelectorAll('.details-group');
-  detailsGroup.forEach((group) => {
-    // select all the sections
-    const detailsSummary = group.querySelectorAll('.details-summary');
-
-    // for each section
-    detailsSummary.forEach((summary) => {
-      // select the details element
-      const details = summary.querySelector('details');
-
-      // when the details element is toggled
-      details.addEventListener('toggle', () => {
-        // if the details element is open
-        if (details.open) {
-          // close all the other details elements
-          detailsSummary.forEach((s) => {
-            const d = s.querySelector('details');
-            if (d !== details) {
-              d.removeAttribute('open');
-            }
-          });
-        }
-      });
-    });
-  });
-
-  /* LIKE BUTTON */
-  /*function sendLike() {
-    const likeCount = document.getElementById('likeCount');
-    const count = parseInt(likeCount.innerText);
-    likeCount.innerText = count + 1;
-
-    // save like count to a text file
-    const articleSlug = window.location.pathname.split('/').pop();
-
-    fetch(`/api/savearticlelikes`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ likes: count + 1, title: articleSlug }),
-    });
-  }*/
-</script>
-
-<script is:inline>
-  // ADDING A COPY BUTTON TO CODE BLOCKS
-  const codeBlocks = document.querySelectorAll('pre code');
-
-  const codeBlockCopySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg>`;
-
-  codeBlocks.forEach((codeBlock) => {
-    const button = document.createElement('button');
-    button.innerHTML = codeBlockCopySvg;
-    button.classList.add('code-block-copy');
-    button.onclick = () => {
-      // An oddessy to copy the text to the clipboard
-      const text = codeBlock.innerText;
-      const el = document.createElement('textarea');
-      el.value = text;
-      el.style.position = 'absolute';
-      el.style.left = '-9999px';
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-
-      // Cloning the template an config
-      const notification = document
-        .querySelector('.notification-item')
-        .cloneNode(true);
-      notification.querySelector('.notification-text').innerText =
-        'Código copiado al portapapeles';
-
-      document.querySelector('.notification-list').appendChild(notification);
-
-      notification.style.display = 'block';
-      setTimeout(() => {
-        notification.style.opacity = 1;
-        notification.style.transform = 'translateY(0)';
-      }, 1);
-
-      setTimeout(() => {
-        notification.remove();
-      }, 3000);
-    };
-    codeBlock.parentNode.insertBefore(button, codeBlock);
-  });
-</script>
-
-<script is:inline>
-  const articleImage = document.getElementById('article-image');
-  // Removing the svg tags themselves
-  if (articleImage)
-    articleImage.innerHTML = articleImage.innerHTML
-      .replace(
-        '&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"&gt;',
-        ''
-      )
-      .replace('&lt;/svg&gt;', '')
-      .replace(/&gt;/g, '>')
-      .replace(/&lt;/g, '<');
-</script> -->
 
 <style is:global>
   *,
