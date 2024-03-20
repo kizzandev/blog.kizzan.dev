@@ -316,10 +316,11 @@ if (Astro.currentLocale === 'en')
           }, 3000);
         };
 
-        button.ariaLabel =
-          Astro.currentLocale === 'en' ? 'Copy code' : 'Copiar código';
-        button.title =
-          Astro.currentLocale === 'en' ? 'Copy code' : 'Copiar código';
+        const htmlElement = document.querySelector('html');
+        const htmlLang = htmlElement?.getAttribute('lang');
+        if (!htmlLang) return;
+        button.ariaLabel = htmlLang === 'en' ? 'Copy code' : 'Copiar código';
+        button.title = htmlLang === 'en' ? 'Copy code' : 'Copiar código';
 
         codeBlock.parentNode?.insertBefore(button, codeBlock);
       });
