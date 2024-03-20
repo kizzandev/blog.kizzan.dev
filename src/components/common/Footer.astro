@@ -19,6 +19,7 @@ const isEn = cLang === 'en';
     <li class="text-sm ml-auto">
       <select
         id="switchLanguage"
+        aria-label={isEn ? 'Switch language' : 'Cambiar idioma'}
         data-lang={isEn ? 'en' : 'es'}
         class="bg-transparent border-none text-sm cursor-pointer"
         transition:name="languageSwitcher"
