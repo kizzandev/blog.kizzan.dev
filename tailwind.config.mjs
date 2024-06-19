@@ -22,12 +22,24 @@ export default {
     extend: {
       colors: {
         primary: '#66ccff',
-        secondary: '#deb1f0',
-        accent: '#f39c12',
+        // secondary: '#deb1f0',
+        // secondary: '#326e8c',
+        secondary: '#295777',
+        // accent: '#f39c12',
+        accent: '#00ffa5',
+        'primary-light': '#006699',
+        'secondary-light': '#89b6d7',
+        'accent-light': '#ed970c',
       },
       textDecorationColor: {
-        accent: '#f39c12',
+        // accent: '#f39c12',
+        accent: '#00ffa5',
       },
+      backgroundColor: {
+        'primary-dark': '#16161c',
+        'secondary-dark': '#232834',
+        'primary-light': '#e2e2e9',
+      }
     },
   },
   darkMode: 'selector',

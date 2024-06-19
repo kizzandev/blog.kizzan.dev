@@ -34,10 +34,10 @@ if (Astro.currentLocale === 'en')
     <meta name="keywords" content={keywords} />
     <ViewTransitions />
   </head>
-  <body class="bg-zinc-100 dark:bg-zinc-900">
+  <body class="bg-zinc-100 dark:bg-primary-dark">
     <div
       id="app"
-      class={`bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100 min-h-screen`}
+      class={`bg-zinc-100 text-zinc-900 dark:bg-primary-dark dark:text-zinc-100 min-h-screen`}
     >
       <div
         id="wrapper"
@@ -54,6 +54,21 @@ if (Astro.currentLocale === 'en')
     </div>
 
     <style is:global>
+      :root {
+        /* THERE'S NOT LIGHT THEME */
+
+        --kizzandev-color-primary: rgb(102, 204, 255);
+        --kizzandev-color-secondary: #295777;
+        --kizzandev-color-accent: #00ffa5;
+
+        --kizzandev-color-light-primary: #006699;
+        --kizzandev-color-light-secondary: #89b6d7;
+        --kizzandev-color-light-accent: #00ffa5;
+
+        --kizzandev-bg-light: #e2e2e9;
+        --kizzandev-bg-dark: #16161c;
+      }
+
       *,
       *::before,
       *::after {
