@@ -5,7 +5,6 @@ isDraft: false
 isSponsored: false
 isArchived: false
 
-# Now in english
 title: Who is Kevin
 description: Tell me about yourself, Kevin, who.. are you?
 
@@ -21,6 +20,7 @@ tags:
     information,
     computer,
     industrial,
+    interview
   ]
 
 # image:
@@ -43,10 +43,12 @@ isAd: false
 
 ## A great question
 
-¿Quién es Kevin? Una pregunta que siempre se hace en las entrevistas, que no nos gusta responder, pero que, sin embargo, deberíamos responder; no unicamente para los demás, sino para nosotros mismos.
+Who is Kevin? A question that always happens in the interviews, that we don't like to answer, but that, in fact, we should answer; not only for others, but for ourselves.
 
 ## Then, who is Kevin?
 
-I, Kevin, am a dedicated and curious individual studying Information Systems Engineering and Industrial Engineering. I have a passion for understanding how things work and a strong drive to continuously learn and grow. I enjoy working in collaborative environments and have experience in frontend development.
+I, Kevin, am a curious and dedicated person, studying Information Systems Engineering and Industrial Engineering. I enjoy figuring out how things work and always seek to learn and grow. I thrive in collaborative environments and have experience in frontend development, and I have 3+ years of experience in the world of programming.
 
-In my free time, I explore new technologies, write for my blog, go to the gym, and spend time with friends. These activities help me maintain a balanced lifestyle and keep me motivated. I value integrity, continuous improvement, and teamwork, and I believe these qualities help me contribute meaningfully to any team. I'm looking forward to bringing my skills and experiences to the table and contributing to the success of the team, and therefore, the company’s success.
+On my own time, I like exercising in the gym and trekking, writing on my blog, and spending time with my friends.
+
+I seek to contribute to a team, improve continuously and contribute my skills and experiences to the growth and success of the company.

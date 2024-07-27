@@ -20,6 +20,7 @@ tags:
     información,
     informática,
     industrial,
+    entrevista
   ]
 
 # image:
@@ -42,10 +43,12 @@ isAd: false
 
 ## Una gran pregunta
 
-¿Quién es Kevin? Una pregunta que siempre se hace en las entrevistas, que no nos gusta responder, pero que, sin embargo, deberíamos responder; no unicamente para los demás, sino para nosotros mismos.
+¿Quién es Kevin? Una pregunta que siempre se hace en las entrevistas, que no nos gusta responder, pero que, sin embargo, deberíamos responder; no únicamente para los demás, sino para nosotros mismos.
 
 ## Entonces, ¿quién es Kevin?
 
-Yo, Kevin, soy una persona curiosa y dedicada, estudiando Ingeniería en Sistemas de Información e Ingeniería Industrial. Me gusta entender cómo funcionan las cosas y siempre busco aprender y crecer. Disfruto trabajar en equipo y tengo experiencia en desarrollo frontend.
+Yo, Kevin, soy una persona curiosa y dedicada, estudiando Ingeniería en Sistemas de Información e Ingeniería Industrial. Me gusta entender cómo funcionan las cosas y siempre busco aprender y crecer. Prospero en entornos colaborativos y poseo experiencia en desarrollo frontend, y llevo 3+ años en el mundo de la programación.
 
-En mi tiempo libre, me gusta explorar nuevas tecnologías, escribir en mi blog, ir al gimnasio y pasar tiempo con amigos; estas actividades me ayudan a mantener un equilibrio y son motivadoras. Valoro la integridad, el trabajo en equipo y la mejora continua, y creo que estas cualidades me permiten contribuir significativamente a cualquier equipo. Estoy comprometido a aportar mis habilidades y experiencias para el éxito del mismo y, por ende, el éxito de la empresa.
+En mi tiempo libre, me gusta realizar actividad física en el gimnasio y trekking, escribir en mi blog, y pasar tiempo con mis amigos.
+
+Busco contribuir dentro de un equipo, mejorar continuamente y aportar mis habilidades y experiencias para el crecimiento y éxito de la empresa.
