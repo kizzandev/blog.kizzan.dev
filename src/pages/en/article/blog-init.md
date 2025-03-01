@@ -40,10 +40,10 @@ An **H4** is a title used to sub-departmentalize content. That is, to divide a s
 
 Images are visual tools that help to better understand the content, and may or may not have a description. Below is an image with and without a description.
 
-![Photo of Kevin Zanzi](/me.webp 'Photo of Kevin Zanzi')
+![Screenshot of the website "cv.kizzan.dev"](/resume-site.png 'Screenshot of the website "cv.kizzan.dev"')
 
-![Photo of Kevin Zanzi](/me.webp 'Photo of Kevin Zanzi')
-_Photo of Kevin Zanzi_
+![Screenshot of the website "cv.kizzan.dev"](/resume-site.png 'Screenshot of the website "cv.kizzan.dev"')
+_Screenshot of the website "cv.kizzan.dev"_
 
 ## Code
 

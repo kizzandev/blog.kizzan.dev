@@ -40,10 +40,10 @@ Un **H4** es un título que se usa para subdepartamentalizar contenido. Es decir
 
 Las imágenes son herramientas visuales que ayudan a entender mejor el contenido, y pueden o no poseer una descripción. A continuación se muestra una imagen con y sin descripción.
 
-![Foto de Kevin Zanzi](/me.webp 'Foto de Kevin Zanzi')
+![Foto de Kevin Zanzi](/resume-site.png 'Foto de la página "cv.kizzan.dev"')
 
-![Foto de Kevin Zanzi](/me.webp 'Foto de Kevin Zanzi')
-_Foto de Kevin Zanzi_
+![Foto de Kevin Zanzi](/resume-site.png 'Foto de la página "cv.kizzan.dev"')
+_Foto de la página "cv.kizzan.dev"_
 
 ## Código
 
